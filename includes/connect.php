@@ -1,18 +1,22 @@
 <?php
+//?path = '/includes';
+//set_include_path(get_include_path().PATH_SEPARATOR.$path);
 
 //names for the database for the later function to use to connect to 
-$serveName = "";
+$serverName = "";
 $userName = "";
 $passWord = "";
 $dbName = "";
+$debug = "true";
 
 //function to connect to db with debugging included
-$connect = sqlConnect($serveName, $userName, $passWord, $dbName);
+$connect = mysqli_connect($serverName, $userName, $passWord, $dbName);
 
-if(sqlConnect_errono()){
-    echo "connection failed";
-    exit();
+if($connect->connect_error) {
+	die('Could not connect: ' . $connect->connect_error);
+}elseif($debug =="true") {
+	echo nl2br("\nDEBUG:\n");
+	echo nl2br("\nConnection Success\n");
 }
-echo "connection made!";
 
 ?>
