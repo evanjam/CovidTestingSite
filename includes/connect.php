@@ -3,7 +3,7 @@
 //set_include_path(get_include_path().PATH_SEPARATOR.$path);
 
 //names for the database for the later function to use to connect to 
-$serverName = "";
+$serverName = "localhost";
 $userName = "";
 $passWord = "";
 $dbName = "";
