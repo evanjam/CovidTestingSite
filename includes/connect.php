@@ -4,9 +4,9 @@
 
 //names for the database for the later function to use to connect to 
 $serverName = "localhost";
-$userName = "";
+$userName = "root";
 $passWord = "";
-$dbName = "";
+$dbName = "sc19_alpha";
 $debug = "true";
 
 //function to connect to db with debugging included
