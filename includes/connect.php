@@ -7,7 +7,7 @@ $serverName = "localhost";
 $userName = "root";
 $passWord = "";
 $dbName = "sc19_alpha";
-$debug = "true";
+$debug = "false";
 
 //function to connect to db with debugging included
 $connect = mysqli_connect($serverName, $userName, $passWord, $dbName);
