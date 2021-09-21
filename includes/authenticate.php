@@ -11,11 +11,17 @@ if ( mysqli_connect_errno() ) {
 	// If error accurs with connecting to the database then display message
 	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
+else{
+    echo "database connected";
+}
 
 //isset() will check to make sure data is defined and 
 if ( !isset($_POST['username'], $_POST['password']) ) {
 	// data was not secured and could not be sent 
 	exit('Please fill both the username and password fields!');
+}
+else{
+    echo "we made it here";
 }
 
 // Prepare our SQL, preparing the SQL statement will prevent SQL injection.
@@ -29,6 +35,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM user_login WHERE username = 
     if ($stmt->num_rows > 0) {
         $stmt->bind_result($id, $password);
         $stmt->fetch();
+ 
         // Account exists, now we verify the password.
         // Note: remember to use password_hash in your registration file to store the hashed passwords.
         if (password_verify($_POST['password'], $password)) {
