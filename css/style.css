@@ -1,46 +1,59 @@
-.container {
-  display: grid;
-  grid-template-columns: 0.5fr 1.6fr 0.9fr;
-  grid-template-rows: 0.4fr 1.6fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "header header header"
-    "left_column page page"
-    "left_column page page";
+* {
+	padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-
-.header { 
-  grid-area: header; 
+body {
+    margin: 50px auto;
+    text-align: center;
+    width: 600px;
 }
-
-.left_column { 
-  grid-area: left_column;
+h1 {
+    font-family: 'Passion One';
+    font-size: 2rem;
+    text-transform: uppercase;
 }
-
-.page { 
-  grid-area: page; 
+label {
+    width: 150px;
+    display: inline-block;
+    text-align: left;
+    font-size: 1.5rem;
+    font-family: 'Lato';
 }
-
-
-html, body , .container {
-  height: 100%;
-  margin: 0;
+input {
+    border: 2px solid #ccc;
+    font-size: 1.5rem;
+    font-weight: 100;
+    font-family: 'Lato';
+    padding: 10px;
 }
-
-.container * {
-  border: 1px solid red;
-  position: relative;
+form {
+    margin: 25px auto;
+    padding: 20px;
+    border: 5px solid #ccc;
+    width: 500px;
+    background: #eee;
 }
-
-.container *:after {
-  content:attr(class);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  align-items: center;
-  justify-content: center;
+div.form-element {
+    margin: 20px 0;
+}
+button {
+    padding: 10px;
+    font-size: 1.5rem;
+    font-family: 'Lato';
+    font-weight: 100;
+    background: yellowgreen;
+    color: white;
+    border: none;
+}
+p.success,
+p.error {
+    color: white;
+    font-family: lato;
+    background: yellowgreen;
+    display: inline-block;
+    padding: 2px 10px;
+}
+p.error {
+    background: orangered;
 }
