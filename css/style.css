@@ -12,6 +12,7 @@
 
 .header { 
   grid-area: header; 
+  background-color: #5274a3;
 }
 
 .left_column { 
