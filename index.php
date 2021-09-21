@@ -1,8 +1,3 @@
-<?php
-
-	include_once 'includes/authenticate.php';
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
