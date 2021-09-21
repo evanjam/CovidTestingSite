@@ -1,6 +1,6 @@
 <?php
 
-	include_once 'authenticate.php';
+	include_once '<includes>authenticate.php';
 
 ?>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
 
     <div class="login">
         <h1>Login</h1>
-        <form action="authenticate.php" method="post">
+        <form action="includes/authenticate.php" method="post">
 
             <input type="text" name="username" placeholder="Username" id="username" required>
 
