@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include('includes/config.php');
+	include('../includes/config.php');
 	if (isset($_POST['register'])) {
 		$username = $_POST['username'];
 		$password = $_POST['password'];
