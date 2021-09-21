@@ -20,6 +20,18 @@
         </form>
     </div>
 
+	<div class="sign-up">
+        <h1>sign up</h1>
+        <form action="includes/authenticate.php" method="post">
+
+            <input type="text" name="username" placeholder="Username" id="username" required>
+
+            <input type="password" name="password" placeholder="Password" id="password" required>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+
     
 </body>
 </html>
