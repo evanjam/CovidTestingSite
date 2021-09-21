@@ -50,34 +50,33 @@ body {
     transition: background-color 0.2s;
 }
 
-
-.login2 {
+.sign-up {
     width: 600px;
     background-color: #ffffff;
     margin: 100px auto;
 }
-.login2 h1 {
+.sign-up h1 {
     text-align: center;
     color: #5b6574;
     font-size: 30px;
     padding: 20px 0 20px 0;
     border-bottom: 1px solid #dee0e4;
 }
-.login2 form {
+.sign-up form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 20px;
 }
 
-.login2 form input[type="password"], .login form input[type="text"] {
+.sign-up form input[type="password"], .sign-up form input[type="text"] {
     width: 310px;
     height: 50px;
     border: 1px solid #dee0e4;
     margin-bottom: 20px;
     padding: 0 15px;
 }
-.login2 form input[type="submit"] {
+.sign-up form input[type="submit"] {
     width: 100%;
     padding: 15px;
    margin-top: 20px;
@@ -90,7 +89,7 @@ body {
     color: #ffffff;
     transition: background-color 0.2s;
 }
-.login2 form input[type="submit"]:hover {
-  background-color: #6f34cf;
+.sign-up form input[type="submit"]:hover {
+  background-color: #2868c7;
     transition: background-color 0.2s;
 }

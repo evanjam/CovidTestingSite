@@ -22,7 +22,10 @@
 
 	<div class="sign-up">
         <h1>sign up</h1>
-        <form action="includes/authenticate.php" method="post">
+        <form action="includes/register.php" method="post">
+
+			<input type= "text" name= "firstname" placeholder="First Name" id=firstname required>
+			<input type= "text" name= "lastname" placeholder="Last Name" id=lastname required>
 
             <input type="text" name="username" placeholder="Username" id="username" required>
 
