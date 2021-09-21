@@ -1,6 +1,6 @@
 <?php
 
-	include_once '<includes>authenticate.php';
+	include_once 'includes/authenticate.php';
 
 ?>
 <!DOCTYPE html>
