@@ -1,13 +1,12 @@
 <?php
+//source: https://code.tutsplus.com/tutorials/create-a-php-login-form--cms-33261
 	session_start();
-	include('../includes/config.php');
+	include('config.php');
 	if (isset($_POST['register'])) {
 		$username = $_POST['username'];
 		$password = $_POST['password'];
+		echo "registration form triggered. you entered:<br>username:$username<br>password:$password<br>nothing else works so good luck :)";
 		$password_hash = password_hash($password, PASSWORD_BCRYPT);
-		echo $username;
-		echo $password;
-		echo $password_hash;
 		$query = $connection->prepare("SELECT * FROM user_login WHERE username=:username");
 		$query->bindParam("username", $username, PDO::PARAM_STR);
 		$query->execute();

@@ -1,4 +1,6 @@
 <?php
+//this file was provided by the instructor and provides a basic db connection
+
 //?path = '/includes';
 //set_include_path(get_include_path().PATH_SEPARATOR.$path);
 
