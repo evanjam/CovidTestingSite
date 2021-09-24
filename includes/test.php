@@ -4,9 +4,10 @@
 	$username = "ev";
 	$password = "ev";
 	$password_hash = password_hash($password, PASSWORD_BCRYPT);
-	echo "username:<br>$username<br><br>password:<br>$password<br><br>password_hash:<br>$password_hash<br><br><br>";
-	echo "vardump: ";
+	echo "username:<br>$username<br><br>password:<br>$password<br><br>password_hash:<br>$password_hash<br><br>";
+	echo "vardump:<br>";
 	var_dump($password_hash);
+	echo "<br>this var_dump spits out some details about the data stored in the \$password_hash variable. note that it is a 60 character string which is why we needed to increase the password varchar in user_login to 64";
 	
 	echo "<br><br><br>";
 	
