@@ -1,6 +1,6 @@
 <?php
 //login.php
-//waluigi
+//https://stackoverflow.com/questions/46819734/how-to-check-username-and-password-matches-the-database-values
 
     include('connect.php');
 	
