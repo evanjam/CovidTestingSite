@@ -12,7 +12,7 @@ $dbName = "sc19_alpha";
 $debug = "false";
 
 //function to connect to db with debugging included
-$connect = mysqli_connect($serverName, $userName, $passWord, $dbName);
+$connect = new mysqli($serverName, $userName, $passWord, $dbName);
 
 if($connect->connect_error) {
 	die('Could not connect: ' . $connect->connect_error);
