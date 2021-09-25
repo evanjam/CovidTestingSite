@@ -12,9 +12,13 @@
 		$result = $connect->query($sql_statement);
 		if($result->num_rows > 0) {
 			echo "user exists..do something..";
+			
+			//my attempt at retrieving the password stored in the database 
+			//and then using the password_verify function to compare it to the hashed user's input
 			$sql_statement2 = "SELECT password FROM user_login WHERE username = '$username'";
 			$stored_password = $connect->query($sql_statement2);
-			$validate_password = password_verify($password, $stored_password);
+			$validate_password = password_verify($password, $stored_password); 
+			
 			if($validate_password ) {
 				echo "no way....????";
 			} else
