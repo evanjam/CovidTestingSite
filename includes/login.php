@@ -8,6 +8,9 @@
     if (isset($_POST['login'])) {
         $username = $_POST['username']; 
         $password = $_POST['password'];
+		// $getId = $_POST['ULID'];
+		$dt2=date("Y-m-d");
+		$success = 0;
 //		$password_hash = password_hash($password, PASSWORD_BCRYPT); 
 		$get_user = "SELECT * FROM user_login WHERE username = '$username'"; 
 		$result = $connect->query($get_user); 
@@ -17,6 +20,13 @@
 			$row = $result->fetch_array(MYSQLI_ASSOC);
 		if(password_verify($password, $row['password'])) {
 				echo "credentials match, username and password has been successfully verified!";
+				//made this code to try and track user log is and success in the login_logs table but dont know why it wont work 
+				++$success;
+				$insert_log = "INSERT INTO login_log (ULID ,login_date, is_successful) VALUES ( NULL , $dt2 , $success )"; //attempting to add into login_logs table with user date and success
+						echo "login log created";
+						if($connect->query($insert_log) == TRUE) { //so it outputs that the query connect worked but no table values show up??????????
+							echo "new log created";
+						}
 			} else {
 				echo "credentials do not match what is stored in the db, try again";
 				header('Refresh: 1;URL=../index.php');
