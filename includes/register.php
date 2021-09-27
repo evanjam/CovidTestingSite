@@ -17,9 +17,7 @@
 		} else { //if username doesnt already exist in database, execute remaining steps to insert the username and password
 			$insert_user = "INSERT INTO user_login (ULID, username, password) VALUES (NULL, '$username', '$password_hash')"; //prepare sql insertion statement
 			
-//			if($connect->query($insert_user) == TRUE) { //evan's query function, up for discussion on which to use
-			
-			if(mysqli_query($connect, $insert_user)) { //call query function on $connect and pass $sql_statement as parameter, then does an if statement to check if it worked at the same time
+			if($connect->query($insert_user) == TRUE) { //evan's query function, up for discussion on which to use
 				echo "new record created, redirecting to home...";
 				header('Refresh: 1;URL=../index.php');
 			} else 
