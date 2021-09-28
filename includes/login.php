@@ -8,9 +8,9 @@
     if (isset($_POST['login'])) {
         $username = $_POST['username']; 
         $password = $_POST['password'];
-		// $getId = $_POST['ULID'];
-		$dt2=date("Y-m-d");
-		$success = 0;
+		$dt2=date("Y-m-d"); //getting the date to input into login_logs 
+		$success = 0; // success variable initiated to 0 then will increment if login continues 
+		$error = 'failed';
 //		$password_hash = password_hash($password, PASSWORD_BCRYPT); 
 		$get_user = "SELECT * FROM user_login WHERE username = '$username'"; 
 		$result = $connect->query($get_user); 
@@ -22,14 +22,18 @@
 				echo "credentials match, username and password has been successfully verified!";
 				//made this code to try and track user log is and success in the login_logs table but dont know why it wont work 
 				++$success;
-				$insert_log = "INSERT INTO login_log (ULID ,login_date, is_successful) VALUES ( NULL , $dt2 , $success )"; //attempting to add into login_logs table with user date and success
-						echo "login log created";
-						if($connect->query($insert_log) == TRUE) { //so it outputs that the query connect worked but no table values show up??????????
+				$getID = $row["ULID"];//gets the ULID from the user which is inputed as the type 
+				$insert_log = "INSERT INTO login_log (ULID, login_date, is_successful) VALUES ( '$getID', '$dt2' , '$success')"; //preparing sql statement 
+						if($connect->query($insert_log) == TRUE) { //test to see if log was created which it was so we are good 
 							echo "new log created";
+						}else{
+							echo "no log entered into login_logs";
 						}
 			} else {
+
+				// $insert_error = "INSERT INTO login_log (ULID, login_date, is_successful, error_message) VALUES ( '$getID', '$dt2' , '$success', '$error')";
 				echo "credentials do not match what is stored in the db, try again";
-				header('Refresh: 1;URL=../index.php');
+				// header('Refresh: 1;URL=../index.php');
 			}
 		} else {
 			echo "user doesnt exist, redirecting to home..";
