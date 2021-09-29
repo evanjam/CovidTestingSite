@@ -11,7 +11,6 @@
 		$dt2=date("Y-m-d"); //getting the date to input into login_logs 
 		$success = 0; // success variable initiated to 0 then will increment if login continues 
 		$error = 'failed';
-//		$password_hash = password_hash($password, PASSWORD_BCRYPT); 
 		$get_user = "SELECT * FROM user_login WHERE username = '$username'"; 
 		$result = $connect->query($get_user); 
 		
@@ -20,10 +19,9 @@
 			$row = $result->fetch_array(MYSQLI_ASSOC);
 		if(password_verify($password, $row['password'])) {
 				echo "credentials match, username and password has been successfully verified!";
-				//made this code to try and track user log is and success in the login_logs table but dont know why it wont work 
 				++$success;
 				$getID = $row["ULID"];//gets the ULID from the user which is inputed as the type 
-				$insert_log = "INSERT INTO login_log (ULID, login_date, is_successful) VALUES ( '$getID', '$dt2' , '$success')"; //preparing sql statement 
+				$insert_log = "INSERT INTO login_log (ULID, login_date, is_successful) VALUES ('$getID', '$dt2', '$success')"; //preparing sql statement 
 						if($connect->query($insert_log) == TRUE) { //test to see if log was created which it was so we are good 
 							echo "new log created";
 						}else{
