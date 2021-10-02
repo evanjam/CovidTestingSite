@@ -23,6 +23,7 @@
         <form method="post" action="includes/register.php" name="register">
             <input type="text" name="username" placeholder="username" required>
             <input type="password" name="password" placeholder="password" required>
+			<input type="text" name="fname" placeholder="first name" required>
             <input type="submit" name="register" value="register">
         </form>
     </div>

@@ -6,37 +6,24 @@
     include('connect.php'); 
 	
     if (isset($_POST['login'])) {
-        $username = $_POST['username']; 
+        $username = $_POST['username'];
         $password = $_POST['password'];
-		$dt2=date("Y-m-d"); //getting the date to input into login_logs 
-		$success = 0; // success variable initiated to 0 then will increment if login continues 
-		$error = 'failed';
-		$get_user = "SELECT * FROM user_login WHERE username = '$username'"; 
-		$result = $connect->query($get_user); 
+		$get_user = "SELECT * FROM user_profile WHERE username = '$username'";
+		$result = $connect->query($get_user);
 		
-		if($result->num_rows > 0) { 
-			$get_password = "SELECT password FROM user_login WHERE username = '$username'"; 
+		if($result->num_rows > 0) {
+			$get_password = "SELECT password FROM user_profile WHERE username = '$username'";
 			$row = $result->fetch_array(MYSQLI_ASSOC);
 		if(password_verify($password, $row['password'])) {
 				echo "credentials match, username and password has been successfully verified!";
-				++$success;
-				$getID = $row["ULID"];//gets the ULID from the user which is inputed as the type 
-				$insert_log = "INSERT INTO login_log (ULID, login_date, is_successful) VALUES ('$getID', '$dt2', '$success')"; //preparing sql statement 
-						if($connect->query($insert_log) == TRUE) { //test to see if log was created which it was so we are good 
-							echo "new log created";
-						}else{
-							echo "no log entered into login_logs";
-						}
 			} else {
-
-				// $insert_error = "INSERT INTO login_log (ULID, login_date, is_successful, error_message) VALUES ( '$getID', '$dt2' , '$success', '$error')";
 				echo "credentials do not match what is stored in the db, try again";
-				// header('Refresh: 1;URL=../index.php');
+				header('Refresh: 1;URL=../index.php');
 			}
 		} else {
-			echo "user doesnt exist, redirecting to home..";
+			echo "credentials do not match what is stored in the db, try again";
 			header('Refresh: 1;URL=../index.php');
 		}
-		
+
 	}
 ?>

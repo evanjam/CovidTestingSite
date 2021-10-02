@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lab dashboard</title>
-    <link href="css/labdashboard.css" rel="stylesheet" type="text/css">
+    <link href="../css/labdashboard.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -17,9 +17,9 @@
 
     <div class="getTests">
         <h1>Enter date for tests </h1>
-        <form method="post" action="includes/getTests.php" name="labtests">
-            <input type="date" name="date"  placeholder="Desired date (year-month-day)" id="username" required />
-            <input type="submit" name="Get desired tests" value="recieve">
+        <form method="post" action="../includes/getTests.php" name="labtests">
+            <input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
+            <input type="submit" name="labtests" value="Search">
         </form>
     </div>
 
@@ -33,11 +33,11 @@
             <th>is_signed</th>
         <tr>
         <tr>
-            <td>A</td>
-            <td>B</td>
-            <td>C</td>
-            <td>D</td>
-            <td>E</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         <tr>
 
     </table>
