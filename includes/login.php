@@ -18,11 +18,11 @@
 				echo "credentials match, username and password has been successfully verified!";
 			} else {
 				echo "credentials do not match what is stored in the db, try again";
-				header('Refresh: 1;URL=../index.php');
+				header('Refresh: 1;URL=../');
 			}
 		} else {
 			echo "credentials do not match what is stored in the db, try again";
-			header('Refresh: 1;URL=../index.php');
+			header('Refresh: 1;URL=../');
 		}
 
 	}
