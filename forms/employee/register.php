@@ -17,6 +17,7 @@
 			<input type="text" name="fname" placeholder="first name" required>
 			<input type="text" name="lname" placeholder="last name" required>
 			<input type="text" name="ssn" placeholder="ssn" pattern="[0-9]+" required>
+			<!-- how do I move this fucking date box down a line!!! -->
 			<input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
             <input type="submit" name="register" value="register">
         </form>
