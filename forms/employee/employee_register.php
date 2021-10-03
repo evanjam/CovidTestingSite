@@ -11,7 +11,7 @@
 
     <div class="register">
         <h1>register</h1>
-        <form method="post" action="../../includes/register.php" name="register">
+        <form method="post" action="../../includes/employee_register.php" name="register">
             <input type="text" name="username" placeholder="username" required>
             <input type="password" name="password" placeholder="password" required>
 			<input type="text" name="fname" placeholder="first name" required>
