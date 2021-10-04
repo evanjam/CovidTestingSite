@@ -17,6 +17,10 @@
     <div>(Link to create user)</div>
     <br>
     <div>(Link to edit user/ user permissions)</div>
+    <br>
+    <div>(Link to create tests)</div>
+    <br>
+    <div>(Link to edit tests)</div>
 
 
 </body>
