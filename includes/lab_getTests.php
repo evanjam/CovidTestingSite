@@ -8,20 +8,15 @@
 		$query_date = "SELECT * FROM `test_sample` WHERE `test_date` = '$date'"; //returns rows that have the desired date
 		$result = $connect->query($query_date); //saves resultng data
 		
-		if($result->num_rows > 0) {
-			echo "penis";
-			while(($row = $result->fetch_assoc())) // gets a row into an array from the results query
-			{
-				echo "gets here";
-				$test = "select * from test_sample where test_date=" .$row[$date].""; //error is occuring here not recognizing the date input
-				$test_query = $connect->query($test);
-				// $testArray = $test_query->fetch_assoc();
-				// echo $testArray;
-			}
+		if($result->num_rows > 2) {
+			echo "test(s) exist";
+			echo "<br><br>";
+			$row = $result->fetch_array(MYSQLI_ASSOC);
+			$get_username = $row['username'];
+			echo "$get_username";
 			
-
 		} else {
-			echo 'gay';
+			echo 'no';
 			echo "<br>";
 	}
 }
