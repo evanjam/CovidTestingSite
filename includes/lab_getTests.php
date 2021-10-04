@@ -12,10 +12,11 @@
 			echo "penis";
 			while(($row = $result->fetch_assoc())) // gets a row into an array from the results query
 			{
+				echo "gets here";
 				$test = "select * from test_sample where test_date=" .$row[$date].""; //error is occuring here not recognizing the date input
 				$test_query = $connect->query($test);
-				$testArray = $test_query->fetch_assoc();
-				echo $testArray;
+				// $testArray = $test_query->fetch_assoc();
+				// echo $testArray;
 			}
 			
 
@@ -23,5 +24,5 @@
 			echo 'gay';
 			echo "<br>";
 	}
-}//fix ur formatting also ur keybaord is shit
+}
 ?>
