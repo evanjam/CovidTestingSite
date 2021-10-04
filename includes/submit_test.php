@@ -12,14 +12,22 @@
 		$select_user = "SELECT * FROM user_profile WHERE username = '$username'";
 		$result = $connect->query($select_user);
 		
-		if($result->num_rows > 0) { //if true, rows exist where serial=$serial, meaning the user with that ssn exists
-			//$insert_test = "INSERT INTO `test_sample` (`TID`, `UID`, `serial_number`, `test_date`, `result`, `is_signed`) 
-			//VALUES (NULL, '', '$serial', '$date', 'NULL', 'NULL')";
-			echo "user exists";
+		if($result->num_rows > 0) { //if true, rows exist where username=$username, which means the user exists in user_login table
+			$row = $result->fetch_array(MYSQLI_ASSOC);
+			$getUID = $row['UID']; //gets the UID of the user 
+			$insert_test = "INSERT INTO `test_sample` (`TID`, `UID`, `serial_number`, `test_date`, `result`, `is_signed`) 
+			VALUES (NULL, '$getUID', '$serial', '$date', 'NULL', 'NULL')";
+			
+			if($connect->query($insert_test) == TRUE) {
+				echo "insert successful?";
+			} else {
+				echo "insertion error failed for some reason. try again.";
+				header('Refresh: 1;URL=../forms/employee/employee_dashboard.php');
+			}
 			
 		} else {
 			echo "no patient exists with the username that was specified. please register a new patient before submitting their test.";
-			header('Refresh: 2;URL=../forms/employee/employee_dashboard.php');
+			header('Refresh: 3;URL=../forms/employee/employee_dashboard.php');
 		}
 	}
 	

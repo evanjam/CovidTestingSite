@@ -27,7 +27,7 @@
 				echo "new record created, redirecting to home...";
 				header('Refresh: 1;URL=../forms/employee/employee_dashboard.php');
 			} else 
-				echo "error";
+				echo "insertion failed for some reason. try again.";
 			$connect->close(); //it still works if I don't include this but I feel like it's probably necessary down the line to do this
 		}
 	}
