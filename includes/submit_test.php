@@ -26,7 +26,7 @@
 			}
 			
 		} else {
-			echo "no patient exists with the username that was specified. please register a new patient before submitting their test.";
+			echo "no patient exists with that username. please register a new patient before submitting their test.";
 			header('Refresh: 3;URL=../forms/employee/employee_dashboard.php');
 		}
 	}
