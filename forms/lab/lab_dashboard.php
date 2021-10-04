@@ -17,7 +17,7 @@
 
     <div class="getTests">
         <h1>Enter date for tests </h1>
-        <form method="post" action="../../includes/getTests.php" name="labtests">
+        <form method="post" action="../../includes/lab_getTests.php" name="labtests">
             <input type="text" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
             <input type="submit" name="labtests" value="Search">
         </form>
