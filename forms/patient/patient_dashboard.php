@@ -14,30 +14,15 @@
     
     </div>
 
-
-    <div class="getTests">
-        <h1>Enter date for tests </h1>
-        <form method="post" action="../../includes/patient_getTests.php" name="labtests">
-            <input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
-            <input type="submit" name="labtests" value="Search">
-        </form>
-    </div>
-
-
     <table class="desiredResults" id="desiredResults">
         <tr>
-            <th>UID</th>
-            <th>Serial #</th>
             <th>Test Date</th>
             <th>Result</th>
-            <th>is_signed</th>
+
         <tr>
         <tr>
             <td>A</td>
             <td>B</td>
-            <td>C</td>
-            <td>D</td>
-            <td>E</td>
         <tr>
 
     </table>
