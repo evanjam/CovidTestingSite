@@ -13,6 +13,9 @@
         <h1>Lab user dashboard</h1>
     
     </div>
+	
+	<div><a href="lab_dashboard.php">Home</a></div>
+    <br>
 
 
     <div class="getTests">
