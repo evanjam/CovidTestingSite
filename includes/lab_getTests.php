@@ -16,8 +16,8 @@
 			echo "$get_username";
 			
 		} else {
-			echo 'no';
-			echo "<br>";
+			echo 'no tests exist on the specified date';
+			
 	}
 }
 ?>
