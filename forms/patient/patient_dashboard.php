@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient dashboard</title>
+    <link href="../../css/dashboard.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>Patient dashboard</h1>
+    
+    </div>
+
+
+    <div class="getTests">
+        <h1>Enter date for tests </h1>
+        <form method="post" action="../../includes/patient_getTests.php" name="labtests">
+            <input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
+            <input type="submit" name="labtests" value="Search">
+        </form>
+    </div>
+
+
+    <table class="desiredResults" id="desiredResults">
+        <tr>
+            <th>UID</th>
+            <th>Serial #</th>
+            <th>Test Date</th>
+            <th>Result</th>
+            <th>is_signed</th>
+        <tr>
+        <tr>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+            <td>E</td>
+        <tr>
+
+    </table>
+
+
+ 
+
+</body>
+</html>
