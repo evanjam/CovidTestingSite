@@ -14,9 +14,9 @@
     
     </div>
     
-    <div><a href="employee_register.php">Link to register patient</a></div>
+    <div><a href="employee_register.php">Patient Registration Form</a></div>
     <br>
-    <div><a href="employee_submit_test.php">Link to submit new test sample</a></div>
+    <div><a href="employee_submit_test.php">Submit New Test</a></div>
 
 
 </body>
