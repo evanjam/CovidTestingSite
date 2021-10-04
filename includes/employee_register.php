@@ -20,7 +20,8 @@
 			echo "username already exists, redirecting to home..."; //print a message saying that username already exists
 			header('Refresh: 1;URL=../forms/employee/employee_dashboard.php'); //wait 1 second and refresh index.php homepage
 		} else { //if username doesnt already exist in database, execute remaining steps to insert the username and password
-			$insert_user = "INSERT INTO user_profile (UID, username, password, fname, lname, dob, ssn) VALUES (NULL, '$username', '$password_hash', '$fname', '$lname', '$dob', '$ssn')"; //prepare sql insertion statement
+			$insert_user = "INSERT INTO user_profile (UID, username, password, fname, lname, dob, ssn) 
+			VALUES (NULL, '$username', '$password_hash', '$fname', '$lname', '$dob', '$ssn')"; //prepare sql insertion statement
 			
 			if($connect->query($insert_user) == TRUE) { //evan's query function, up for discussion on which to use
 				echo "new record created, redirecting to home...";
