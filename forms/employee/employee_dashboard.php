@@ -16,7 +16,7 @@
     
     <div><a href="employee_register.php">Link to register patient</a></div>
     <br>
-    <div>(Link to register new test)</div>
+    <div><a href="employee_submit_test.php">Link to submit new test sample</a></div>
 
 
 </body>

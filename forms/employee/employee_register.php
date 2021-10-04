@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test login/register page</title>
+    <title>Patient Registration Form</title>
     <link href="../../css/dashboard.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -14,6 +14,8 @@
     
     </div>
 
+	<div><a href="employee_dashboard.php">Home</a></div>
+    <br>
 
     <div class="employee_register">
         <h1>register</h1>
@@ -23,9 +25,8 @@
 			<input type="text" name="fname" placeholder="first name" required>
 			<input type="text" name="lname" placeholder="last name" required>
 			<input type="text" name="ssn" placeholder="ssn" pattern="[0-9]+" required>
-			<!-- how do I move this fucking date box down a line!!! fuck css-->
 			<input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
-            <input type="submit" name="register" value="register">
+            <input type="submit" name="register" value="Register">
         </form>
     </div>
 
