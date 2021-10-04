@@ -1,7 +1,6 @@
 <?php
 //register.php
-//inserts a new patient into user_profile table
-//permission automatically set to 0
+//creates new user in the user_login table and gives admin the ability to set the permission level
 
 	include('connect.php'); //allows us to use the $connect variable set in the connect.php file
 	
@@ -13,20 +12,21 @@
 		$lname = $_POST['lname'];
 		$dob = $_POST['date'];
 		$ssn = $_POST['ssn'];
+		$permission = $_POST['permission'];
 		
 		$select_user = "SELECT * FROM user_profile WHERE username = '$username'"; //prepares sql statement to check if username already exists
 		$result = $connect->query($select_user); //runs $select_user as a query and stores the result in $result
 		
 		if($result->num_rows > 0) { //if $result->num_rows > 0 returns true, then there exists rows where the username=$username 
 			echo "username already exists, redirecting to home..."; //print a message saying that username already exists
-			header('Refresh: 1;URL=../forms/employee/employee_dashboard.php'); //wait 1 second and refresh index.php homepage
+			header('Refresh: 1;URL=../forms/admin/admin_dashboard.php'); //wait 1 second and refresh index.php homepage
 		} else { //if username doesnt already exist in database, execute remaining steps to insert the username and password
-			$insert_user = "INSERT INTO user_profile (UID, username, password, fname, lname, dob, ssn) 
-			VALUES (NULL, '$username', '$password_hash', '$fname', '$lname', '$dob', '$ssn')"; //prepare sql insertion statement
+			$insert_user = "INSERT INTO user_profile (UID, username, password, fname, lname, dob, ssn, permission) 
+			VALUES (NULL, '$username', '$password_hash', '$fname', '$lname', '$dob', '$ssn', '$permission')"; //prepare sql insertion statement
 			
 			if($connect->query($insert_user) == TRUE) { //evan's query function, up for discussion on which to use
 				echo "new record created, redirecting to home...";
-				header('Refresh: 1;URL=../forms/employee/employee_dashboard.php');
+				header('Refresh: 1;URL=../forms/admin/admin_dashboard.php');
 			} else 
 				echo "insertion failed for some reason. try again.";
 			$connect->close(); //it still works if I don't include this but I feel like it's probably necessary down the line to do this

@@ -22,12 +22,12 @@
 				echo "insert successful?";
 			} else {
 				echo "insertion error failed for some reason. try again.";
-				header('Refresh: 1;URL=../forms/employee/employee_dashboard.php');
+				header('Refresh: 1;URL=../');
 			}
 			
 		} else {
 			echo "no patient exists with that username. please register a new patient before submitting their test.";
-			header('Refresh: 3;URL=../forms/employee/employee_dashboard.php');
+			header('Refresh: 3;URL=../');
 		}
 	}
 	

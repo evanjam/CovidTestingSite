@@ -14,11 +14,11 @@
     
     </div>
     
-    <div>(Link to create user)</div>
+    <div><a href="admin_register.php">User Registration Form</a></div>
     <br>
     <div>(Link to edit user/ user permissions)</div>
     <br>
-    <div>(Link to create tests)</div>
+    <div><a href="admin_submit_test.php">Submit New Test</a></div>
     <br>
     <div>(Link to edit tests)</div>
 
