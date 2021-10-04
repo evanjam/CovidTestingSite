@@ -85,3 +85,23 @@ table, tr{
     border: 2px, black;
     padding: 2px;
 }
+
+  .employee_register {
+    width: 300px;
+    height: 200px;
+    background-color: #ffffff;
+    margin: 100px auto;
+}
+.employee_register h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 30px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+.employee_register form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
