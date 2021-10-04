@@ -10,7 +10,7 @@
 <body>
 
 	<div class="header">
-        <h1>Patient Registration Form</h1>
+        <h1>Employee/Patient Registration Form</h1>
     
     </div>
 
@@ -18,7 +18,9 @@
     <br>
 
     <div class="employee_register">
-        <h1>register</h1>
+        <h1>Patient Registration Form</h1>
+		Please fill out the following form and press Register to register a new Patient
+		<img src="../../img/employee/nurse_resize.jpg" alt="Nurse">
         <form method="post" action="../../includes/employee_register.php" name="register">
             <input type="text" name="username" placeholder="username" required>
             <input type="password" name="password" placeholder="password" required>

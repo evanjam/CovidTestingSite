@@ -5,8 +5,10 @@
 	include('connect.php'); //allows us to use the $connect variable set in the connect.php file
 	
 	if (isset($_POST['submit_test'])) {
+		$ssn = $_POST['ssn'];
+		$serial = $_POST['serial'];
 		
-		echo "works";
+		
 		
 	}
 	
