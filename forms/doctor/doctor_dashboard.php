@@ -33,8 +33,8 @@
             <th>Serial #</th>
             <th>Test Date</th>
             <th>Result</th>
-            <th></th>
             <th>is_signed</th>
+            <th>TID</th>
         <tr>
 
             <?php
@@ -54,23 +54,26 @@
                             echo "<td>{$row[2]}</td>";
                             echo "<td>{$row[3]}</td>";
                             echo "<td>{$row[4]}</td>";
-                            echo '<form action="doctor_dashboard.php" method="post">';
-                            echo '<td><input type="number" name="result" placeholder="result" id="result" pattern="[0-1]"/></td>';
                             echo "<td>{$row[5]}</td>";
-                            echo '<td><input type="number" name="is_signed" placeholder="is_signed" id="is_signed" pattern="[0-1]"/></td>';
-                            echo '<td><input type="number" name="tid" placeholder="Enter TID" id="tid" pattern="[0-1]"/></td>';
-                            echo "<td>The TID is {$row[0]}</td>";
-                            echo '<td><input type="submit" name="submit" value="submit"></td>';
-                            echo '</form>';
+                            echo "<td>TID = {$row[0]}</td>";
                             echo '</tr>';
                             echo '<tr>
                             <td><hr></td><td><hr></td>
                             <td><hr></td><td><hr></td>
                             <td><hr></td><td><hr></td>
-                            <td><hr></td><td><hr></td>
-                            <td><hr></td>
                             </tr>';
                         }
+                        echo '<tr><td><br></td></tr>';
+                        echo '<tr>';
+                        echo '<td>Update Test: </td>';
+                        echo '<td></td>';
+                        echo '<form action="doctor_dashboard.php" method="post">';
+                        echo '<td><input type="number" name="result" placeholder="Enter Result" id="result" pattern="[0-1]"/></td>';
+                        echo '<td><input type="number" name="is_signed" placeholder="Enter is_signed" id="is_signed" pattern="[0-1]"/></td>';
+                        echo '<td><input type="number" name="tid" placeholder="Enter TID" id="tid" pattern="[0-1]"/></td>';
+                        echo '<td><input type="submit" name="submit" value="submit"></td>';
+                        echo '</form>';
+                        echo '</tr>';
                     } else {
                         echo '<tr><td>There were no tests on that date</td></tr>';
                         
