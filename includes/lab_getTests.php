@@ -60,7 +60,7 @@
             <th>is_signed</th>
         <tr>
         <tr>
-            <td><?php $row[0];?></td>
+            <td> <?php echo "$row[0]" ?> </td>
             <td>B</td>
             <td>C</td>
             <td>D</td>
