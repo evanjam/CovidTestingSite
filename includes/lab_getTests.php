@@ -8,18 +8,33 @@
 		$query_date = "SELECT * FROM `test_sample` WHERE `test_date` = '$date'"; //returns rows that have the desired date
 		$result = $connect->query($query_date); //saves resultng data
 		
-		if($result->num_rows > 2) {
+		if($result->num_rows >= 1) {
 			echo "test(s) exist";
 			echo "<br><br>";
-			
 			while(($row = $result->fetch_row())!==null) {
-				echo "$row[0], $row[1], $row[2], $row[3], $row[4], $row[5]<br><br>";
+                displayHTML($row);//calls function to display tests
 			
 			}
 		} else {
 			echo 'no tests exist on the specified date';
 			
 	}
+
+
+    function displayHTML($row){ //made a function so later on we can have a file with all funcitons in it to make our files more organized
+        echo '<tr>';
+        echo "<td>{$row[1]}</td>";
+        echo "&nbsp";
+        echo "<td>{$row[2]}</td>";
+        echo "&nbsp";
+        echo "<td>{$row[3]}</td>";
+        echo "&nbsp";
+        echo "<td>{$row[4]}</td>";
+        echo "&nbsp";
+        echo "<td>{$row[5]}</td>";
+        echo "&nbsp";
+        echo "<td>TID = {$row[0]}</td>";
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -59,18 +74,33 @@
             <th>Result</th>
             <th>is_signed</th>
         <tr>
-        <tr>
-            <td> <?php echo "$row[0]" ?> </td>
-            <td>B</td>
-            <td>C</td>
-            <td>D</td>
-            <td>E</td>
-        <tr>
+            <?php  //demonstration on how you can add directly into the html file and display results, plz dont delete
 
+            // $query_date = "SELECT * FROM `test_sample` WHERE `test_date` = '$date'"; //returns rows that have the desired date
+            // $result = $connect->query($query_date); //saves resultng data
+            
+            // if($result->num_rows >= 1) {
+            //     echo "test(s) exist";
+            //     echo "<br><br>";
+
+            //     while(($row = $result->fetch_row())!==null) {
+            //         //print out rows
+            //         echo '<tr>';
+            //         echo "<td>{$row[1]}</td>";
+            //         echo "<td>{$row[2]}</td>";
+            //         echo "<td>{$row[3]}</td>";
+            //         echo "<td>{$row[4]}</td>";
+            //         echo "<td>{$row[5]}</td>";
+            //         echo "<td>TID = {$row[0]}</td>";
+            //         echo '</tr>';
+            //         echo '<tr>
+            //         <td><hr></td><td><hr></td>
+            //         <td><hr></td><td><hr></td>
+            //         <td><hr></td><td><hr></td>
+            //         </tr>';
+            //     }
+            // }
+            ?>
     </table>
-
-
- 
-
 </body>
 </html>
