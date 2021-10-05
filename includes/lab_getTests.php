@@ -11,13 +11,15 @@
 		if($result->num_rows > 2) {
 			echo "test(s) exist";
 			echo "<br><br>";
-			$row = $result->fetch_array(MYSQLI_ASSOC);
-			$get_username = $row['username'];
-			echo "$get_username";
 			
+			while(($row = $result->fetch_row())!==null) {
+				echo "$row[0], $row[1], $row[2], $row[3], $row[4], $row[5]<br><br>";
+			
+			}
 		} else {
 			echo 'no tests exist on the specified date';
 			
 	}
 }
 ?>
+
