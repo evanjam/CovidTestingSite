@@ -53,14 +53,34 @@
                             echo "<td>{$row[2]}</td>";
                             echo "<td>{$row[3]}</td>";
                             echo "<td>{$row[4]}</td>";
+                            echo '<form action="doctor_dashboard.php" method="post">';
+                            echo '<td><input type="number" name="result" placeholder="result" id="result" pattern="[0-1]"/></td>';
                             echo "<td>{$row[5]}</td>";
+                            echo '<td><input type="number" name="is_signed" placeholder="is_signed" id="is_signed" pattern="[0-1]"/></td>';
+                            echo '<td><input type="submit" name="submit" value="submit"></td>';
+                            echo '</form>';
                             echo '</tr>';
                         }
                     } else {
                         echo 'There were no tests on that date.';
                         
+                    }
                 }
-            }
+                if (isset($_POST['submit'])) { //checks if the submit button was pressed
+                    $result = $_POST['result']; //saves variables from the user's input
+                    $is_signed = $_POST['is_signed'];
+                    
+                    
+                    $update_result = "UPDATE `test_sample` SET `result` = '$result', `is_signed` = '$is_signed' WHERE `test_sample`.`TID` = 1;"; //prepares sql statement to check if username already exists
+                    $result = $connect->query($update_result); //runs $select_user as a query and stores the result in $result
+
+                    if($connect->query($update_result) == TRUE) { //evan's query function, up for discussion on which to use
+                        echo "Result has been updated";
+                        header('Refresh: 1;URL=doctor_dashboard.php');
+                    } else 
+                        echo "insertion failed for some reason. try again.";
+                    $connect->close();
+                }
         ?>
 
     </table>
