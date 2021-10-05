@@ -91,7 +91,7 @@
 
                     if($connect->query($update_result) == TRUE) { //evan's query function, up for discussion on which to use
                         echo "Result has been updated";
-                        header('Refresh: 1;URL=doctor_dashboard.php');
+                        //header('Refresh: 1;URL=doctor_dashboard.php');
                     } else 
                         echo "insertion failed for some reason. try again.";
                     $connect->close();

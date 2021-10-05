@@ -20,7 +20,7 @@
     <br>
     <div><a href="admin_submit_test.php">Submit New Test</a></div>
     <br>
-    <div>(Link to edit tests)</div>
+    <div><a href="lab_admin_dashboard.php">Edit Test</a></div>
 
 
 </body>

@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab user dashboard</title>
+    <title>Admin/Lab user dashboard</title>
     <link href="../../css/dashboard.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
     <div class="header">
-        <h1>Lab user dashboard</h1>
+        <h1>Admin/Lab user dashboard</h1>
     
     </div>
 	
-	<div><a href="lab_dashboard.php">Home</a></div>
+	<div><a href="admin_dashboard.php">Home</a></div>
     <br>
 
 
@@ -69,7 +69,7 @@
                         echo '<tr>';
                         echo '<td>Update Test: </td>';
                         echo '<td>(All fields are required)</td>';
-                        echo '<form action="lab_dashboard.php" method="post">';
+                        echo '<form action="lab_admin_dashboard.php" method="post">';
                         echo '<td><input type="number" name="result" placeholder="Enter Result" id="result" pattern="[0-1]"/></td>';
                         echo '<td><input type="number" name="tid" placeholder="Enter TID" id="tid" pattern="[0-1]"/></td>';
                         echo '<td><input type="submit" name="submit" value="submit"></td>';
