@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctor dashboard</title>
+    <title>Patient dashboard</title>
     <link href="../../css/dashboard.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -45,10 +45,12 @@
                     if($result->num_rows > 0) {
              
                         while(($row = $result->fetch_row())!==null) {
-                            echo '<tr>';
-                            echo "<td>{$row[3]}</td>";
-                            echo "<td>{$row[4]}</td>";
-                            echo '</tr>';
+                            if(${row[4] != null}){//Print out the row if result is not null
+                                echo '<tr>';
+                                echo "<td>{$row[3]}</td>";
+                                echo "<td>{$row[4]}</td>";
+                                echo '</tr>';
+                            }
                         }
                     } else {
                         echo 'There were no tests on that date.';
