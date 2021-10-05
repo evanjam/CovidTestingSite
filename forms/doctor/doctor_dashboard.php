@@ -58,8 +58,8 @@
                             echo "<td>{$row[5]}</td>";
                             echo '<td><input type="number" name="is_signed" placeholder="is_signed" id="is_signed" pattern="[0-1]"/></td>';
                             echo '<td><input type="submit" name="submit" value="submit"></td>';
-                            echo '<td><input type="number" name="tid" placeholder="tid" id="tid" pattern="[0-1]"/></td>';
-                            echo "<td>{$row[0]} is tid</td>";
+                            echo '<td><input type="number" name="tid" placeholder="Enter TID" id="tid" pattern="[0-1]"/></td>';
+                            echo "<td>The TID is {$row[0]}</td>";
                             echo '</form>';
                             echo '</tr>';
                         }
