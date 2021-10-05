@@ -47,8 +47,9 @@
                     $result = $connect->query($query_date); //saves resultng data
                     
                     if($result->num_rows > 0) {
-             
+                        //loop throught rows
                         while(($row = $result->fetch_row())!==null) {
+                            //print out rows
                             echo '<tr>';
                             echo "<td>{$row[1]}</td>";
                             echo "<td>{$row[2]}</td>";
@@ -63,10 +64,11 @@
                             <td><hr></td><td><hr></td>
                             </tr>';
                         }
+                        //print out the form
                         echo '<tr><td><br></td></tr>';
                         echo '<tr>';
                         echo '<td>Update Test: </td>';
-                        echo '<td></td>';
+                        echo '<td>(All fields are required)</td>';
                         echo '<form action="doctor_dashboard.php" method="post">';
                         echo '<td><input type="number" name="result" placeholder="Enter Result" id="result" pattern="[0-1]"/></td>';
                         echo '<td><input type="number" name="is_signed" placeholder="Enter is_signed" id="is_signed" pattern="[0-1]"/></td>';
