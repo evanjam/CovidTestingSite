@@ -13,12 +13,15 @@
         <h1>Doctor dashboard</h1>
     
     </div>
+	
+	<div><a href="doctor_dashboard.php">Home</a></div>
+    <br>
 
 
     <div class="getTests">
         <h1>Enter date for tests </h1>
-        <form method="post" action="../../includes/lab_getTests.php" name="labtests">
-            <input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
+        <form method="post" action="" name="labtests">
+            <input type="date" name="date"  placeholder="Desired date" id="date" required />
             <input type="submit" name="labtests" value="Search">
         </form>
     </div>
@@ -32,18 +35,35 @@
             <th>Result</th>
             <th>is_signed</th>
         <tr>
-        <tr>
-            <td>A</td>
-            <td>B</td>
-            <td>C</td>
-            <td>D</td>
-            <td>E</td>
-        <tr>
+
+            <?php
+                include('../../includes/connect.php'); 
+	
+                if (isset($_POST['labtests'])) {
+                    $date = $_POST['date'];
+            
+                    $query_date = "SELECT * FROM `test_sample` WHERE `test_date` = '$date'"; //returns rows that have the desired date
+                    $result = $connect->query($query_date); //saves resultng data
+                    
+                    if($result->num_rows > 0) {
+             
+                        while(($row = $result->fetch_row())!==null) {
+                            echo '<tr>';
+                            echo "<td>{$row[0]}</td>";
+                            echo "<td>{$row[1]}</td>";
+                            echo "<td>{$row[2]}</td>";
+                            echo "<td>{$row[3]}</td>";
+                            echo "<td>{$row[4]}</td>";
+                            echo "<td>{$row[5]}</td>";
+                            echo '</tr>';
+                        }
+                    } else {
+                        echo 'There were no tests on that date.';
+                        
+                }
+            }
+        ?>
 
     </table>
-
-
- 
-
 </body>
 </html>
