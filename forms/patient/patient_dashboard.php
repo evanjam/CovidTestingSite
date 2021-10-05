@@ -43,9 +43,9 @@
                     $result = $connect->query($query_date); //saves resultng data
                     
                     if($result->num_rows > 0) {
-             
+                        
                         while(($row = $result->fetch_row())!==null) {
-                            if(${row[4] != null}){//Print out the row if result is not null
+                            if($row[4] != null){//Print out the row if result is not null
                                 echo '<tr>';
                                 echo "<td>{$row[3]}</td>";
                                 echo "<td>{$row[4]}</td>";
