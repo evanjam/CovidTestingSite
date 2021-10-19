@@ -95,7 +95,7 @@
                     $connect->close();
                 }
         ?>
-
     </table>
+
 </body>
 </html>
