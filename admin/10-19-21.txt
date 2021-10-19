@@ -1,0 +1,44 @@
+to do list from 10-19-21 meeting
+
+-user session handling
+--think "session variables"
+---think of the patient dashboard, needs to know "who" is opening their dashboard? 
+session variable saving their UID right
+
+-most of our current insertion forms show a blank html echo statement after doing
+the insertion. obviously fix this. make things refresh themself? or redirect dashboard?
+-still notify the person that the insertion was successful, but stay on current page and show 
+that echo statement. kinda thing. 
+--"insert success?"
+
+-add sign out button to dashboard (topic of user sessions, redirect to login and 'clear session'
+-we already have home buttons? keep pushing in this direction
+
+-add "change password" button to dashboards
+--new form required for this
+--use same style sheet as login form (login.css)
+**session based change password screen? or just same as forgot password? 
+***if you're already logged in, then you can just type current password + 
+2x new password.
+
+-forgot password
+--everyone can access the forgot password form, link from the login screen
+--(use login.css)
+--username, ssn, enter new pw twice (and then do the whole "UPDATE blah WHERE blah"
+**maybe leave option open for an email situation? (evan warns us about SMTP relay)
+
+-think about more admin functionality
+-reset passwords? ->>>
+--create admin\password reset form
+--list all usernames
+--click a username, (or maybe just type in the username)
+ field to enter password (2x) ((confirm password))
+-edit details of an account? 
+--they technically already have access to the lab dashboard so they can already edit results
+but NOT sign
+
+-we are NOT displaying 0, 1, 2 for test results (not ready, negative, positive)
+--ACTUALLY display the words "not ready", "negative", "positive"
+--same thing for doctor_signed - dont just say 0 or 1
+--also CHANGE the doctor form so they aren't manually inputting shit (radio boxes, or maybe
+just a bigg ol button that says SIGN and they press sign and then it changes isSigned to 1)
