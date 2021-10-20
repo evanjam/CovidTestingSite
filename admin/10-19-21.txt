@@ -27,8 +27,11 @@ that echo statement. kinda thing.
 --username, ssn, enter new pw twice (and then do the whole "UPDATE blah WHERE blah"
 **maybe leave option open for an email situation? (evan warns us about SMTP relay)
 
+-create admin\edit_user form
+--look at admin_dashboard to see what im talking about
+
 -think about more admin functionality
--reset passwords? ->>>
+-reset passwords? ->>> maybe the edit user form can have a pw field
 --create admin\password reset form
 --list all usernames
 --click a username, (or maybe just type in the username)
