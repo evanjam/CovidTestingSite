@@ -21,7 +21,7 @@
         <h1>Patient Registration Form</h1>
 		Please fill out the following form and press Register to register a new Patient
 		<img src="../../img/employee/nurse_resize.jpg" alt="Nurse">
-        <form method="post" action="../../includes/employee_register.php" name="register">
+        <form method="post" action="../../classes/UserRegister-inc.php" name="register">
             <input type="text" name="username" placeholder="username" required>
             <input type="password" name="password" placeholder="password" required>
 			<input type="text" name="fname" placeholder="first name" required>

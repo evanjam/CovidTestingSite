@@ -13,24 +13,50 @@ class RegisterContr {
 
     //constructor to create instance with the inputed data from the form which the employee will input for the first time user
     public function __construct(username, password, fname, lname,socialnum, dob ){
-        $this->$username = username;
-        $this->$password = password;
-        $this->$fname = fname;
-        $this->$lname = lname;
-        $this->$socialNum = socialnum;
-        $this->$dob = dob;
+        $this->username = $username;
+        $this->password = $password;
+        $this->fname = $fname;
+        $this->lname = $lname;
+        $this->socialNum = $socialnum;
+        $this->dob = $dob;
+    }
+
+    //checking functions to then be able to 
+    public function signupUser(){
+        if($this-> emptyField() == false){
+            header("location: ../forms/login.php");
+            exit();
+        }
+        if($this-> userMatch() == false){
+            header("location: ../forms/login.php");
+            exit();
+        }
+        
+        $this->setUser($this->$username, $this->$password, $this->$fname, $this->$lname, $this->$socialNum, $this->$dob);
     }
 
     //simple function to check to make sure all the data fields are checked and cleared to register with data needed to insert into DB table
     private function emptyField(){
         $result;
-        if( empty($this->$username) || empty($this->$password) || empty($this->$fname) || empty($this->$lname) || empty($this->$socialNum)|| empty($this->$dob)) {
+        if( empty($this->username) || empty($this->password) || empty($this->fname) || empty($this->lname) || empty($this->socialNum)|| empty($this->dob)) {
             $result = false;
         }
         else{
             $result = true;
         }
-        return $result
+        return $result;
+    }
+
+    private function userMatch(){
+        $result;
+        if(!$this->checkUser($this->username))
+        {
+            $result = false;
+        }
+        else{
+            $result = true;
+        }
+        return $result;
     }
 
 

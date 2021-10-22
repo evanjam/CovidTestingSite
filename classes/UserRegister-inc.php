@@ -12,10 +12,17 @@ if(isset($_POST["register"]))
 
 
     //instantiating register controller 
-
+    include "../classes/db.classes.php";
     include "../classes/register.classes.php";
     include "../classes/register-contr.php";
+
     $registerUser = new RegisterContr(username, password, fname, lname, dob, ssn);
+
+
+    $registerUser->signupUser();
+
+    header("location: ../index.php?error=none'");
+
 
 
 }
