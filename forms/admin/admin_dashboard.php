@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,20 +12,23 @@
     <link href="../../css/dashboard.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
-    <div class="header">
-        <h1>Admin dashboard</h1>
-    
-    </div>
-    
-    <div><a href="admin_register.php">User Registration Form</a></div>
-    <br>
-    <div>(Link to edit user/ user permissions)</div>
-    <br>
-    <div><a href="admin_submit_test.php">Submit New Test</a></div>
-    <br>
-    <div><a href="lab_admin_dashboard.php">Edit Test</a></div>
-
+    <?php
+    if($_SESSION['permission'] == 4){    
+        echo'<div class="header">
+            <h1>Admin dashboard</h1>
+        
+        </div>        
+        <div><a href="admin_register.php">User Registration Form</a></div>
+        <br>
+        <div>(Link to edit user/ user permissions)</div>
+        <br>
+        <div><a href="admin_submit_test.php">Submit New Test</a></div>
+        <br>
+        <div><a href="lab_admin_dashboard.php">Edit Test</a></div>';
+    }else{
+        echo '<h1>Get out of here you dirty non-admin user.</h1>';
+    }
+    ?>
 
 </body>
 </html>

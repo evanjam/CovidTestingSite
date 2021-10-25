@@ -21,7 +21,6 @@
 				$_SESSION['username'] = $username;
 				$_SESSION['permission'] = $permission;
 				echo "credentials match, username and password has been successfully verified!";
-				echo $_SESSION['permission'];
 				if($_SESSION['permission'] == 0){
 					header('Refresh: 1;URL=../forms/patient/patient_dashboard.php');
 				}

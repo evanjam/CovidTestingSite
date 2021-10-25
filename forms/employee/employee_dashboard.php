@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,16 +12,21 @@
     <link href="../../css/dashboard.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
-    <div class="header">
-        <h1>Employee dashboard</h1>
-    
-    </div>
-    
-    <div><a href="employee_register.php">Patient Registration Form</a></div>
-    <br>
-    <div><a href="employee_submit_test.php">Submit New Test</a></div>
-
+    <?php
+    if($_SESSION['permission'] == 1){ 
+        echo'<div class="header">';
+            echo'<h1>Employee dashboard</h1>';
+        
+        echo'</div>';
+        
+        echo'<div><a href="employee_register.php">Patient Registration Form</a></div>';
+        echo'<br>';
+        echo'<div><a href="employee_submit_test.php">Submit New Test</a></div>';
+    }
+    else{
+        echo'<h1>Get out of here you dirty non-employee user.</h1>';
+    }
+    ?>
 
 </body>
 </html>

@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +12,8 @@
     <link href="../../css/dashboard.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
+    <?php
+    echo'
     <div class="header">
         <h1>Patient dashboard</h1>
     
@@ -31,9 +36,8 @@
         <tr>
             <th>Test Date</th>
             <th>Result</th>
-        <tr>
+        <tr>';
 
-            <?php
                 include('../../includes/connect.php'); 
 	
                 if (isset($_POST['labtests'])) {

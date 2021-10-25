@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,36 +12,37 @@
     <link href="../../css/dashboard.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+    <?php
+    if($_SESSION['permission'] == 3){
 
-    <div class="header">
-        <h1>Doctor dashboard</h1>
+    echo'<div class="header">';
+        echo'<h1>Doctor dashboard</h1>';
     
-    </div>
+    echo'</div>';
 	
-	<div><a href="doctor_dashboard.php">Home</a></div>
-    <br>
+	echo'<div><a href="doctor_dashboard.php">Home</a></div>';
+    echo'<br>';
 
 
-    <div class="getTests">
-        <h1>Enter date for tests </h1>
-        <form method="post" action="" name="labtests">
-            <input type="date" name="date"  placeholder="Desired date" id="date" required />
-            <input type="submit" name="labtests" value="Search">
-        </form>
-    </div>
+    echo'<div class="getTests">';
+        echo'<h1>Enter date for tests </h1>';
+        echo'<form method="post" action="" name="labtests">';
+            echo'<input type="date" name="date"  placeholder="Desired date" id="date" required />';
+            echo'<input type="submit" name="labtests" value="Search">';
+        echo'</form>';
+    echo'</div>';
 
 
-    <table class="desiredResults" id="desiredResults">
-        <tr>
-            <th>UID</th>
-            <th>Serial #</th>
-            <th>Test Date</th>
-            <th>Result</th>
-            <th>is_signed</th>
-            <th>TID</th>
-        <tr>
+    echo'<table class="desiredResults" id="desiredResults">';
+        echo'<tr>';
+            echo'<th>UID</th>';
+            echo'<th>Serial #</th>';
+            echo'<th>Test Date</th>';
+            echo'<th>Result</th>';
+            echo'<th>is_signed</th>';
+            echo'<th>TID</th>';
+        echo'<tr>';
 
-            <?php
                 include('../../includes/connect.php'); 
 	
                 if (isset($_POST['labtests'])) {
@@ -96,6 +101,10 @@
                         echo "insertion failed for some reason. try again.";
                     $connect->close();
                 }
+            }
+            else{
+                echo '<h1>Get out of here you dirty non-doctor user.</h1>';
+            }
         ?>
 
     </table>

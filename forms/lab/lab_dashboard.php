@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,36 +11,36 @@
     <link href="../../css/dashboard.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
-    <div class="header">
-        <h1>Lab user dashboard</h1>
+    <?php
+    if($_SESSION['permission'] == 2){ 
+    echo'<div class="header">';
+        echo'<h1>Lab user dashboard</h1>';
     
-    </div>
+    echo'</div>';
 	
-	<div><a href="lab_dashboard.php">Home</a></div>
-    <br>
+	echo'<div><a href="lab_dashboard.php">Home</a></div>';
+    echo'<br>';
 
 
-    <div class="getTests">
-        <h1>Enter date for tests </h1>
-        <form method="post" action="" name="labtests">
-            <input type="date" name="date"  placeholder="Desired date" id="date" required />
-            <input type="submit" name="labtests" value="Search">
-        </form>
-    </div>
+    echo'<div class="getTests">';
+        echo'<h1>Enter date for tests </h1>';
+        echo'<form method="post" action="" name="labtests">';
+            echo'<input type="date" name="date"  placeholder="Desired date" id="date" required />';
+            echo'<input type="submit" name="labtests" value="Search">';
+        echo'</form>';
+    echo'</div>';
 
 
-    <table class="desiredResults" id="desiredResults">
-        <tr>
-            <th>UID</th>
+    echo'<table class="desiredResults" id="desiredResults">';
+        echo'<tr>';
+            echo'<th>UID</th>
             <th>Serial #</th>
             <th>Test Date</th>
             <th>Result</th>
             <th>is_signed</th>
-            <th>TID</th>
-        <tr>
+            <th>TID</th>';
+        echo'<tr>';
 
-            <?php
                 include('../../includes/connect.php'); 
 	
                 if (isset($_POST['labtests'])) {
@@ -65,16 +68,17 @@
                             </tr>';
                         }
                         //print out the form
-                        echo '<tr><td><br></td></tr>';
-                        echo '<tr>';
-                        echo '<td>Update Test: </td>';
-                        echo '<td>(All fields are required)</td>';
-                        echo '<form action="lab_dashboard.php" method="post">';
-                        echo '<td><input type="number" name="result" placeholder="Enter Result" id="result" pattern="[0-1]"/></td>';
-                        echo '<td><input type="number" name="tid" placeholder="Enter TID" id="tid" pattern="[0-1]"/></td>';
-                        echo '<td><input type="submit" name="submit" value="submit"></td>';
-                        echo '</form>';
-                        echo '</tr>';
+                        echo '<tr><td><
+                        br></td></tr>
+                        <tr>
+                        <td>Update Test: </td>
+                        <td>(All fields are required)</td>
+                        <form action="lab_dashboard.php" method="post">
+                        <td><input type="number" name="result" placeholder="Enter Result" id="result" pattern="[0-1]"/></td>
+                        <td><input type="number" name="tid" placeholder="Enter TID" id="tid" pattern="[0-1]"/></td>
+                        <td><input type="submit" name="submit" value="submit"></td>
+                        </form>
+                        </tr>';
                     } else {
                         echo '<tr><td>There were no tests on that date</td></tr>';
                         
@@ -94,6 +98,10 @@
                         echo "insertion failed for some reason. try again.";
                     $connect->close();
                 }
+    }
+    else{
+        echo'<h1>Get out of here you dirty non-Lab user.</h1>';
+    }
         ?>
     </table>
 
