@@ -103,7 +103,7 @@
                 }
             }
             else{
-                echo '<h1>Get out of here you dirty non-doctor user.</h1>';
+                echo '<h1>This page is not reachable with your level of access.</h1>';
             }
         ?>
 

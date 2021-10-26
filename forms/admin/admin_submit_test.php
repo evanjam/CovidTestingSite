@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,25 +13,33 @@
 </head>
 <body>
 
-	<div class="header">
-        <h1>Admin/Submit New Test</h1>
-    
-    </div>
-	
-	<div><a href="admin_dashboard.php">Home</a></div>
-    
+<?php
+    if($_SESSION['permission'] == 4){ 
 
-    <div class="employee_register">
-        <h1>Submit New Test</h1>
-		Please enter the patient's username and the serial # on the test vial and press Submit
-		<img src="../../img/employee/cotton_swab_resize.jpg" alt="Cotton Swab">
-        <form method="post" action="../../includes/submit_test.php" name="submit_test">
-			<input type="text" name="username" placeholder="username" required>
-			<input type="text" name="serial" placeholder="serial #" pattern="[0-9]+" required>
-            <input type="submit" name="submit_test" value="Submit">
-        </form>
-		
-    </div>
+        echo'<div class="header">
+            <h1>Admin/Submit New Test</h1>
+        
+        </div>
+        
+        <div><a href="admin_dashboard.php">Home</a></div>
+        
+
+        <div class="employee_register">
+            <h1>Submit New Test</h1>
+            Please enter the patients username and the serial # on the test vial and press Submit
+            <img src="../../img/employee/cotton_swab_resize.jpg" alt="Cotton Swab">
+            <form method="post" action="../../includes/submit_test.php" name="submit_test">
+                <input type="text" name="username" placeholder="username" required>
+                <input type="text" name="serial" placeholder="serial #" pattern="[0-9]+" required>
+                <input type="submit" name="submit_test" value="Submit">
+            </form>
+            
+        </div>';
+
+    }else{
+        echo '<h1>This page is not reachable with your level of access.</h1>';
+    }
+?>
 	
 
 </body>

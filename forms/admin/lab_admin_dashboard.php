@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +13,10 @@
 </head>
 <body>
 
-    <div class="header">
+<?php
+    if($_SESSION['permission'] == 4){
+
+    echo'<div class="header">
         <h1>Admin/Lab user dashboard</h1>
     
     </div>
@@ -35,9 +42,8 @@
             <th>Result</th>
             <th>is_signed</th>
             <th>TID</th>
-        <tr>
+        <tr>';
 
-            <?php
                 include('../../includes/connect.php'); 
 	
                 if (isset($_POST['labtests'])) {
@@ -94,6 +100,9 @@
                         echo "insertion failed for some reason. try again.";
                     $connect->close();
                 }
+            }else{
+                echo '<h1>This page is not reachable with your level of access.</h1>';
+            }
         ?>
 
     </table>

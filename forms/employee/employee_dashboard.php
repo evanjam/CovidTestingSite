@@ -24,7 +24,7 @@
         echo'<div><a href="employee_submit_test.php">Submit New Test</a></div>';
     }
     else{
-        echo'<h1>Get out of here you dirty non-employee user.</h1>';
+        echo '<h1>This page is not reachable with your level of access.</h1>';
     }
     ?>
 

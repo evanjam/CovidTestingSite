@@ -26,7 +26,7 @@
         <br>
         <div><a href="lab_admin_dashboard.php">Edit Test</a></div>';
     }else{
-        echo '<h1>Get out of here you dirty non-admin user.</h1>';
+        echo '<h1>This page is not reachable with your level of access.</h1>';
     }
     ?>
 
