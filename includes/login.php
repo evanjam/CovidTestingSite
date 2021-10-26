@@ -44,11 +44,11 @@
 
 			} else {
 				echo "credentials do not match what is stored in the db, try again";
-				header('Refresh: 1;URL=../forms/login.php');
+				header('Refresh: 1;URL=../index.php');
 			}
 		} else {
 			echo "credentials do not match what is stored in the db, try again";
-			header('Refresh: 1;URL=../forms/login.php');
+			header('Refresh: 1;URL=../index.php');
 		}
 
 	}
