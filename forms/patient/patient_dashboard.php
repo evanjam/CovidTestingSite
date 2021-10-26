@@ -64,7 +64,9 @@
                             }
                         }
                     } else {
-                        echo 'There are no test results available';                       
+                        echo '<tr>';
+                        echo "<td>There are no test results available</td>";  
+                        echo '</tr>';                   
                 }
         ?>
 
