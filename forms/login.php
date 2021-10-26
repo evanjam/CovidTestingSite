@@ -10,12 +10,18 @@
 <body>
 
     <div class="login">
-        <h1>login</h1>
+        <h1>Login</h1>
         <form method="post" action="../includes/login.php" name="login">
-            <input type="text" name="username" pattern="[a-zA-Z0-9]+" placeholder="login" id="username" required />
-            <input type="password" name="password" placeholder="password" required>
-            <input type="submit" name="login" value="login">
+            <input type="text" name="username" pattern="[a-zA-Z0-9]+" placeholder="Login" id="username" required />
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" name="login" value="Login">
         </form>
+    </div>
+
+    <div class="register">
+            <form method="post" action="../includes/pass_reset.php" name="passReset">
+                <input type="submit" name="passReset" placeholder="Forgot Password" value="Forgot Password">
+            </form>
     </div>
 
 
