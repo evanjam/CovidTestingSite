@@ -2,6 +2,9 @@
 //submit_test.php
 //inserts new test_sample into the test_sample table
 
+
+	//Start Session
+	session_start();
 	include('connect.php'); //allows us to use the $connect variable set in the connect.php file
 	
 	if (isset($_POST['submit_test'])) {
@@ -19,16 +22,29 @@
 			VALUES (NULL, '$getUID', '$serial', '$date', 'NULL', 'NULL')";
 			
 			if($connect->query($insert_test) == TRUE) {
-				echo "insert successful. redirecting to home";
+				echo "Insert successful. Redirecting to home";
 				//dustin can you please make it go to the right dashboard here buddy :)
+				if($_SESSION['permission'] == 4){
+					header('Refresh: 2;URL=../forms/admin/admin_dashboard.php');
+				}else if($_SESSION['permission'] == 1){
+					header('Refresh: 2;URL=../forms/employee/employee_dashboard.php');
+				}
 			} else {
-				echo "insertion error failed for some reason. try again.";
-				header('Refresh: 1;URL=../');
+				echo "Insertion error. Failed for some reason. Try again.";
+				if($_SESSION['permission'] == 4){
+					header('Refresh: 2;URL=../forms/admin/admin_submit_test.php');
+				}else if($_SESSION['permission'] == 1){
+					header('Refresh: 2;URL=../forms/employee/employee_submit_test.php');
+				}
 			}
 			
 		} else {
-			echo "no patient exists with that username. please register a new patient before submitting their test.";
-			header('Refresh: 3;URL=../');
+			echo "No patient exists with that username. Please register a new patient before submitting their test.";
+			if($_SESSION['permission'] == 4){
+				header('Refresh: 3;URL=../forms/admin/admin_submit_test.php');
+			}else if($_SESSION['permission'] == 1){
+				header('Refresh: 3;URL=../forms/employee/employee_submit_test.php');
+			}
 		}
 	}
 	
