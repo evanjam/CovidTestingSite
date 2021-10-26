@@ -22,6 +22,9 @@
 	
 	echo'<div><a href="doctor_dashboard.php">Home</a></div>';
     echo'<br>';
+    echo'<div><a href="../patient/patient_dashboard.php">View Personal Test Results</a></div>';
+    echo'<br>';
+    echo'<div><a href="../login.php">Log Out</a></div>';
 
 
     echo'<div class="getTests">';

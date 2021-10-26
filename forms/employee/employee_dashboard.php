@@ -24,6 +24,11 @@
         echo'<div><a href="employee_register.php">Patient Registration Form</a></div>';
         echo'<br>';
         echo'<div><a href="employee_submit_test.php">Submit New Test</a></div>';
+        echo'<br>';
+        echo'<div><a href="../patient/patient_dashboard.php">View Personal Test Results</a></div>';
+        echo'<br>';
+        echo'<div><a href="../login.php">Log Out</a></div>';
+
     }
     else{
         //Return message if access level is incorrect.
