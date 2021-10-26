@@ -1,3 +1,8 @@
+<?php
+    //Start the session to access the user and permission level
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +13,10 @@
     <link href="../../css/dashboard.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
-	<div class="header">
+<?php
+    //Check to see if the users permission level is correct for this page
+    if($_SESSION['permission'] == 1){ 
+	echo'<div class="header">
         <h1>Employee/Patient Registration Form</h1>
     
     </div>
@@ -30,8 +37,13 @@
 			<input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
             <input type="submit" name="register" value="Register">
         </form>
-    </div>
+    </div>';
 
+    }else{
+        //Return message if access level is incorrect.
+        echo '<h1>This page is not reachable with your level of access.</h1>';
+    }
 
+?>
 </body>
 </html>

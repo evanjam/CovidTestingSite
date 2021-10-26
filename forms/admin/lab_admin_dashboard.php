@@ -1,4 +1,5 @@
 <?php
+    //Start the session to access the user and permission level
     session_start();
 ?>
 
@@ -14,6 +15,7 @@
 <body>
 
 <?php
+    //Check to see if the users permission level is correct for this page
     if($_SESSION['permission'] == 4){
 
     echo'<div class="header">
@@ -101,6 +103,7 @@
                     $connect->close();
                 }
             }else{
+                //Return message if access level is incorrect.
                 echo '<h1>This page is not reachable with your level of access.</h1>';
             }
         ?>

@@ -1,4 +1,5 @@
 <?php
+    //Start the session to access the user and permission level
     session_start();
 ?>
 
@@ -13,6 +14,7 @@
 </head>
 <body>
     <?php
+    //Check to see if the users permission level is correct for this page
     if($_SESSION['permission'] == 4){    
         echo'<div class="header">
             <h1>Admin dashboard</h1>
@@ -26,6 +28,7 @@
         <br>
         <div><a href="lab_admin_dashboard.php">Edit Test</a></div>';
     }else{
+        //Return message if access level is incorrect.
         echo '<h1>This page is not reachable with your level of access.</h1>';
     }
     ?>
