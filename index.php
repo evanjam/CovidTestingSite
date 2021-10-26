@@ -19,9 +19,5 @@
 		<a href="includes/password_reset.php">Forgot password?</a>
     </div>
 
-     <!--   //Just here temporarily to make users more easily -->
-    <div><a href="forms/admin/admin_register.php">User Registration Form (Temporary for easy user creation)</a></div>
-
-
 </body>
 </html>
