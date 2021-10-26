@@ -16,6 +16,7 @@
             <input type="password" name="password" placeholder="Password" required>
             <input type="submit" name="login" value="Login">
         </form>
+        <a href="../forms/pass_reset.php">Forgot password?</a>
     </div>
 
 
