@@ -10,16 +10,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Need New Password</title>
-    <link href="../../css/dashboard.css" rel="stylesheet" type="text/css">
+    <link href="../css/login.css" rel="stylesheet" type="text/css">
 </head>
     <body>
 
-    <h1>Reset your password</h1>
-    <p>An email will be sent with a ling to reset your password</p>
+    <div class="login">
+        <h1>Reset Password</h1>
+        <form method="post" action="includes/login.php" name="login">
+            <input type="text" name="username" pattern="[a-zA-Z0-9]+" placeholder="login" id="username" required />
+            <input type="text" name="ssn" placeholder="ssn" pattern="[0-9]+" required>
+            <input type="password" name="Newpassword" placeholder=" New password" required>
+            <input type="password" name="Confirmpassword" placeholder=" Confirm password" required>
+            <input type="submit" name="reset" value="Reset">
+        </form>
+    </div>
 
-        <form action='../included/pass_reset.php' method="post">
-            <input type="text" name="email" placeholder="Enter your email address">
-            <button type="submit" name="pass_reset_request">Recieve new password by email</button>
 
     </body>
 </html>
