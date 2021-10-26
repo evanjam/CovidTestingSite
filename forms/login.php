@@ -24,6 +24,8 @@
             </form>
     </div>
 
+    <div><a href="../forms/admin/admin_register.php">User Registration Form</a></div>
+
 
 </body>
 </html>
