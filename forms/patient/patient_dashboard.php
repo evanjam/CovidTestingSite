@@ -17,10 +17,23 @@
     <div class="header">
         <h1>Patient dashboard</h1>
     
-    </div>
-	
-	<div><a href="patient_dashboard.php">Home</a></div>
-    <div><a href="../login.php">Log Out</a></div>
+    </div>';
+	if($_SESSION['permission'] == 0){
+        echo'<div><a href="patient_dashboard.php">Home</a></div>';
+    }
+    else if($_SESSION['permission'] == 1){
+        echo'<div><a href="../employee/employee_dashboard.php">Home</a></div>';
+    }
+    else if($_SESSION['permission'] == 2){
+        echo'<div><a href="../lab/lab_dashboard.php">Home</a></div>';
+    }
+    else if($_SESSION['permission'] == 3){
+        echo'<div><a href="../doctor/doctor_dashboard.php">Home</a></div>';
+    }
+    else if($_SESSION['permission'] == 4){
+        echo'<div><a href="../admin/admin_dashboard.php">Home</a></div>';
+    }
+    echo'<div><a href="../login.php">Log Out</a></div>
     <br>
     <div class="getTests">
     <h1>Test Results </h1>
