@@ -20,13 +20,16 @@
             echo'<h1>Employee dashboard</h1>';
         
         echo'</div>';
-        
+        //Registration form link
         echo'<div><a href="employee_register.php">Patient Registration Form</a></div>';
         echo'<br>';
+        //Submit test form link
         echo'<div><a href="employee_submit_test.php">Submit New Test</a></div>';
         echo'<br>';
+        //Personal Restuls link
         echo'<div><a href="../patient/patient_dashboard.php">View Personal Test Results</a></div>';
         echo'<br>';
+        //Log Out link
         echo'<div><a href="../login.php">Log Out</a></div>';
 
     }

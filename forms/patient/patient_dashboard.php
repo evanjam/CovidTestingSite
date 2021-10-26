@@ -18,6 +18,8 @@
         <h1>Patient dashboard</h1>
     
     </div>';
+
+    //Check to see which home button to display based on permission level
 	if($_SESSION['permission'] == 0){
         echo'<div><a href="patient_dashboard.php">Home</a></div>';
     }
@@ -34,6 +36,7 @@
         echo'<div><a href="../admin/admin_dashboard.php">Home</a></div>';
     }
     echo'<br>';
+    //Display the log out button
     echo'<div><a href="../login.php">Log Out</a></div>
     <br>
     <div class="getTests">

@@ -15,14 +15,17 @@
 		$result = $connect->query($get_user);
 		
 		if($result->num_rows > 0) {
+			//Get data from the user and create variables
 			$row = $result->fetch_array(MYSQLI_ASSOC);
 			$permission = $row['permission'];
 			$UID = $row['UID'];
 		if(password_verify($password, $row['password'])) {
+				//Create session variables
 				$_SESSION['username'] = $username;
 				$_SESSION['UID'] = $UID;
 				$_SESSION['permission'] = $permission;
 				echo "credentials match, username and password has been successfully verified!";
+				//Check the user permission to determine which dashboard to link to
 				if($_SESSION['permission'] == 0){
 					header('Refresh: 1;URL=../forms/patient/patient_dashboard.php');
 				}
