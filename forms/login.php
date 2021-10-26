@@ -18,12 +18,6 @@
         </form>
     </div>
 
-    <div class="register">
-            <form method="post" action="../includes/pass_reset.php" name="passReset">
-                <input type="submit" name="passReset" placeholder="Forgot Password" value="Forgot Password">
-            </form>
-    </div>
-
 
 </body>
 </html>
