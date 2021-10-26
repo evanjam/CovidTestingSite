@@ -15,7 +15,7 @@
 <body>
     <?php
     //Check to see if the users permission level is correct for this page
-    if($_SESSION['permission'] == 4 || 1 === 1){    
+    if($_SESSION['permission'] == 4){    
         echo'<div class="header">
             <h1>Admin dashboard</h1>
         
