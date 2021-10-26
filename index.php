@@ -16,11 +16,10 @@
             <input type="password" name="password" placeholder="password" required>
             <input type="submit" name="login" value="login">
         </form>
+		<a href="../includes/password_reset.php">Forgot password?</a>
     </div>
 
-    <?php
-        //Just here temporarily to make users more easily
-    ?>
+     <!--   //Just here temporarily to make users more easily -->
     <div><a href="forms/admin/admin_register.php">User Registration Form (Temporary for easy user creation)</a></div>
 
 
