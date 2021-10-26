@@ -19,7 +19,8 @@
 			VALUES (NULL, '$getUID', '$serial', '$date', 'NULL', 'NULL')";
 			
 			if($connect->query($insert_test) == TRUE) {
-				echo "insert successful?";
+				echo "insert successful. redirecting to home";
+				//dustin can you please make it go to the right dashboard here buddy :)
 			} else {
 				echo "insertion error failed for some reason. try again.";
 				header('Refresh: 1;URL=../');
