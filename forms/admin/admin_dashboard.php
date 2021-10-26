@@ -26,7 +26,9 @@
         <br>
         <div><a href="admin_submit_test.php">Submit New Test</a></div>
         <br>
-        <div><a href="lab_admin_dashboard.php">Edit Test</a></div>';
+        <div><a href="lab_admin_dashboard.php">Edit Test</a></div>
+        <br>
+        <div><a href="../login.php">Log Out</a></div>';
     }else{
         //Return message if access level is incorrect.
         echo '<h1>This page is not reachable with your level of access.</h1>';

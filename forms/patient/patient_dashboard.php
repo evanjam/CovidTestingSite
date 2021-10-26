@@ -20,18 +20,11 @@
     </div>
 	
 	<div><a href="patient_dashboard.php">Home</a></div>
+    <div><a href="../login.php">Log Out</a></div>
     <br>
-
-
     <div class="getTests">
-        <h1>Enter date for tests </h1>
-        <form method="post" action="" name="labtests">
-            <input type="date" name="date"  placeholder="Desired date" id="date" required />
-            <input type="submit" name="labtests" value="Search">
-        </form>
-    </div>
-
-
+    <h1>Test Results </h1>
+</div>
     <table class="desiredResults" id="desiredResults">
         <tr>
             <th>Test Date</th>
@@ -39,13 +32,13 @@
         <tr>';
 
                 include('../../includes/connect.php'); 
-	
-                if (isset($_POST['labtests'])) {
-                    $date = $_POST['date'];
-            
-                    $query_date = "SELECT * FROM `test_sample` WHERE `test_date` = '$date'"; //returns rows that have the desired date
-                    $result = $connect->query($query_date); //saves resultng data
+
+                    //Get the user ID
+                    $UID = $_SESSION['UID'];
+                    $query_tests = "SELECT * FROM `test_sample` WHERE `UID` = '$UID'"; //returns rows that have the desired date
+                    $result = $connect->query($query_tests); //saves resultng data
                     
+                    //Check if there are tests
                     if($result->num_rows > 0) {
                         
                         while(($row = $result->fetch_row())!==null) {
@@ -57,10 +50,8 @@
                             }
                         }
                     } else {
-                        echo 'There were no tests on that date.';
-                        
+                        echo 'There are no test results available';                       
                 }
-            }
         ?>
 
     </table>
