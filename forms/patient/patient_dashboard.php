@@ -37,7 +37,7 @@
     }
     echo'<br>';
     //Display the log out button
-    echo'<div><a href="../login.php">Log Out</a></div>
+    echo'<div><a href="../../index.php">Log Out</a></div>
     <br>
     <div class="getTests">
     <h1>Test Results </h1>

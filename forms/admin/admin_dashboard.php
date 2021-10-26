@@ -30,7 +30,7 @@
         <br>
         <div><a href="../patient/patient_dashboard.php">View Personal Test Results</a></div>
         <br>
-        <div><a href="../login.php">Log Out</a></div>';
+        <div><a href="../../index.php">Log Out</a></div>';
     }else{
         //Return message if access level is incorrect.
         echo '<h1>This page is not reachable with your level of access.</h1>';

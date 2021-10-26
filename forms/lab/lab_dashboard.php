@@ -22,7 +22,7 @@
     echo'<br>';
     echo'<div><a href="../patient/patient_dashboard.php">View Personal Test Results</a></div>';
     echo'<br>';
-    echo'<div><a href="../login.php">Log Out</a></div>';
+    echo'<div><a href="../../index.php">Log Out</a></div>';
 
 
     echo'<div class="getTests">';
