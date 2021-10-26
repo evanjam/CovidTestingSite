@@ -33,6 +33,7 @@
     else if($_SESSION['permission'] == 4){
         echo'<div><a href="../admin/admin_dashboard.php">Home</a></div>';
     }
+    echo'<br>';
     echo'<div><a href="../login.php">Log Out</a></div>
     <br>
     <div class="getTests">
