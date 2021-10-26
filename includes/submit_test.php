@@ -19,7 +19,7 @@
 			$row = $result->fetch_array(MYSQLI_ASSOC);
 			$getUID = $row['UID']; //gets the UID of the user 
 			$insert_test = "INSERT INTO `test_sample` (`TID`, `UID`, `serial_number`, `test_date`, `result`, `is_signed`) 
-			VALUES (NULL, '$getUID', '$serial', '$date', 'NULL', 'NULL')";
+			VALUES (NULL, '$getUID', '$serial', '$date', '0', '0')";
 			
 			if($connect->query($insert_test) == TRUE) {
 				echo "Insert successful. Redirecting to home";
