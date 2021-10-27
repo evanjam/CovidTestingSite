@@ -71,8 +71,8 @@
                             </tr>';
                         }
                         //print out the form
-                        echo '<tr><td><
-                        br></td></tr>
+                        echo '<tr><td>
+                        </td></tr>
                         <tr>
                         <td>Update Test: </td>
                         <td>(All fields are required)</td>
