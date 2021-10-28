@@ -26,10 +26,8 @@
         $matchnum = " SELECT * FROM user_profile WHERE ssn = '$ssn'";
         $result2 = $connect->query($matchnum);
 
-        echo "$result2->num_rows"; //here gets a result of 1
         if($result2->num_rows == 1) {//if there is no username in the db them it will not allow pw change
             $update_pass = "UPDATE user_profile SET password = '$password_hash' WHERE ssn= '$ssn'"; //set to update as long as the ssn matches 
-            echo "gets here pt2.";
             if($connect->query($update_pass) === TRUE) { //evan's query function, up for discussion on which to use
 				echo "new record created, redirecting to home...";
 				header('Refresh: 1;URL= ../index.php');
