@@ -62,7 +62,15 @@
                             if($row[4] != null){//Print out the row if result is not null
                                 echo '<tr>';
                                 echo "<td>{$row[3]}</td>";
-                                echo "<td>{$row[4]}</td>";
+                                if($row[4] == 0){
+                                    echo "<td>Test result is not ready.</td>";
+                                }
+                                else if($row[4] == 1){
+                                    echo "<td>Negative</td>";
+                                }
+                                else if($row[4] == 2){
+                                    echo "<td>Positive</td>";
+                                }
                                 echo '</tr>';
                             }
                         }
