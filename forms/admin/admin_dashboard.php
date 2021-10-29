@@ -14,26 +14,43 @@
 </head>
 <body>
     <?php
+ 
+    //This allows the error to be caught. It gets missed without line 19-28
+    set_error_handler('exceptions_error_handler');
+
+    function exceptions_error_handler($severity, $message, $filename, $lineno) {
+    if (error_reporting() == 0) {
+        return;
+    }
+    if (error_reporting() & $severity) {
+        throw new ErrorException($message, 0, $severity, $filename, $lineno);
+    }
+    }
+
     //Check to see if the users permission level is correct for this page
-    if($_SESSION['permission'] == 4){    
-        echo'<div class="header">
-            <h1>Admin dashboard</h1>
-        
-        </div>        
-        <div><a href="admin_register.php">User Registration Form</a></div>
-        <br>
-        <div>(Link to edit user/ user permissions)</div>
-        <br>
-        <div><a href="admin_submit_test.php">Submit New Test</a></div>
-        <br>
-        <div><a href="lab_admin_dashboard.php">Edit Test</a></div>
-        <br>
-        <div><a href="../patient/patient_dashboard.php">View Personal Test Results</a></div>
-        <br>
-        <div><a href="../../index.php">Log Out</a></div>';
-    }else{
-        //Return message if access level is incorrect.
-        echo '<h1>This page is not reachable with your level of access.</h1>';
+    try{
+        if($_SESSION['permission'] == 4){    
+            echo'<div class="header">
+                <h1>Admin dashboard</h1>
+            
+            </div>        
+            <div><a href="admin_register.php">User Registration Form</a></div>
+            <br>
+            <div>(Link to edit user/ user permissions)</div>
+            <br>
+            <div><a href="admin_submit_test.php">Submit New Test</a></div>
+            <br>
+            <div><a href="lab_admin_dashboard.php">Edit Test</a></div>
+            <br>
+            <div><a href="../patient/patient_dashboard.php">View Personal Test Results</a></div>
+            <br>
+            <div><a href="../../index.php">Log Out</a></div>';
+        }else{
+            //Return message if access level is incorrect.
+            echo '<h1>This page is not reachable with your level of access.</h1>';
+        }
+    } catch(Exception $e){
+        echo'<h1>This page is unavailable.</h1>';
     }
     ?>
 
