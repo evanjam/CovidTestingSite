@@ -19,7 +19,7 @@
     if($_SESSION['permission'] == 4){ 
 
         echo'<div class="header">
-            <h1>Admin/Submit New Test</h1>
+            <h1>Submit New Test</h1>
         
         </div>
         

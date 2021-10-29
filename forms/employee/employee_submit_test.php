@@ -17,7 +17,7 @@
     //Check to see if the users permission level is correct for this page
     if($_SESSION['permission'] == 1){ 
         echo'<div class="header">
-            <h1>Employee/Submit New Test</h1>
+            <h1>Submit New Test</h1>
         
         </div>
         

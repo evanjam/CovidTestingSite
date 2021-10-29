@@ -22,7 +22,42 @@
 			VALUES (NULL, '$getUID', '$serial', '$date', '0', '0')";
 			
 			if($connect->query($insert_test) == TRUE) {
-				echo "Insert successful. Redirecting to home";
+				echo'
+				<!DOCTYPE html>
+				<html lang="en">
+				<head>
+					<meta charset="UTF-8">
+					<meta http-equiv="X-UA-Compatible" content="IE=edge">
+					<meta name="viewport" content="width=device-width, initial-scale=1.0">
+					<title>Submit New Test</title>
+					<link href="../css/dashboard.css" rel="stylesheet" type="text/css">
+				</head>
+				<body>
+				
+				<div class="header">
+				<h1>Submit New Test</h1>
+			
+				</div>
+				
+				<div><a href="employee_dashboard.php">Home</a></div>
+				
+
+				<div class="employee_register">
+					<h1>Submit New Test</h1>
+					Please enter the patients username and the serial # on the test vial and press Submit
+					<img src="../img/employee/cotton_swab_resize.jpg" alt="Cotton Swab">
+					<form method="post" action="submit_test.php" name="submit_test">
+						<input type="text" name="username" placeholder="username" required>
+						<input type="text" name="serial" placeholder="serial #" pattern="[0-9]+" required>
+						<input type="submit" name="submit_test" value="Submit">
+					</form>
+					<hr>
+					<div>Test Submitted Successfully</div>
+					
+				</div>
+				</body>
+				</html>
+				';
 				//dustin can you please make it go to the right dashboard here buddy :)
 				if($_SESSION['permission'] == 4){
 					header('Refresh: 2;URL=../forms/admin/admin_dashboard.php');
@@ -30,7 +65,42 @@
 					header('Refresh: 2;URL=../forms/employee/employee_dashboard.php');
 				}
 			} else {
-				echo "Insertion error. Failed for some reason. Try again.";
+				echo'
+				<!DOCTYPE html>
+				<html lang="en">
+				<head>
+					<meta charset="UTF-8">
+					<meta http-equiv="X-UA-Compatible" content="IE=edge">
+					<meta name="viewport" content="width=device-width, initial-scale=1.0">
+					<title>Submit New Test</title>
+					<link href="../css/dashboard.css" rel="stylesheet" type="text/css">
+				</head>
+				<body>
+				
+				<div class="header">
+				<h1>Submit New Test</h1>
+			
+				</div>
+				
+				<div><a href="employee_dashboard.php">Home</a></div>
+				
+
+				<div class="employee_register">
+					<h1>Submit New Test</h1>
+					Please enter the patients username and the serial # on the test vial and press Submit
+					<img src="../img/employee/cotton_swab_resize.jpg" alt="Cotton Swab">
+					<form method="post" action="submit_test.php" name="submit_test">
+						<input type="text" name="username" placeholder="username" required>
+						<input type="text" name="serial" placeholder="serial #" pattern="[0-9]+" required>
+						<input type="submit" name="submit_test" value="Submit">
+					</form>
+					<hr>
+					<div>Test Submission Failed. Try again.</div>
+					
+				</div>
+				</body>
+				</html>
+				';
 				if($_SESSION['permission'] == 4){
 					header('Refresh: 2;URL=../forms/admin/admin_submit_test.php');
 				}else if($_SESSION['permission'] == 1){
@@ -39,7 +109,42 @@
 			}
 			
 		} else {
-			echo "No patient exists with that username. Please register a new patient before submitting their test.";
+			echo'
+				<!DOCTYPE html>
+				<html lang="en">
+				<head>
+					<meta charset="UTF-8">
+					<meta http-equiv="X-UA-Compatible" content="IE=edge">
+					<meta name="viewport" content="width=device-width, initial-scale=1.0">
+					<title>Submit New Test</title>
+					<link href="../css/dashboard.css" rel="stylesheet" type="text/css">
+				</head>
+				<body>
+				
+				<div class="header">
+				<h1>Submit New Test</h1>
+			
+				</div>
+				
+				<div><a href="employee_dashboard.php">Home</a></div>
+				
+
+				<div class="employee_register">
+					<h1>Submit New Test</h1>
+					Please enter the patients username and the serial # on the test vial and press Submit
+					<img src="../img/employee/cotton_swab_resize.jpg" alt="Cotton Swab">
+					<form method="post" action="submit_test.php" name="submit_test">
+						<input type="text" name="username" placeholder="username" required>
+						<input type="text" name="serial" placeholder="serial #" pattern="[0-9]+" required>
+						<input type="submit" name="submit_test" value="Submit">
+					</form>
+					<hr>
+					<div>No patient exists with that username.</div>
+					
+				</div>
+				</body>
+				</html>
+				';
 			if($_SESSION['permission'] == 4){
 				header('Refresh: 3;URL=../forms/admin/admin_submit_test.php');
 			}else if($_SESSION['permission'] == 1){
