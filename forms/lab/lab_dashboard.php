@@ -12,6 +12,19 @@
 </head>
 <body>
     <?php
+    //This allows the error to be caught. It gets missed without line 19-28
+    set_error_handler('exceptions_error_handler');
+
+    function exceptions_error_handler($severity, $message, $filename, $lineno) {
+    if (error_reporting() == 0) {
+        return;
+    }
+    if (error_reporting() & $severity) {
+        throw new ErrorException($message, 0, $severity, $filename, $lineno);
+    }
+    }
+    
+    try{
     if($_SESSION['permission'] == 2){ 
     echo'<div class="header">';
         echo'<h1>Lab user dashboard</h1>';
@@ -105,6 +118,10 @@
     else{
         echo '<h1>This page is not reachable with your level of access.</h1>';
     }
+}catch(Exception $e){
+    echo'<h1>This page is unavailable.</h1>';
+    header('Refresh: 1;URL=../../index.php');
+}
         ?>
     </table>
 
