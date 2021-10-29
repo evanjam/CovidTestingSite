@@ -60,6 +60,7 @@
         }
     }catch(Exception $e){
         echo'<h1>This page is unavailable.</h1>';
+        header('Refresh: 1;URL=../../index.php');
     }
 ?>
 

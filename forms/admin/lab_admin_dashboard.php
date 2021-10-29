@@ -15,7 +15,21 @@
 <body>
 
 <?php
+
+    //This allows the error to be caught
+    set_error_handler('exceptions_error_handler');
+
+    function exceptions_error_handler($severity, $message, $filename, $lineno) {
+    if (error_reporting() == 0) {
+        return;
+    }
+    if (error_reporting() & $severity) {
+        throw new ErrorException($message, 0, $severity, $filename, $lineno);
+    }
+    }
+
     //Check to see if the users permission level is correct for this page
+    try{
     if($_SESSION['permission'] == 4){
 
     echo'<div class="header">
@@ -106,6 +120,10 @@
                 //Return message if access level is incorrect.
                 echo '<h1>This page is not reachable with your level of access.</h1>';
             }
+    }catch(Exception $e){
+        echo'<h1>This page is unavailable.</h1>';
+        header('Refresh: 1;URL=../../index.php');
+    }
         ?>
 
     </table>
