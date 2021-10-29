@@ -54,10 +54,10 @@
 				
 			</body>
 			</html>';
-			header('Refresh: 2;URL=../forms/patient_register.php'); //wait 1 second and refresh index.php homepage
+			//header('Refresh: 2;URL=../forms/patient_register.php'); //wait 1 second and refresh index.php homepage
 		} else { //if username doesnt already exist in database, execute remaining steps to insert the username and password
-			$insert_user = "INSERT INTO user_profile (UID, username, password, fname, lname, dob, ssn) 
-			VALUES (NULL, '$username', '$password_hash', '$fname', '$lname', '$dob', '$ssn')"; //prepare sql insertion statement
+			$insert_user = "INSERT INTO user_profile (UID, username, password, fname, lname, dob, ssn, permission) 
+			VALUES (NULL, '$username', '$password_hash', '$fname', '$lname', '$dob', '$ssn', '0')"; //prepare sql insertion statement
 			
 			if($connect->query($insert_user) == TRUE) { //evan's query function, up for discussion on which to use
 				//If new user profile was created
@@ -98,7 +98,7 @@
 					
 				</body>
 				</html>';
-				header('Refresh: 2;URL=../index.php');
+				//header('Refresh: 2;URL=../index.php');
 			} else 
 			//If insertion failed
 			echo'<!DOCTYPE html>
@@ -137,7 +137,7 @@
 				</div>				
 			</body>
 			</html>';
-			header('Refresh: 2;URL=../forms/patient_register.php');
+			//header('Refresh: 2;URL=../forms/patient_register.php');
 			$connect->close(); //it still works if I don't include this but I feel like it's probably necessary down the line to do this
 		}
 	}
