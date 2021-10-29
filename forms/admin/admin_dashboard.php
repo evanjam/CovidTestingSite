@@ -48,6 +48,7 @@
         }else{
             //Return message if access level is incorrect.
             echo '<h1>This page is not reachable with your level of access.</h1>';
+            header('Refresh: 1;URL=../../index.php');
         }
     } catch(Exception $e){
         echo'<h1>This page is unavailable.</h1>';

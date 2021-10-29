@@ -1,7 +1,21 @@
 <?php
 //register.php
-//creates new user in the user_login table and gives admin the ability to set the permission level
+//This allows the error to be caught. It gets missed without line 19-28
+set_error_handler('exceptions_error_handler');
 
+function exceptions_error_handler($severity, $message, $filename, $lineno) {
+if (error_reporting() == 0) {
+	return;
+}
+if (error_reporting() & $severity) {
+	throw new ErrorException($message, 0, $severity, $filename, $lineno);
+}
+}
+
+
+//creates new user in the user_login table and gives admin the ability to set the permission level
+try{
+if($_SESSION['permission'] == 4){ 
 	include('connect.php'); //allows us to use the $connect variable set in the connect.php file
 	
 	if (isset($_POST['register'])) { //checks if the register button was pressed on index.php
@@ -145,4 +159,13 @@
 			$connect->close(); //it still works if I don't include this but I feel like it's probably necessary down the line to do this
 		}
 	}
+}else{
+	echo '<h1>This page is not reachable with your level of access.</h1>';
+	header('Refresh: 1;URL=../index.php');
+}
+}catch(Exception $e){
+	echo'<h1>This page is unavailable.</h1>';
+	header('Refresh: 1;URL=../index.php');
+}
+
 ?>
