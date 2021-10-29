@@ -1,4 +1,7 @@
 <?php
+    //start session
+    session_start();
+
     //This allows the error to be caught. It gets missed without line 19-28
     set_error_handler('exceptions_error_handler');
 
