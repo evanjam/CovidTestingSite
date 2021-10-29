@@ -24,7 +24,36 @@
 				$_SESSION['username'] = $username;
 				$_SESSION['UID'] = $UID;
 				$_SESSION['permission'] = $permission;
-				echo "credentials match, username and password has been successfully verified!";
+				echo '
+				<!DOCTYPE html>
+				<html lang="en">
+				<head>
+					<meta charset="UTF-8">
+					<meta http-equiv="X-UA-Compatible" content="IE=edge">
+					<meta name="viewport" content="width=device-width, initial-scale=1.0">
+					<title>test login/register page</title>
+					<link href="../css/login.css" rel="stylesheet" type="text/css">
+				</head>
+				<body>
+
+					<div class="login">
+						<h1>login</h1>
+						<form method="post" action="includes/login.php" name="login">
+							<input type="text" name="username" pattern="[a-zA-Z0-9]+" placeholder="login" id="username" required />
+							<input type="password" name="password" placeholder="password" required>
+							<input type="submit" name="login" value="login">
+						</form>
+						<a href="forms/pass_reset.php">Forgot password?</a><br>
+						<a href="forms/register.php">Create New Account</a>
+						<hr>
+						<div>Credentials match, Logging in...</div>
+						<hr>
+					</div>
+
+				</body>
+				</html>';
+
+
 				//Check the user permission to determine which dashboard to link to
 				if($_SESSION['permission'] == 0){
 					header('Refresh: 1;URL=../forms/patient/patient_dashboard.php');
@@ -43,12 +72,66 @@
 				}
 
 			} else {
-				echo "credentials do not match what is stored in the db, try again";
-				header('Refresh: 1;URL=../index.php');
+				echo '
+				<!DOCTYPE html>
+				<html lang="en">
+				<head>
+					<meta charset="UTF-8">
+					<meta http-equiv="X-UA-Compatible" content="IE=edge">
+					<meta name="viewport" content="width=device-width, initial-scale=1.0">
+					<title>test login/register page</title>
+					<link href="../css/login.css" rel="stylesheet" type="text/css">
+				</head>
+				<body>
+
+					<div class="login">
+						<h1>login</h1>
+						<form method="post" action="includes/login.php" name="login">
+							<input type="text" name="username" pattern="[a-zA-Z0-9]+" placeholder="login" id="username" required />
+							<input type="password" name="password" placeholder="password" required>
+							<input type="submit" name="login" value="login">
+						</form>
+						<a href="forms/pass_reset.php">Forgot password?</a><br>
+						<a href="forms/register.php">Create New Account</a>
+						<hr>
+						<div>Credentials do not match you dum idiot, Try again</div>
+						<hr>
+					</div>
+
+				</body>
+				</html>';
+				header('Refresh: 2;URL=../index.php');
 			}
 		} else {
-			echo "credentials do not match what is stored in the db, try again";
-			header('Refresh: 1;URL=../index.php');
+			echo '
+				<!DOCTYPE html>
+				<html lang="en">
+				<head>
+					<meta charset="UTF-8">
+					<meta http-equiv="X-UA-Compatible" content="IE=edge">
+					<meta name="viewport" content="width=device-width, initial-scale=1.0">
+					<title>test login/register page</title>
+					<link href="../css/login.css" rel="stylesheet" type="text/css">
+				</head>
+				<body>
+
+					<div class="login">
+						<h1>login</h1>
+						<form method="post" action="includes/login.php" name="login">
+							<input type="text" name="username" pattern="[a-zA-Z0-9]+" placeholder="login" id="username" required />
+							<input type="password" name="password" placeholder="password" required>
+							<input type="submit" name="login" value="login">
+						</form>
+						<a href="forms/pass_reset.php">Forgot password?</a><br>
+						<a href="forms/register.php">Create New Account</a>
+						<hr>
+						<div>Credentials do not match, Try again</div>
+						<hr>
+					</div>
+
+				</body>
+				</html>';
+			header('Refresh: 2;URL=../index.php');
 		}
 
 	}
