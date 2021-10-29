@@ -1,5 +1,18 @@
 <?php
+    //This allows the error to be caught. It gets missed without line 19-28
+    set_error_handler('exceptions_error_handler');
 
+    function exceptions_error_handler($severity, $message, $filename, $lineno) {
+    if (error_reporting() == 0) {
+        return;
+    }
+    if (error_reporting() & $severity) {
+        throw new ErrorException($message, 0, $severity, $filename, $lineno);
+    }
+    }
+
+    try{
+    if($_SESSION['permission'] == 2){ 
     include('connect.php'); 
 	
 	if (isset($_POST['labtests'])) {
@@ -36,7 +49,7 @@
         echo "<td>TID = {$row[0]}</td>";
     }
 }
-?>
+echo'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,33 +87,16 @@
             <th>Result</th>
             <th>is_signed</th>
         <tr>
-            <?php  //demonstration on how you can add directly into the html file and display results, plz dont delete
-
-            // $query_date = "SELECT * FROM `test_sample` WHERE `test_date` = '$date'"; //returns rows that have the desired date
-            // $result = $connect->query($query_date); //saves resultng data
-            
-            // if($result->num_rows >= 1) {
-            //     echo "test(s) exist";
-            //     echo "<br><br>";
-
-            //     while(($row = $result->fetch_row())!==null) {
-            //         //print out rows
-            //         echo '<tr>';
-            //         echo "<td>{$row[1]}</td>";
-            //         echo "<td>{$row[2]}</td>";
-            //         echo "<td>{$row[3]}</td>";
-            //         echo "<td>{$row[4]}</td>";
-            //         echo "<td>{$row[5]}</td>";
-            //         echo "<td>TID = {$row[0]}</td>";
-            //         echo '</tr>';
-            //         echo '<tr>
-            //         <td><hr></td><td><hr></td>
-            //         <td><hr></td><td><hr></td>
-            //         <td><hr></td><td><hr></td>
-            //         </tr>';
-            //     }
-            // }
-            ?>
     </table>
 </body>
-</html>
+</html>';
+    }else{
+        echo'<h1>This page is not reachable with your level of access.</h1>';
+        header('Refresh: 1;URL=../index.php');
+    }
+    }catch(Exception $e){
+        echo'<h1>This page is unavailable.</h1>';
+        header('Refresh: 1;URL=../index.php');
+    }
+
+?>
