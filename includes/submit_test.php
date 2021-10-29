@@ -37,10 +37,13 @@
 				<div class="header">
 				<h1>Submit New Test</h1>
 			
-				</div>
-				
-				<div><a href="employee_dashboard.php">Home</a></div>
-				
+				</div>';
+				if($_SESSION['permission'] == 4){
+					echo'<div><a href="../forms/admin/admin_dashboard.php">Home</a></div>';
+				}else if($_SESSION['permission'] == 1){
+					echo'<div><a href="../forms/employee/employee_dashboard.php">Home</a></div>';
+				}
+				echo'
 
 				<div class="employee_register">
 					<h1>Submit New Test</h1>
@@ -58,12 +61,7 @@
 				</body>
 				</html>
 				';
-				//dustin can you please make it go to the right dashboard here buddy :)
-				if($_SESSION['permission'] == 4){
-					header('Refresh: 2;URL=../forms/admin/admin_dashboard.php');
-				}else if($_SESSION['permission'] == 1){
-					header('Refresh: 2;URL=../forms/employee/employee_dashboard.php');
-				}
+
 			} else {
 				echo'
 				<!DOCTYPE html>
@@ -80,11 +78,15 @@
 				<div class="header">
 				<h1>Submit New Test</h1>
 			
-				</div>
-				
-				<div><a href="employee_dashboard.php">Home</a></div>
-				
+				</div>';
 
+				if($_SESSION['permission'] == 4){
+					echo'<div><a href="../forms/admin/admin_dashboard.php">Home</a></div>';
+				}else if($_SESSION['permission'] == 1){
+					echo'<div><a href="../forms/employee/employee_dashboard.php">Home</a></div>';
+				}
+
+				echo'
 				<div class="employee_register">
 					<h1>Submit New Test</h1>
 					Please enter the patients username and the serial # on the test vial and press Submit
@@ -101,11 +103,6 @@
 				</body>
 				</html>
 				';
-				if($_SESSION['permission'] == 4){
-					header('Refresh: 2;URL=../forms/admin/admin_submit_test.php');
-				}else if($_SESSION['permission'] == 1){
-					header('Refresh: 2;URL=../forms/employee/employee_submit_test.php');
-				}
 			}
 			
 		} else {
@@ -124,9 +121,15 @@
 				<div class="header">
 				<h1>Submit New Test</h1>
 			
-				</div>
+				</div>';
+
+				if($_SESSION['permission'] == 4){
+					echo'<div><a href="../forms/admin/admin_dashboard.php">Home</a></div>';
+				}else if($_SESSION['permission'] == 1){
+					echo'<div><a href="../forms/employee/employee_dashboard.php">Home</a></div>';
+				}
 				
-				<div><a href="employee_dashboard.php">Home</a></div>
+				echo'
 				
 
 				<div class="employee_register">
@@ -145,11 +148,6 @@
 				</body>
 				</html>
 				';
-			if($_SESSION['permission'] == 4){
-				header('Refresh: 3;URL=../forms/admin/admin_submit_test.php');
-			}else if($_SESSION['permission'] == 1){
-				header('Refresh: 3;URL=../forms/employee/employee_submit_test.php');
-			}
 		}
 	}
 	
