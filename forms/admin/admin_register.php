@@ -14,7 +14,7 @@
 </head>
 <body>
 <?php
-    //This allows the error to be caught. It gets missed without line 19-28
+    //This allows the error to be caught
     set_error_handler('exceptions_error_handler');
 
     function exceptions_error_handler($severity, $message, $filename, $lineno) {
