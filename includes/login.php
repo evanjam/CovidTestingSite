@@ -44,7 +44,7 @@
 							<input type="submit" name="login" value="login">
 						</form>
 						<a href="forms/pass_reset.php">Forgot password?</a><br>
-						<a href="forms/register.php">Create New Account</a>
+						<a href="forms/patient_register.php">Create New Account</a>
 						<hr>
 						<div>Credentials match, Logging in...</div>
 						<hr>
