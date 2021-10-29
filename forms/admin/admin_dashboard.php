@@ -36,7 +36,7 @@
             </div>        
             <div><a href="admin_register.php">User Registration Form</a></div>
             <br>
-            <div>(Link to edit user/ user permissions)</div>
+            <div><a href="admin_edit_user.php">Edit User</a></div>
             <br>
             <div><a href="admin_submit_test.php">Submit New Test</a></div>
             <br>
