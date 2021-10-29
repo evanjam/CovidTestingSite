@@ -34,14 +34,14 @@
         
 			</div>
 
-			<div><a href="admin_dashboard.php">Home</a></div>
+			<div><a href="../forms/admin/admin_dashboard.php">Home</a></div>
 			<br>
 
 			<div class="employee_register">
 				<h1>User Registration Form</h1>
 				Please fill out the following form and press Register to register a new User. Enter permission level as number 0-4.
 				<img src="../img/employee/nurse_resize.jpg" alt="Nurse">
-				<form method="post" action="../../includes/admin_register.php" name="register">
+				<form method="post" action="admin_register.php" name="register">
 					<input type="text" name="username" placeholder="username" required>
 					<input type="password" name="password" placeholder="password" required>
 					<input type="text" name="fname" placeholder="first name" required>
@@ -57,7 +57,7 @@
 			</body>
 			</html>';
 	
-			header('Refresh: 2;URL=../forms/admin/admin_register.php'); //wait 1 second and refresh index.php homepage
+			//header('Refresh: 2;URL=../forms/admin/admin_register.php'); //wait 1 second and refresh index.php homepage
 		} else { //if username doesnt already exist in database, execute remaining steps to insert the username and password
 			$insert_user = "INSERT INTO user_profile (UID, username, password, fname, lname, dob, ssn, permission) 
 			VALUES (NULL, '$username', '$password_hash', '$fname', '$lname', '$dob', '$ssn', '$permission')"; //prepare sql insertion statement
@@ -79,14 +79,14 @@
         
 			</div>
 
-			<div><a href="admin_dashboard.php">Home</a></div>
+			<div><a href="../forms/admin/admin_dashboard.php">Home</a></div>
 			<br>
 
 			<div class="employee_register">
 				<h1>User Registration Form</h1>
 				Please fill out the following form and press Register to register a new User. Enter permission level as number 0-4.
 				<img src="../img/employee/nurse_resize.jpg" alt="Nurse">
-				<form method="post" action="../../includes/admin_register.php" name="register">
+				<form method="post" action="admin_register.php" name="register">
 					<input type="text" name="username" placeholder="username" required>
 					<input type="password" name="password" placeholder="password" required>
 					<input type="text" name="fname" placeholder="first name" required>
@@ -101,7 +101,7 @@
 			</div>
 			</body>
 			</html>';
-				header('Refresh: 2;URL=../forms/admin/admin_register.php');
+				//header('Refresh: 2;URL=../forms/admin/admin_register.php');
 			} else 
 			echo'
 			<!DOCTYPE html>
@@ -119,14 +119,14 @@
         
 			</div>
 
-			<div><a href="admin_dashboard.php">Home</a></div>
+			<div><a href="../forms/admin/admin_dashboard.php">Home</a></div>
 			<br>
 
 			<div class="employee_register">
 				<h1>User Registration Form</h1>
 				Please fill out the following form and press Register to register a new User. Enter permission level as number 0-4.
 				<img src="../img/employee/nurse_resize.jpg" alt="Nurse">
-				<form method="post" action="../../includes/admin_register.php" name="register">
+				<form method="post" action="admin_register.php" name="register">
 					<input type="text" name="username" placeholder="username" required>
 					<input type="password" name="password" placeholder="password" required>
 					<input type="text" name="fname" placeholder="first name" required>
@@ -141,7 +141,7 @@
 			</div>
 			</body>
 			</html>';
-			header('Refresh: 2;URL=../forms/admin/admin_register.php');
+			//header('Refresh: 2;URL=../forms/admin/admin_register.php');
 			$connect->close(); //it still works if I don't include this but I feel like it's probably necessary down the line to do this
 		}
 	}
