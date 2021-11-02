@@ -97,7 +97,7 @@
                                         echo"<td>{$row[2]}</td>";
                                     }
                                     else{
-                                        echo"<td>Unavailable<td>
+                                        echo'<td>Unavailable<td>';
                                     }
                                 }
                                 echo '</tr>';
@@ -105,8 +105,8 @@
                         }
                     } else {
                         echo '<tr>';
-                        echo "<td>There are no test results available</td>";  
-                        echo '</tr>';                   
+                        echo '<td>There are no test results available</td>';  
+                        echo '</tr>';                  
                 }
             }else{
                 echo '<h1>This page is not reachable with your level of access.</h1>';
