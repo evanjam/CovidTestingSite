@@ -94,7 +94,7 @@
 						<a href="forms/pass_reset.php">Forgot password?</a><br>
 						<a href="forms/register.php">Create New Account</a>
 						<hr>
-						<div>Credentials do not match you dum idiot, Try again</div>
+						<div>Credentials do not match you dum idiot, Try again</div> <!--password verify fails -->
 						<hr>
 					</div>
 
@@ -125,7 +125,7 @@
 						<a href="forms/pass_reset.php">Forgot password?</a><br>
 						<a href="forms/register.php">Create New Account</a>
 						<hr>
-						<div>Credentials do not match, Try again</div>
+						<div>Credentials do not match, Try again</div> <!--user does not exist-->
 						<hr>
 					</div>
 
