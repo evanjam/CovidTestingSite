@@ -92,14 +92,6 @@
                                     echo "<td>Positive</td>";
                                 }
                                 
-                                if($result2->num_rows >0){//added this statement in order to check results for the date to show last login
-                                    if($row[2]!== NULL){
-                                        echo"<td>{$row[2]}</td>";
-                                    }
-                                    else{
-                                        echo'<td>Unavailable<td>';
-                                    }
-                                }
                                 echo '</tr>';
                             }
                         }
