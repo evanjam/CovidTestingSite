@@ -61,7 +61,6 @@
         <tr>
             <th>Test Date</th>
             <th>Result</th>
-            <th>Last Login</th>
         <tr>';
 
                 include('../../includes/connect.php'); 
@@ -71,10 +70,6 @@
                     $query_tests = "SELECT * FROM `test_sample` WHERE `UID` = '$UID'"; //returns rows that have the desired date
                     $result = $connect->query($query_tests); //saves resultng data
 
-                    //get the last login from different table
-                    $query_date = "SELECT 'date' FROM 'login_log' WHERE 'UID' = '$UID'"; //returns (first?) row where the date is picked
-                    $result2 = $connect->query($query_date);
-                    
                     //Check if there are tests
                     if($result->num_rows > 0) {
                         
