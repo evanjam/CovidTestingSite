@@ -28,7 +28,8 @@
 
 				//if successful, insert a record of the login event into login_log table with timestamp
 				$insert_log = "INSERT INTO login_log (UID, login_date, is_successful) VALUES ('$UID', '$login_date', '1')"; //preparing sql statement 
-				$connect->query($insert_log);
+				$connect->query($insert_log); //executing sql statement
+				//printing
 				echo '
 				<!DOCTYPE html>
 				<html lang="en">
@@ -60,7 +61,7 @@
 				</html>';
 
 
-				//Check the user permission to determine which dashboard to link to
+				//Check the user permission to determine which dashboard to redirect to
 				if($_SESSION['permission'] == 0){
 					header('Refresh: 1;URL=../forms/patient/patient_dashboard.php');
 				}
@@ -78,6 +79,9 @@
 				}
 
 			} else {
+				//if password verification fails (ie username is correct and pw is not) then insert a log entry and print message denying access, refresh page.
+				$insert_log = "INSERT INTO login_log (UID, login_date, is_successful) VALUES ('$UID', '$login_date', '0')"; //preparing sql statement 
+				$connect->query($insert_log);
 				echo '
 				<!DOCTYPE html>
 				<html lang="en">
@@ -101,6 +105,7 @@
 						<a href="forms/register.php">Create New Account</a>
 						<hr>
 						<div>Credentials do not match you dum idiot, Try again</div> <!--password verify fails -->
+						<div>(Log created)</div>
 						<hr>
 					</div>
 
@@ -109,6 +114,7 @@
 				header('Refresh: 2;URL=../index.php');
 			}
 		} else {
+			//if the username does not exist in the database then do not insert a log entry and print message denying access, refresh page
 			echo '
 				<!DOCTYPE html>
 				<html lang="en">
@@ -132,6 +138,7 @@
 						<a href="forms/register.php">Create New Account</a>
 						<hr>
 						<div>Credentials do not match, Try again</div> <!--user does not exist-->
+						<div>(No log created)</div>
 						<hr>
 					</div>
 
