@@ -11,25 +11,27 @@
     if (isset($_POST['login'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
-		$login_date=date("Y-m-d"); //getting the date to input into login_logs 
-		$get_user = "SELECT * FROM user_profile WHERE username = '$username'";
-		$result = $connect->query($get_user);
+		$login_date = date("Y-m-d"); //getting the date to input into login_logs 
+		$get_user = "SELECT * FROM user_profile WHERE username = '$username'"; //prepare sql query to select row from table where username=$username
+		$result = $connect->query($get_user); //execute sql statement, store row in $result
 		
+		//if rows are greater than 0, then rows exist where username=$username, therefore user exists
 		if($result->num_rows > 0) {
-			//Get data from the user and create variables
+			//$row is an array of the fields of $result
 			$row = $result->fetch_array(MYSQLI_ASSOC);
-			$permission = $row['permission'];
-			$UID = $row['UID'];
-		if(password_verify($password, $row['password'])) {
-				//Create session variables
+			$permission = $row['permission']; //grabs the permission value from the selected $row
+			$UID = $row['UID']; //grabs UID from selected $row
+		if(password_verify($password, $row['password'])) { //reverse hash function to check entered password against the hash stored in database
+				//if password_verify succeeds, set up some session variables
 				$_SESSION['username'] = $username;
 				$_SESSION['UID'] = $UID;
 				$_SESSION['permission'] = $permission;
 
-				//if successful, insert a record of the login event into login_log table with timestamp
+				//next, insert a record of the login event into login_log table with timestamp
 				$insert_log = "INSERT INTO login_log (UID, login_date, is_successful) VALUES ('$UID', '$login_date', '1')"; //preparing sql statement 
-				$connect->query($insert_log); //executing sql statement
-				//printing
+				$connect->query($insert_log); //executing sql statement to insert into login_log table
+				
+				//re-printing the login page front end but with an added div at the bottom indicating login status
 				echo '
 				<!DOCTYPE html>
 				<html lang="en">
@@ -60,8 +62,7 @@
 				</body>
 				</html>';
 
-
-				//Check the user permission to determine which dashboard to redirect to
+				//Check the user permission and redirect to appropriate dashboard based on permission level
 				if($_SESSION['permission'] == 0){
 					header('Refresh: 1;URL=../forms/patient/patient_dashboard.php');
 				}
@@ -81,7 +82,8 @@
 			} else {
 				//if password verification fails (ie username is correct and pw is not) then insert a log entry and print message denying access, refresh page.
 				$insert_log = "INSERT INTO login_log (UID, login_date, is_successful) VALUES ('$UID', '$login_date', '0')"; //preparing sql statement 
-				$connect->query($insert_log);
+				$connect->query($insert_log); //executing sql statement to insert into login_log table
+				//re-printing the login page front end but with an added div at the bottom indicating login status
 				echo '
 				<!DOCTYPE html>
 				<html lang="en">
@@ -115,6 +117,8 @@
 			}
 		} else {
 			//if the username does not exist in the database then do not insert a log entry and print message denying access, refresh page
+			
+			//re-printing the login page front end but with an added div at the bottom indicating login status
 			echo '
 				<!DOCTYPE html>
 				<html lang="en">
