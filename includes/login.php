@@ -11,8 +11,7 @@
     if (isset($_POST['login'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
-		$dt2=date("Y-m-d"); //getting the date to input into login_logs 
-		$success = 0; 
+		$login_date=date("Y-m-d"); //getting the date to input into login_logs 
 		$get_user = "SELECT * FROM user_profile WHERE username = '$username'";
 		$result = $connect->query($get_user);
 		
@@ -27,14 +26,9 @@
 				$_SESSION['UID'] = $UID;
 				$_SESSION['permission'] = $permission;
 
-				//putting insertion into login_logs here, is that okay? 
-				// ++$success;
-				// $insert_log = "INSERT INTO login_log (UID, login_date, is_successful) VALUES ('$UID', '$dt2', $success)"; //preparing sql statement 
-				// 		if($connect->query($insert_log) == TRUE) { //test to see if log was created which it was so we are good 
-				// 			echo "new log created";
-				// 		}else{
-				// 			echo "no log entered into login_logs";
-				// 		}
+				//if successful, insert a record of the login event into login_log table with timestamp
+				$insert_log = "INSERT INTO login_log (UID, login_date, is_successful) VALUES ('$UID', '$login_date', '1')"; //preparing sql statement 
+				$connect->query($insert_log);
 				echo '
 				<!DOCTYPE html>
 				<html lang="en">
@@ -58,6 +52,7 @@
 						<a href="forms/patient_register.php">Create New Account</a>
 						<hr>
 						<div>Credentials match, Logging in...</div>
+						<div>(Log created)</div>
 						<hr>
 					</div>
 

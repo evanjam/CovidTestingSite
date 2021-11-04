@@ -55,6 +55,19 @@ CREATE TABLE `user_profile` (
   `permission` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login_log`
+--
+
+CREATE TABLE `login_log` (
+  `LLID` int(11) NOT NULL,
+  `UID` int(11) NOT NULL,
+  `login_date` date NOT NULL,
+  `is_successful` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Dumping data for table `user_profile`
 --
@@ -82,6 +95,12 @@ ALTER TABLE `test_sample`
 --
 ALTER TABLE `user_profile`
   ADD PRIMARY KEY (`UID`);
+  
+  -- Indexes for table `user_profile`
+--
+ALTER TABLE `login_log`
+  ADD PRIMARY KEY (`LLID`),
+  ADD KEY `UID` (`UID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -98,6 +117,11 @@ ALTER TABLE `test_sample`
 --
 ALTER TABLE `user_profile`
   MODIFY `UID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  
+  -- AUTO_INCREMENT for table `test_sample`
+--
+ALTER TABLE `login_log`
+  MODIFY `LLID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -108,6 +132,13 @@ ALTER TABLE `user_profile`
 --
 ALTER TABLE `test_sample`
   ADD CONSTRAINT `test_sample_ibfk_1` FOREIGN KEY (`UID`) REFERENCES `user_profile` (`UID`) ON DELETE NO ACTION ON UPDATE CASCADE;
+COMMIT;
+
+--
+-- Constraints for table `login_log`
+--
+ALTER TABLE `login_log`
+  ADD CONSTRAINT `login_log_ibfk_1` FOREIGN KEY (`UID`) REFERENCES `user_profile` (`UID`) ON DELETE NO ACTION ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
