@@ -51,6 +51,8 @@
         echo'<div><a href="../admin/admin_dashboard.php">Home</a></div>';
     }
     echo'<br>';
+	echo'<div><a href="patient_info.php">Personal Info</a></div>';
+	echo'<br>';
     //Display the log out button
     echo'<div><a href="../../index.php">Log Out</a></div>
     <br>
