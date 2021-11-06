@@ -40,6 +40,8 @@
         //Submit test form link
         echo'<div><a href="employee_submit_test.php">Submit New Test</a></div>';
         echo'<br>';
+		echo '<div><a href="employee_view_user.php">Search User</a></div>';
+		echo'<br>';
         //Personal Restuls link
         echo'<div><a href="../patient/patient_dashboard.php">View Personal Test Results</a></div>';
         echo'<br>';
