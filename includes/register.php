@@ -13,6 +13,11 @@
 		$dob = $_POST['date'];
 		$ssn = $_POST['ssn'];
 		
+		$getAge = explode("-", $dob);
+		$age = (date("md", date("U", mktime(0, 0, 0, $getAge[1], $getAge[2], $getAge[0]))) > date("md")
+		? ((date("Y") - $getAge[0]) - 1)
+		: (date("Y") - $getAge[0]));
+		
 		$select_user = "SELECT * FROM user_profile WHERE username = '$username'"; //prepares sql statement to check if username already exists
 		$result = $connect->query($select_user); //runs $select_user as a query and stores the result in $result
 		
@@ -50,6 +55,45 @@
 					</form>
 					<hr>
 					<div>Username already exists. Try again.</div>
+				</div>
+				
+			</body>
+			</html>';
+			//header('Refresh: 2;URL=../forms/patient_register.php'); //wait 1 second and refresh index.php homepage
+		} elseif($age < 18) { //if $age < 18, can't register
+			echo'<!DOCTYPE html>
+			<html lang="en">
+			<head>
+				<meta charset="UTF-8">
+				<meta http-equiv="X-UA-Compatible" content="IE=edge">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<title>Patient Registration Form</title>
+				<link href="../css/dashboard.css" rel="stylesheet" type="text/css">
+			</head>
+			<body>
+				<div class="header">
+					<h1>Register a new user profile</h1>
+				
+				</div>
+			
+				<div><a href="../index.php">Home</a></div>
+				<br>
+			
+				<div class="employee_register">
+					<h1>User Registration Form</h1>
+					Please fill out the following form and press Register to register a new Patient
+					<img src="../img/employee/nurse_resize.jpg" alt="Nurse">
+					<form method="post" action="../includes/register.php" name="register">
+						<input type="text" name="username" placeholder="username" required>
+						<input type="password" name="password" placeholder="password" required>
+						<input type="text" name="fname" placeholder="first name" required>
+						<input type="text" name="lname" placeholder="last name" required>
+						<input type="text" name="ssn" placeholder="ssn" pattern="[0-9]+" required>
+						<input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
+						<input type="submit" name="register" value="Register">
+					</form>
+					<hr>
+					<div>Must be 18 or older to register</div>
 				</div>
 				
 			</body>
