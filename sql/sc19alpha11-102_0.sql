@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2021 at 01:53 AM
+-- Generation Time: Nov 11, 2021 at 02:04 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -20,14 +20,13 @@ SET time_zone = "+00:00";
 --
 -- Database: `sc19_alpha`
 --
+CREATE DATABASE IF NOT EXISTS `sc19_alpha` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `sc19_alpha`;
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `login_log`
---
--- Creation: Nov 02, 2021 at 03:57 AM
--- Last update: Nov 11, 2021 at 12:49 AM
 --
 
 CREATE TABLE `login_log` (
@@ -37,16 +36,10 @@ CREATE TABLE `login_log` (
   `is_successful` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- RELATIONSHIPS FOR TABLE `login_log`:
---
-
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `test_sample`
---
--- Creation: Oct 27, 2021 at 12:11 AM
 --
 
 CREATE TABLE `test_sample` (
@@ -58,18 +51,10 @@ CREATE TABLE `test_sample` (
   `is_signed` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- RELATIONSHIPS FOR TABLE `test_sample`:
---   `UID`
---       `user_profile` -> `UID`
---
-
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `user_info`
---
--- Creation: Nov 10, 2021 at 02:20 AM
 --
 
 CREATE TABLE `user_info` (
@@ -86,18 +71,10 @@ CREATE TABLE `user_info` (
   `dob` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- RELATIONSHIPS FOR TABLE `user_info`:
---   `UID`
---       `user_profile` -> `UID`
---
-
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `user_profile`
---
--- Creation: Oct 27, 2021 at 12:11 AM
 --
 
 CREATE TABLE `user_profile` (
@@ -110,10 +87,6 @@ CREATE TABLE `user_profile` (
   `ssn` int(9) NOT NULL,
   `permission` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- RELATIONSHIPS FOR TABLE `user_profile`:
---
 
 --
 -- Dumping data for table `user_profile`
