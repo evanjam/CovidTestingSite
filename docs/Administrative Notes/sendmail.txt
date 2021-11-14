@@ -1,0 +1,3 @@
+https://stackoverflow.com/questions/15965376/how-to-configure-xampp-to-send-mail-from-localhost
+
+https://code.tutsplus.com/tutorials/how-to-implement-email-verification-for-new-members--net-3824
