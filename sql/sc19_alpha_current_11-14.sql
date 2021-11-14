@@ -67,7 +67,7 @@ CREATE TABLE `user_profile` (
   `ssn` int(9) NOT NULL,
   `permission` int(1) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `email_hash` varchar(32) NOT NULL,
+  `email_token` varchar(32) NOT NULL,
   `email_verified` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -75,7 +75,7 @@ CREATE TABLE `user_profile` (
 -- Dumping data for table `user_profile`
 --
 
-INSERT INTO `user_profile` (`UID`, `username`, `password`, `fname`, `lname`, `dob`, `ssn`, `permission`, `email`, `email_hash`, `email_verified`) VALUES
+INSERT INTO `user_profile` (`UID`, `username`, `password`, `fname`, `lname`, `dob`, `ssn`, `permission`, `email`, `email_token`, `email_verified`) VALUES
 (1, 'a', '$2y$10$kzhwCTKalXGfti0XYx5VkuWeZj2QDkLC4JV1Tm0fI72EckLFou94e', 'a', 'a', '2021-10-01', 111111111, 4, 'a@cts.com', '', 0),
 (2, 'd', '$2y$10$CkBzcf5QHcf2/ZrXYflNj.JH5cnq2MeQKomJxIglCcMRInAmrb98O', 'd', 'd', '2021-10-01', 222222222, 3, 'd@cts.com', '', 0),
 (3, 'l', '$2y$10$Iex7HvEUoylESDSzXfJXNupakumMUGFz8xQcGNsPtVoATLK3Uy382', 'l', 'l', '2021-10-01', 333333333, 2, 'l@cts.com', '', 0),
