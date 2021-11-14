@@ -80,10 +80,10 @@ try{
 			} else { //if username doesnt already exist in database, execute remaining steps to insert the username and password
 			
 				//seed a new hash for $email_hash for email verification purposes
-				$email_hash = md5(rand(0,1000));
+				$email_token = md5(rand(0,1000));
 				
-				$insert_user = "INSERT INTO user_profile (UID, username, password, fname, lname, dob, ssn, email, email_hash, permission) 
-				VALUES (NULL, '$username', '$password_hash', '$fname', '$lname', '$dob', '$ssn', '$email', '$email_hash', '$permission')"; //prepare sql insertion statement
+				$insert_user = "INSERT INTO user_profile (UID, username, password, fname, lname, dob, ssn, email, email_token, permission) 
+				VALUES (NULL, '$username', '$password_hash', '$fname', '$lname', '$dob', '$ssn', '$email', '$email_token', '$permission')"; //prepare sql insertion statement
 				
 				if($connect->query($insert_user) == TRUE) { //evan's query function, up for discussion on which to use
 					echo'
