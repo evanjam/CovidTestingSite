@@ -36,18 +36,6 @@ CREATE TABLE `login_log` (
   `is_successful` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `login_log`
---
-
-INSERT INTO `login_log` (`LLID`, `UID`, `login_date`, `is_successful`) VALUES
-(1, 1, '2021-11-14', 1),
-(2, 4, '2021-11-14', 1),
-(3, 4, '2021-11-14', 1),
-(4, 2, '2021-11-14', 1),
-(5, 4, '2021-11-14', 1),
-(6, 4, '2021-11-14', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -126,7 +114,7 @@ ALTER TABLE `user_profile`
 -- AUTO_INCREMENT for table `login_log`
 --
 ALTER TABLE `login_log`
-  MODIFY `LLID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `LLID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `test_sample`
