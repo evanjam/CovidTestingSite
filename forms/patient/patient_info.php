@@ -49,6 +49,11 @@
 					print "Social Security: $row[6]";
 				}
 				echo '<br>';
+				if($row[8] != null)
+				{
+					print "Email Address: $row[8]";
+				}
+				echo '<br>';
 			}
 		}
 		echo '<br>';
