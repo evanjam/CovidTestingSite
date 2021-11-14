@@ -65,6 +65,7 @@ try{
 						<input type="text" name="fname" placeholder="first name" required>
 						<input type="text" name="lname" placeholder="last name" required>
 						<input type="text" name="ssn" placeholder="ssn" pattern="[0-9]+" required>
+						<input type="text" name="email" placeholder="email" required>
 						<input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
 						<input type="submit" name="register" value="Register">
 					</form>
@@ -111,6 +112,7 @@ try{
 						<input type="text" name="fname" placeholder="first name" required>
 						<input type="text" name="lname" placeholder="last name" required>
 						<input type="text" name="ssn" placeholder="ssn" pattern="[0-9]+" required>
+						<input type="text" name="email" placeholder="email" required>
 						<input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
 						<input type="submit" name="register" value="Register">
 					</form>
@@ -149,6 +151,7 @@ try{
 						<input type="text" name="fname" placeholder="first name" required>
 						<input type="text" name="lname" placeholder="last name" required>
 						<input type="text" name="ssn" placeholder="ssn" pattern="[0-9]+" required>
+						<input type="text" name="email" placeholder="email" required>
 						<input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
 						<input type="submit" name="register" value="Register">
 					</form>
