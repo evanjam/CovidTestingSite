@@ -29,6 +29,7 @@ try{
 			$lname = $_POST['lname'];
 			$dob = $_POST['date'];
 			$ssn = $_POST['ssn'];
+			$email = $_POST['email'];
 			
 			$select_user = "SELECT * FROM user_profile WHERE username = '$username'"; //prepares sql statement to check if username already exists
 			$result = $connect->query($select_user); //runs $select_user as a query and stores the result in $result
@@ -73,8 +74,12 @@ try{
 				</body>
 				</html>';
 			} else { //if username doesnt already exist in database, execute remaining steps to insert the username and password
-				$insert_user = "INSERT INTO user_profile (UID, username, password, fname, lname, dob, ssn, permission) 
-				VALUES (NULL, '$username', '$password_hash', '$fname', '$lname', '$dob', '$ssn', '0')"; //prepare sql insertion statement
+				
+				//seed a new hash for $email_hash for email verification purposes
+				$email_hash = md5(rand(0,1000));
+				
+				$insert_user = "INSERT INTO user_profile (UID, username, password, fname, lname, dob, ssn, email, email_hash, permission) 
+				VALUES (NULL, '$username', '$password_hash', '$fname', '$lname', '$dob', '$ssn', '$email', '$email_hash', '0')"; //prepare sql insertion statement
 				
 				if($connect->query($insert_user) == TRUE) { //evan's query function, up for discussion on which to use
 					echo'
