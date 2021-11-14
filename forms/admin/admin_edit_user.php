@@ -51,6 +51,7 @@
             <th>Lname</th>
             <th>DOB</th>
             <th>SSN</th>
+			<th>Email</th>
             <th>Permission</th>';
         echo'<tr>';
 
@@ -73,6 +74,7 @@
                             echo "<td>{$row[4]}</td>";
                             echo "<td>{$row[5]}</td>";
                             echo "<td>{$row[6]}</td>";
+							echo "<td>{$row[8]}</td>";
                             echo "<td>{$row[7]}</td>";
                             echo '</tr>';
                             echo '<tr>
@@ -92,6 +94,7 @@
                         <td><input type="text" name="lname" placeholder="Lname" id="lname" required/></td>
                         <td><input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required /></td>
                         <td><input type="text" name="ssn" placeholder="ssn" id="ssn" pattern="[0-9]+" required></td>
+						<td><input type="text" name="email" placeholder="email" id="email" required></td>
                         <td><input type="number" name="permission" placeholder="permission" id="permission" pattern="[0-4]" required /></td>
                         <td><input type="submit" name="submit" value="submit"></td>
                         </form>
@@ -105,14 +108,16 @@
                     //$result = $_POST['result']; //saves variables from the user's input
                     $username = $_POST['username'];
                     $password = $_POST['password'];
+					$password_hash = password_hash($password, PASSWORD_BCRYPT); //prepares the password hash
                     $fname = $_POST['fname'];
                     $lname = $_POST['lname'];
                     $date = $_POST['date'];
                     $ssn = $_POST['ssn'];
+					$email = $_POST['email'];
                     $permission = $_POST['permission'];
 
                     
-                    $update_result = "UPDATE `user_profile` SET `username` = '$username', `password` = '$password', `fname` = '$fname', `lname` = '$lname', `dob` = '$date', `ssn` = '$ssn', `permission` = '$permission' WHERE `user_profile`.`UID` = 13;"; //prepares sql statement to check if username already exists
+                    $update_result = "UPDATE `user_profile` SET `username` = '$username', `password` = '$password_hash', `fname` = '$fname', `lname` = '$lname', `dob` = '$date', `ssn` = '$ssn', `email` = '$email', `permission` = '$permission' WHERE `user_profile`.`UID` = '6';"; //prepares sql statement to check if username already exists
                     $result = $connect->query($update_result); //runs $select_user as a query and stores the result in $result
 
                     if($connect->query($update_result) == TRUE) { //evan's query function, up for discussion on which to use

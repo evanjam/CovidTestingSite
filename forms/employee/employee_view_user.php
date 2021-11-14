@@ -51,6 +51,7 @@
             <th>Lname</th>
             <th>DOB</th>
             <th>SSN</th>
+			<th>Email</th>
             <th>Permission</th>';
         echo'<tr>';
 
@@ -73,6 +74,7 @@
                             echo "<td>{$row[4]}</td>";
                             echo "<td>{$row[5]}</td>";
                             echo "<td>{$row[6]}</td>";
+							echo "<td>{$row[8]}</td>";
                             echo "<td>{$row[7]}</td>";
                             echo '</tr>';
                             echo '<tr>
