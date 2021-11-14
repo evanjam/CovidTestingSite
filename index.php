@@ -23,6 +23,7 @@
             <input type="submit" name="login" value="login">
         </form>
 		<a href="forms/pass_reset.php">Forgot password?</a><br>
+		<a href="forms/sendmailtest.php">sendmail test</a><br>
 		<!-- <a href="forms/patient_register.php">Create New Account</a> -->
     </div>
 
