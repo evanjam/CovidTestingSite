@@ -115,9 +115,14 @@
                     $ssn = $_POST['ssn'];
 					$email = $_POST['email'];
                     $permission = $_POST['permission'];
-
+					
+					//capture UID for the entered user
+					$query_user = "SELECT * FROM `user_profile` WHERE `username` = '$username'"; //returns user row
+					$query_user_result = $connect->query($query_user); //runs query, saves column into $query_user_result
+					$user_row = $query_user_result->fetch_array(MYSQLI_ASSOC); //allows us to access individual fields inside user_result
+					$UID = $user_row['UID']; //accesses the UID field from the selected row
                     
-                    $update_result = "UPDATE `user_profile` SET `username` = '$username', `password` = '$password_hash', `fname` = '$fname', `lname` = '$lname', `dob` = '$date', `ssn` = '$ssn', `email` = '$email', `permission` = '$permission' WHERE `user_profile`.`UID` = '6';"; //prepares sql statement to check if username already exists
+                    $update_result = "UPDATE `user_profile` SET `username` = '$username', `password` = '$password_hash', `fname` = '$fname', `lname` = '$lname', `dob` = '$date', `ssn` = '$ssn', `email` = '$email', `permission` = '$permission' WHERE `user_profile`.`UID` = '$UID';"; //prepares sql statement to check if username already exists
                     $result = $connect->query($update_result); //runs $select_user as a query and stores the result in $result
 
                     if($connect->query($update_result) == TRUE) { //evan's query function, up for discussion on which to use
