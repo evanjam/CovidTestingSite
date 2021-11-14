@@ -29,6 +29,7 @@ try{
 			$lname = $_POST['lname'];
 			$dob = $_POST['date'];
 			$ssn = $_POST['ssn'];
+			$email = $_POST['email'];
 			$permission = $_POST['permission'];
 			
 			$select_user = "SELECT * FROM user_profile WHERE username = '$username'"; //prepares sql statement to check if username already exists
@@ -64,6 +65,7 @@ try{
 						<input type="text" name="fname" placeholder="first name" required>
 						<input type="text" name="lname" placeholder="last name" required>
 						<input type="text" name="ssn" placeholder="ssn" pattern="[0-9]+" required>
+						<input type="text" name="email" placeholder="email" required>
 						<input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
 						<input type="number" name="permission" placeholder="permission" id="permission" pattern="[0-4]" required />
 						<input type="submit" name="register" value="Register">
@@ -76,8 +78,12 @@ try{
 		
 				//header('Refresh: 2;URL=../forms/admin/admin_register.php'); //wait 1 second and refresh index.php homepage
 			} else { //if username doesnt already exist in database, execute remaining steps to insert the username and password
-				$insert_user = "INSERT INTO user_profile (UID, username, password, fname, lname, dob, ssn, permission) 
-				VALUES (NULL, '$username', '$password_hash', '$fname', '$lname', '$dob', '$ssn', '$permission')"; //prepare sql insertion statement
+			
+				//seed a new hash for $email_hash for email verification purposes
+				$email_hash = md5(rand(0,1000));
+				
+				$insert_user = "INSERT INTO user_profile (UID, username, password, fname, lname, dob, ssn, email, email_hash, permission) 
+				VALUES (NULL, '$username', '$password_hash', '$fname', '$lname', '$dob', '$ssn', '$email', '$email_hash', '$permission')"; //prepare sql insertion statement
 				
 				if($connect->query($insert_user) == TRUE) { //evan's query function, up for discussion on which to use
 					echo'
@@ -109,6 +115,7 @@ try{
 						<input type="text" name="fname" placeholder="first name" required>
 						<input type="text" name="lname" placeholder="last name" required>
 						<input type="text" name="ssn" placeholder="ssn" pattern="[0-9]+" required>
+						<input type="text" name="email" placeholder="email" required>
 						<input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
 						<input type="number" name="permission" placeholder="permission" id="permission" pattern="[0-4]" required />
 						<input type="submit" name="register" value="Register">
@@ -149,6 +156,7 @@ try{
 						<input type="text" name="fname" placeholder="first name" required>
 						<input type="text" name="lname" placeholder="last name" required>
 						<input type="text" name="ssn" placeholder="ssn" pattern="[0-9]+" required>
+						<input type="text" name="email" placeholder="email" required>
 						<input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
 						<input type="number" name="permission" placeholder="permission" id="permission" pattern="[0-4]" required />
 						<input type="submit" name="register" value="Register">
