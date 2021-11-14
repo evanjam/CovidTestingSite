@@ -122,8 +122,8 @@
 					$user_row = $query_user_result->fetch_array(MYSQLI_ASSOC); //allows us to access individual fields inside user_result
 					$UID = $user_row['UID']; //accesses the UID field from the selected row
                     
-                    $update_result = "UPDATE `user_profile` SET `username` = '$username', `password` = '$password_hash', `fname` = '$fname', `lname` = '$lname', `dob` = '$date', `ssn` = '$ssn', `email` = '$email', `permission` = '$permission' WHERE `user_profile`.`UID` = '$UID';"; //prepares sql statement to check if username already exists
-                    $result = $connect->query($update_result); //runs $select_user as a query and stores the result in $result
+                    $update_result = "UPDATE `user_profile` SET `username` = '$username', `password` = '$password_hash', `fname` = '$fname', `lname` = '$lname', `dob` = '$date', `ssn` = '$ssn', `email` = '$email', `permission` = '$permission' WHERE `user_profile`.`UID` = '$UID';"; //prepares sql statement to update the user table with provided information
+                    $result = $connect->query($update_result); //runs the above sql command to update the user_profile table
 
                     if($connect->query($update_result) == TRUE) { //evan's query function, up for discussion on which to use
                         echo "Result has been updated";
