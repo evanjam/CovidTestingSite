@@ -117,10 +117,27 @@ try{
 						<input type="submit" name="register" value="Register">
 					</form>
 					<hr>
-					<div>New record created</div>
+					<div>New record created<br>Email Verification Link Sent</div>
 				</div>
 				</body>
 				</html>';
+				
+				//prepare and send account verification email
+				$subject = 'Verify your CTS Account';
+				$message = '
+You have been registered for weekly Covid-19 Testing Services with CTS Testing Services
+========================
+Username: ' . $username . '
+========================
+Please click the following link to activate your CTS account:
+http://localhost/CovidTestingSite/includes/email_verify.php?username=' . $username . '&email_token=' . $email_token . '
+
+Thank you.
+				';
+				$headers = 'From:cts.sendmail2021@gmail.com' . "\r\n";
+				mail($email, $subject, $message, $headers); // Send our email
+				
+				
 				} else 
 				echo'
 				<!DOCTYPE html>

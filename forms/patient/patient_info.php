@@ -54,6 +54,14 @@
 					print "Email Address: $row[8]";
 				}
 				echo '<br>';
+				if($row[10] != null)
+				{
+					if($row[10] == '0')
+						$temp = 'Not Verified';
+					else
+						$temp = "Verified";
+					print "Email Verified: " . $temp;
+				}
 			}
 		}
 		echo '<br>';
