@@ -22,14 +22,17 @@
 			//echo '<br>';
 			//echo 'email token = '. $email_token;
 			if($username == $row['username'] && $email_token == $row['email_token']) {
-				echo 'token matches';
+				echo 'email successfully verified. please return to home page and sign in.';
 				$update_verification_status = "UPDATE `user_profile` SET `email_verified` = '1' WHERE `user_profile`.`username` = '$username'";
 				$connect->query($update_verification_status);
 				$update_email_token = "UPDATE `user_profile` SET `email_token` = '' WHERE `user_profile`.`username` = '$username'";
 				$connect->query($update_email_token);
+				header('Refresh: 2;URL=../index.php');
 			}
-			else
-				echo 'invalid token or something';
+			else {
+				echo 'invalid token or the verification has already been processed. try again.';
+				header('Refresh: 2;URL=../index.php');
+			}
 		}
 
 ?>
