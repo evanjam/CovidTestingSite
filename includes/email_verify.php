@@ -17,16 +17,18 @@
 		$result = $connect->query($select_user); //runs $select_user as a query and stores the result in $result
 		
 		if($result->num_rows > 0) { //if $result->num_rows > 0 returns true, then there exists rows where the username=$username 
-			$row = $result->fetch_array(MYSQLI_ASSOC);
-			//echo 'username = ' . $username;
-			//echo '<br>';
-			//echo 'email token = '. $email_token;
+			$row = $result->fetch_array(MYSQLI_ASSOC); //explode information from the username table where $username = input from URL bar
+			
+			//compare username and email_token from URL with the information in database, created during registration
 			if($username == $row['username'] && $email_token == $row['email_token']) {
+				
 				echo 'email successfully verified. please return to home page and sign in.';
-				$update_verification_status = "UPDATE `user_profile` SET `email_verified` = '1' WHERE `user_profile`.`username` = '$username'";
-				$connect->query($update_verification_status);
-				$update_email_token = "UPDATE `user_profile` SET `email_token` = '' WHERE `user_profile`.`username` = '$username'";
-				$connect->query($update_email_token);
+				
+				$update_verification_status = "UPDATE `user_profile` SET `email_verified` = '1' WHERE `user_profile`.`username` = '$username'"; //set up query for next line
+				$connect->query($update_verification_status); //update email_verified from 0 to 1
+				$update_email_token = "UPDATE `user_profile` SET `email_token` = '' WHERE `user_profile`.`username` = '$username'"; //set up query for next line
+				$connect->query($update_email_token); //reset email_token back to a NULL value
+				
 				header('Refresh: 2;URL=../index.php');
 			}
 			else {
