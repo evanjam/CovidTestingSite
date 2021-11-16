@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin dashboard</title>
-    <link href="../../css/dashboard.css" rel="stylesheet" type="text/css">
+    <link href="../../css/dashboards.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <?php
@@ -34,17 +34,17 @@
                 <h1>Admin dashboard</h1>
             
             </div>        
-            <div><a href="admin_register.php">User Registration Form</a></div>
+            <div class="border"><a href="admin_register.php">User Registration Form</a></div>
             <br>
-            <div><a href="admin_edit_user.php">Edit User</a></div>
+            <div class="border"><a href="admin_edit_user.php">Edit User</a></div>
             <br>
-            <div><a href="admin_submit_test.php">Submit New Test</a></div>
+            <div class="border"><a href="admin_submit_test.php">Submit New Test</a></div>
             <br>
-            <div><a href="lab_admin_dashboard.php">Edit Test</a></div>
+            <div class="border"><a href="lab_admin_dashboard.php">Edit Test</a></div>
             <br>
-            <div><a href="../patient/patient_dashboard.php">View Personal Test Results</a></div>
+            <div class="border"><a href="../patient/patient_dashboard.php">View Personal Test Results</a></div>
             <br>
-            <div><a href="../../index.php">Log Out</a></div>';
+            <div class="border"><a href="../../index.php">Log Out</a></div>';
         }else{
             //Return message if access level is incorrect.
             echo '<h1>This page is not reachable with your level of access.</h1>';
@@ -55,6 +55,11 @@
         header('Refresh: 1;URL=../../index.php');
     }
     ?>
-
+   
+    <footer>
+        <div>
+            <p>Covid Testing Site 2021</p>
+        </div>
+    </footer>
 </body>
 </html>
