@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab user dashboard</title>
-    <link href="../../css/dashboard.css" rel="stylesheet" type="text/css">
+    <link href="../../css/dashboards.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <?php
@@ -39,8 +39,8 @@
 
 
     echo'<div class="getTests">';
-        echo'<h1>Enter date for tests </h1>';
-        echo'<form method="post" action="" name="labtests">';
+        echo'<h1 class="labheading">Enter date for tests </h1>';
+        echo'<form method="post" action="" name="labtests" class="labheading">';
             echo'<input type="date" name="date"  placeholder="Desired date" id="date" required />';
             echo'<input type="submit" name="labtests" value="Search">';
         echo'</form>';
@@ -124,6 +124,11 @@
 }
         ?>
     </table>
+    <footer>
+        <div>
+            <p>Covid Testing Site 2021</p>
+        </div>
+    </footer>
 
 </body>
 </html>
