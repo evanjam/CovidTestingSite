@@ -1,5 +1,14 @@
 <?php
     session_start();
+	
+	$t=time();
+	if (isset($_SESSION['logged']) && ($t - $_SESSION['logged'] > 10)) {
+    session_destroy();
+    session_unset();
+    header('Refresh: 0.01;URL=../../index.php');
+}else {
+    $_SESSION['logged'] = time();
+}  
 ?>
 
 <!DOCTYPE html>
