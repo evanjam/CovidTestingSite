@@ -9,14 +9,15 @@ if(isset($_POST["register"]))
     $lname = $_POST['lname'];
     $dob = $_POST['date'];
     $ssn = $_POST['ssn'];
+    $email = $_POST['email'];
 
 
     //instantiating register controller 
-    include "../classes/db.classes.php";
-    include "../classes/register.classes.php";
-    include "../classes/register-contr.php";
+    require_once 'db.classes.php';
+    require_once 'register.classes.php';
+    require_once 'register-contr.classes.php';
 
-    $registerUser = new RegisterContr(username, password, fname, lname, dob, ssn);
+    $registerUser = new RegisterContr($username, $password, $fname, $lname, $dob, $ssn, $email);
 
 
     $registerUser->signupUser();
