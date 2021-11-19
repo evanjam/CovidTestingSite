@@ -42,7 +42,7 @@
                 <h1>User Registration Form</h1>
                 Please fill out the following form and press Register to register a new User. Enter permission level as number 0-4.
                 <img src="../../img/employee/nurse_resize.jpg" alt="Nurse">
-                <form method="post" action="../../classes/UserRegister-inc.php" name="register">
+                <form method="post" action="../../includes/admin_register.php" name="register">
                     <input type="text" name="username" placeholder="username" required>
                     <input type="password" name="password" placeholder="password" required>
                     <input type="text" name="fname" placeholder="first name" required>
