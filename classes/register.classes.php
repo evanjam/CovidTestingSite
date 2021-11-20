@@ -7,23 +7,12 @@ class Register extends Dbh{
         require '../includes/connect.php';
        $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
-        // $getAge = explode("-", $dob);
-		// $age = (date("md", date("U", mktime(0, 0, 0, $getAge[1], $getAge[2], $getAge[0]))) > date("md")
-		// ? ((date("Y") - $getAge[0]) - 1)
-		// : (date("Y") - $getAge[0]));
-
         $email_token = md5(rand(0,1000));
-
-        $sql = 'INSERT INTO user_profile (username, password, fname, lname, dob, ssn, permission, email, email_token) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);';    
-        $stmt = mysqli_stmt_init($connect); //statement to run query
-        if(!mysqli_stmt_prepare($stmt, $sql)){
-            echo "There was an error";
-            exit();
-        }else{
-            mysqli_stmt_bind_param($stmt, "ssssssisd" , $username, $password_hash, $fname, $lname, $dob, $ssn, '0', $email, $email_token);
-            mysqli_stmt_execute($stmt);
-
-
+				
+				$insert_user = "INSERT INTO user_profile (UID, username, password, fname, lname, dob, ssn, email, email_token, permission) 
+				VALUES (NULL, '$username', '$password_hash', '$fname', '$lname', '$dob', '$ssn', '$email', '$email_token', '0')"; //prepare sql insertion statement
+				
+        if ($connect->query($insert_user) == true){
             $subject = 'Verify your CTS Account';
             $message = '
 You have been registered for weekly Covid-19 Testing Services with CTS Testing Services
@@ -36,11 +25,8 @@ http://localhost/CovidTestingSite/includes/email_verify.php?username=' . $userna
 Thank you.
             ';
             $headers = 'From:cts.sendmail2021@gmail.com' . "\r\n";
-            mail($email, $subject, $message, $headers); // Send our email
-            echo "query completed";
+            mail($email, $subject, $message, $headers);
         }
-    
-
     }
 
 }

@@ -17,8 +17,8 @@ class RegisterContr extends Register{
         $this->password = $password;
         $this->fname = $fname;
         $this->lname = $lname;
-        $this->ssn = $ssn;
         $this->dob = $dob;
+        $this->ssn = $ssn;
         $this->email = $email;
     }
 
