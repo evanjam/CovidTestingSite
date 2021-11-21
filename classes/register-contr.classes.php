@@ -12,7 +12,7 @@ class RegisterContr extends Register{
     private $email;
 
     //constructor to create instance with the inputed data from the form which the employee will input for the first time user
-    public function __construct($username, $password, $fname, $lname, $ssn, $dob, $email){
+    public function __construct($username, $password, $fname, $lname, $ssn, $email, $dob){
         $this->username = $username;
         $this->password = $password;
         $this->fname = $fname;
