@@ -61,6 +61,7 @@
 				</body>
 				</html>
 				';
+				header('Refresh: 1;URL=../forms/employee/employee_submit_test.php');
 
 			} else {
 				echo'
@@ -148,6 +149,7 @@
 				</body>
 				</html>
 				';
+				header('Refresh: 1;URL=../forms/employee/employee_submit_test.php');
 		}
 	}
 	
