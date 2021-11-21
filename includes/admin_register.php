@@ -76,7 +76,7 @@ try{
 				</body>
 				</html>';
 		
-				//header('Refresh: 2;URL=../forms/admin/admin_register.php'); //wait 1 second and refresh index.php homepage
+				header('Refresh: 2;URL=../forms/admin/admin_register.php'); //wait 2 seconds and redirect to admin_register form
 			} else { //if username doesnt already exist in database, execute remaining steps to insert the username and password
 			
 				//seed a new hash for $email_hash for email verification purposes
@@ -141,7 +141,9 @@ Thank you.
 				$headers = 'From:cts.sendmail2021@gmail.com' . "\r\n";
 				mail($email, $subject, $message, $headers); // Send our email
 
-
+				header('Refresh: 2;URL=../forms/admin/admin_register.php'); //wait 2 seconds and redirect to admin_register form
+				
+				
 				} else 
 				echo'
 				<!DOCTYPE html>
@@ -182,7 +184,7 @@ Thank you.
 				</div>
 				</body>
 				</html>';
-				//header('Refresh: 2;URL=../forms/admin/admin_register.php');
+				header('Refresh: 2;URL=../forms/admin/admin_register.php'); //wait 2 seconds and redirect to admin_register form
 				$connect->close(); //it still works if I don't include this but I feel like it's probably necessary down the line to do this
 			}
 		}
