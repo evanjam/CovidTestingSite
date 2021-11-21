@@ -17,7 +17,7 @@ if(isset($_POST["register"]))
     require_once 'register.classes.php';
     require_once 'register-contr.classes.php';
 
-    $registerUser = new RegisterContr($username, $password, $fname, $lname, $dob, $ssn, $email);
+    $registerUser = new RegisterContr($username, $password, $fname, $lname, $ssn, $dob, $email);
 
 
     $registerUser->signupUser();
