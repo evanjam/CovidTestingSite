@@ -53,9 +53,9 @@
 					title="Only letters" required>
                     <input type="text" name="ssn" maxlength="9" placeholder="ssn" pattern="[0-9]+"
 					title="SSN must be 9 digits" required>
-					<input type="email" placeholder="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-                    <input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
-                    <input type="number" name="permission" placeholder="permission" id="permission" pattern="[0-4]" required />
+					<input type="email" placeholder="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                    <input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required>
+                    <input type="number" name="permission" placeholder="permission" id="permission" max="4" required>
                     <input type="submit" name="register" value="Register">
                 </form>
             </div>';
