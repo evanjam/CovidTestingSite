@@ -112,7 +112,7 @@
                     $connect->query($update_result); //runs $update_result as a query
 
                     if($connect->query($update_result) == TRUE) { //evan's query function, up for discussion on which to use
-                        echo "Result has been updated. Result email sent to email on file.";
+                        echo "Result has been updated. Result email sent to email on file. *Email is only sent if the patient's email has been verified!*";
 						
 						//block of code related to sending email to patient after test submission
 						//first, query the user associated with the test that was signed
@@ -125,6 +125,7 @@
 						$temp_row2 = $result->fetch_array(MYSQLI_ASSOC);
 						$username = $temp_row2['username'];
 						$email = $temp_row2['email'];
+						$email_verify = $temp_row2['email_verified'];
 						$submitted_test_result = $temp_row['result'];
 						if($submitted_test_result == '0') {
 							$email_result = 'Not Examined';
@@ -137,7 +138,7 @@
 						
 						//now that we have all the info we need for our email (obtained as painfully as possible)
 						//we can actually compose the email and send it using the php mail() function
-						if($is_signed == '1') {
+						if($is_signed == '1' && $email_verify == '1') {
 							 $subject = 'Your Recent CTS Test Results Are Available';
             $message = 'Thank you for using CTS Testing Services. Your recent test results are available for viewing on the CTS Patient Portal. Please see results below.
 ========================
