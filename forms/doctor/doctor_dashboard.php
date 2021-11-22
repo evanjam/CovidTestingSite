@@ -109,10 +109,14 @@
                     $tid = $_POST['tid'];
                     
                     $update_result = "UPDATE `test_sample` SET `result` = '$result', `is_signed` = '$is_signed' WHERE `test_sample`.`TID` = $tid;"; //prepares sql statement to check if username already exists
-                    $result = $connect->query($update_result); //runs $select_user as a query and stores the result in $result
+                    $connect->query($update_result); //runs $update_result as a query
 
                     if($connect->query($update_result) == TRUE) { //evan's query function, up for discussion on which to use
                         echo "Result has been updated";
+						
+						//block of code related to sending email to patient after test submission
+						//first, query the user 
+						
                         header('Refresh: 1;URL=doctor_dashboard.php');
                     } else 
                         echo "insertion failed for some reason. try again.";
