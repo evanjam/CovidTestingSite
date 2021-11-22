@@ -43,14 +43,17 @@
                 Please fill out the following form and press Register to register a new User. Enter permission level as number 0-4.
                 <img src="../../img/employee/nurse_resize.jpg" alt="Nurse">
                 <form method="post" action="../../includes/admin_register.php" name="register">
-                    <input type="text" name="username" placeholder="username" required>
+                    <input type="text" name="username" placeholder="username" pattern="[A-Za-z0-9]+"
+					title="Only letters and numbers" required>
                     <input type="password" id="password" name="password" placeholder="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[#?!@$%^&*-]).{8,}" 
-					title="Password must contain at least one number, one uppercase, lowercase letter and 1 special character, and at least 8 or more characters" required>
-                    <input type="text" name="fname" placeholder="first name" required>
-                    <input type="text" name="lname" placeholder="last name" required>
-                    <input type="text" name="ssn" maxlength="9" placeholder="ssn" pattern="[0-9]+.{8,}"
+					title="Password must contain at least one number, one uppercase, lowercase letter and 1 special character, and at least 8 or more characters" required/>
+                    <input type="text" name="fname" placeholder="first name" pattern="[A-Za-z]+" 
+					title="Only letters" required>
+                    <input type="text" name="lname" placeholder="last name" pattern="[A-Za-z]+"
+					title="Only letters" required>
+                    <input type="text" name="ssn" maxlength="9" placeholder="ssn" pattern="[0-9]+"
 					title="SSN must be 9 digits" required>
-					<input type="text" name="email" placeholder="email" required>
+					<input type="email" placeholder="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                     <input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
                     <input type="number" name="permission" placeholder="permission" id="permission" pattern="[0-4]" required />
                     <input type="submit" name="register" value="Register">
