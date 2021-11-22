@@ -112,7 +112,7 @@
                     $connect->query($update_result); //runs $update_result as a query
 
                     if($connect->query($update_result) == TRUE) { //evan's query function, up for discussion on which to use
-                        echo "Result has been updated. Result email sent to email on file. *Email is only sent if the patient's email has been verified!*";
+                        echo "Result has been updated. ";
 						
 						//block of code related to sending email to patient after test submission
 						//first, query the user associated with the test that was signed
@@ -155,8 +155,13 @@ Thank you.
             $headers = 'From:cts.sendmail2021@gmail.com' . "\r\n";
             mail($email, $subject, $message, $headers); //function to send email
 						}
+						//some echo statements to indicate whether the result email was sent to the patient
+						if($email_verify == '1'){
+							echo 'Result email sent to patient\'s email address on file';
+						} else 
+							echo 'Patient has not yet verified email address. No email sent.';
 						//lastly, refresh the doctor dashboard after a test sample is signed successfully (end email block)
-                        header('Refresh: 2;URL=doctor_dashboard.php'); 
+                        header('Refresh: 3;URL=doctor_dashboard.php'); 
 						
                     } else 
                         echo "insertion failed for some reason. try again.";
