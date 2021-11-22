@@ -115,9 +115,48 @@
                         echo "Result has been updated";
 						
 						//block of code related to sending email to patient after test submission
-						//first, query the user 
+						//first, query the user associated with the test that was signed
+						$select_test = "SELECT * from test_sample WHERE TID = $tid;"; //separate the test row that we just edited
+						$result = $connect->query($select_test);
+						$temp_row = $result->fetch_array(MYSQLI_ASSOC);
+						$submitted_test_UID = $temp_row['UID'];
+						$select_UID = "SELECT * from user_profile WHERE UID = $submitted_test_UID;";
+						$result = $connect->query($select_UID);
+						$temp_row2 = $result->fetch_array(MYSQLI_ASSOC);
+						$username = $temp_row2['username'];
+						$email = $temp_row2['email'];
+						$submitted_test_result = $temp_row['result'];
+						if($submitted_test_result == '0') {
+							$email_result = 'Not Examined';
+						} else if($submitted_test_result == '1') {
+							$email_result = 'Negative';
+						} else if($submitted_test_result == '2') {
+							$email_result = 'Positive';
+						}
+						$submitted_test_date = $temp_row['test_date'];
 						
-                        header('Refresh: 1;URL=doctor_dashboard.php');
+						//now that we have all the info we need for our email (obtained as painfully as possible)
+						//we can actually compose the email and send it using the php mail() function
+						if($is_signed == '1') {
+							 $subject = 'Your Recent CTS Test Results Are Available';
+            $message = '
+Thank you for using CTS Testing Services. Your recent test results are available for viewing on the CTS Patient Portal. Please see results below.
+========================
+Username: ' . $username . '
+Test ID: ' . $tid . '
+Test Date: ' . $submitted_test_date . '
+Test Result: ' . $email_result . '
+========================
+Please click the following link to log in to your patient portal.
+http://localhost/CovidTestingSite/
+
+Thank you.
+            ';
+            $headers = 'From:cts.sendmail2021@gmail.com' . "\r\n";
+            mail($email, $subject, $message, $headers); //function to send email
+						}
+						//lastly, refresh the doctor dashboard after a test sample is signed successfully
+                        //header('Refresh: 1;URL=doctor_dashboard.php'); 
                     } else 
                         echo "insertion failed for some reason. try again.";
                     $connect->close();
