@@ -112,7 +112,7 @@
                     $connect->query($update_result); //runs $update_result as a query
 
                     if($connect->query($update_result) == TRUE) { //evan's query function, up for discussion on which to use
-                        echo "Result has been updated";
+                        echo "Result has been updated. Result email sent to email on file.";
 						
 						//block of code related to sending email to patient after test submission
 						//first, query the user associated with the test that was signed
@@ -139,8 +139,7 @@
 						//we can actually compose the email and send it using the php mail() function
 						if($is_signed == '1') {
 							 $subject = 'Your Recent CTS Test Results Are Available';
-            $message = '
-Thank you for using CTS Testing Services. Your recent test results are available for viewing on the CTS Patient Portal. Please see results below.
+            $message = 'Thank you for using CTS Testing Services. Your recent test results are available for viewing on the CTS Patient Portal. Please see results below.
 ========================
 Username: ' . $username . '
 Test ID: ' . $tid . '
@@ -155,8 +154,9 @@ Thank you.
             $headers = 'From:cts.sendmail2021@gmail.com' . "\r\n";
             mail($email, $subject, $message, $headers); //function to send email
 						}
-						//lastly, refresh the doctor dashboard after a test sample is signed successfully
-                        //header('Refresh: 1;URL=doctor_dashboard.php'); 
+						//lastly, refresh the doctor dashboard after a test sample is signed successfully (end email block)
+                        header('Refresh: 2;URL=doctor_dashboard.php'); 
+						
                     } else 
                         echo "insertion failed for some reason. try again.";
                     $connect->close();
