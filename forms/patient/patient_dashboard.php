@@ -5,6 +5,8 @@
 	if (isset($_SESSION['logged']) && ($t - $_SESSION['logged'] > 5)) 
 	{
     session_destroy();
+    session_unset();
+	header('Refresh: 0.01;URL=../../index2.php');
 	}
 	else
 	{
