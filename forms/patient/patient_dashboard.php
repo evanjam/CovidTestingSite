@@ -2,11 +2,11 @@
     session_start();
 	
 	$t=time();
-	if (isset($_SESSION['logged']) && ($t - $_SESSION['logged'] > 10)) 
+	if (isset($_SESSION['logged']) && ($t - $_SESSION['logged'] > 5)) 
 	{
     session_destroy();
     session_unset();
-    header('Refresh: 0.01;URL=../../index.php');
+	header('Refresh: 0.01;URL=../../index2.php');
 	}
 	else
 	{
