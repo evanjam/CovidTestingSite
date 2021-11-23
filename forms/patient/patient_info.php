@@ -2,10 +2,9 @@
     session_start();
 	
 	$t=time();
-	if (isset($_SESSION['logged']) && ($t - $_SESSION['logged'] > 5)) 
+	if (isset($_SESSION['logged']) && ($t - $_SESSION['logged'] > 900)) 
 	{
     session_destroy();
-    session_unset();
 	header('Refresh: 0.01;URL=../../sessioninactivitytimeout.php');
 	}
 	else
