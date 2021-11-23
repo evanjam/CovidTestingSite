@@ -5,7 +5,7 @@
 	if (isset($_SESSION['logged']) && ($t - $_SESSION['logged'] > 5)) 
 	{
     session_destroy();
-	header('Refresh: 0.01;URL=../../index2.php');
+	header('Refresh: 0.01;URL=../../sessioninactivitytimeout.php');
 	}
 	else
 	{

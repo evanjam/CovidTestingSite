@@ -6,7 +6,7 @@
 	{
     session_destroy();
     session_unset();
-	header('Refresh: 0.01;URL=../../index2.php');
+	header('Refresh: 0.01;URL=../../sessioninactivitytimeout.php');
 	}
 	else
 	{
