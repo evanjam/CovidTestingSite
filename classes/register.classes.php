@@ -26,6 +26,8 @@ Thank you.
             ';
             $headers = 'From:cts.sendmail2021@gmail.com' . "\r\n";
             mail($email, $subject, $message, $headers);
+
+
         }
     }
 
