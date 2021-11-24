@@ -22,7 +22,7 @@ if(isset($_POST["register"]))
 
     $registerUser->signupUser();
 
-    header("location: ../index.php?error=none'");
+    header('Refresh: 1;URL=../forms/employee/employee_dashboard.php?error=none');
 
 
 
