@@ -20,7 +20,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient dashboard</title>
-    <link href="../../css/dashboard.css" rel="stylesheet" type="text/css">
+    <link href="../../css/dashboards.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	
@@ -42,36 +42,37 @@
 			{
 				if($row[3] != null)
 				{
-					print "First Name: $row[3]";
+					print "<p><b>First Name: $row[3]</b></p>";
+					//print "First Name: $row[3]";
 				}
-				echo '<br>';
 				if($row[4] != null)
 				{
-					print "Last Name: $row[4]";
+					print "<p><b>Last Name: $row[4]</b></p>";
 				}
-				echo '<br>';
 				if($row[5] != null)
 				{
-					print "Date of birth: $row[5]";
+					$getAge = explode("-", $row[5]);
+					$age = (date("md", date("U", mktime(0, 0, 0, $getAge[1], $getAge[2], $getAge[0]))) > date("md")
+					? ((date("Y") - $getAge[0]) - 1)
+					: (date("Y") - $getAge[0]));
+					print "<p><b>Age: $age</b></p>";
 				}
-				echo '<br>';
 				if($row[6] != null)
 				{
-					print "Social Security: $row[6]";
+					$part = substr($row[6], -4);
+					print "<p><b>Social Security: xxx-xx-$part</b></p>";
 				}
-				echo '<br>';
 				if($row[8] != null)
 				{
-					print "Email Address: $row[8]";
+					print "<p><b>Email Address: $row[8]</b></p>";
 				}
-				echo '<br>';
 				if($row[10] != null)
 				{
 					if($row[10] == '0')
 						$temp = 'Not Verified';
 					else
 						$temp = "Verified";
-					print "Email Verified: " . $temp;
+					print "<p><b>Email Verified: $temp</b></p>";
 				}
 			}
 		}
@@ -79,6 +80,12 @@
 		echo '<div><a href="patient_dashboard.php">Home</a></div>'
 	?>
 
+  <footer>
+        <div>
+            <p>Covid Testing Site 2021</p>
+        </div>
+    </footer>
+	
 </body>
 </html>
 
