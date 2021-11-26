@@ -21,7 +21,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Registration Form</title>
-    <link href="../../css/dashboard.css" rel="stylesheet" type="text/css">
+    <link href="../../css/register.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <?php
@@ -43,31 +43,39 @@
         if($_SESSION['permission'] == 4){
             echo'<div class="header">
                 <h1>Admin/User Registration Form</h1>
-            
+				<p><a href="admin_dashboard.php">Home</a></p>
             </div>
-
-            <div><a href="admin_dashboard.php">Home</a></div>
-            <br>
-
+			<br><br>
             <div class="employee_register">
-                <h1>User Registration Form</h1>
-                Please fill out the following form and press Register to register a new User. Enter permission level as number 0-4.
-                <img src="../../img/employee/nurse_resize.jpg" alt="Nurse">
+				<br><br>
+                <p>Please fill out the following form and press Register to register a new User. Enter permission level as number 0-4.</p>
                 <form method="post" action="../../includes/admin_register.php" name="register">
-                    <input type="text" name="username" placeholder="username" pattern="[A-Za-z0-9]+"
+				    <label for="username"><b>Username</b></label>
+                    <input type="text" name="username" placeholder="Enter username" pattern="[A-Za-z0-9]+"
 					title="Only letters and numbers" required>
-                    <input type="password" id="password" name="password" placeholder="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[#?!@$%^&*-]).{8,}" 
+					<label for="password"><b>Password</b></label>
+                    <input type="password" id="password" name="password" placeholder="Enter password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[#?!@$%^&*-]).{8,}" 
 					title="Password must contain at least one number, one uppercase, lowercase letter and 1 special character, and at least 8 or more characters" required/>
-                    <input type="text" name="fname" placeholder="first name" pattern="[A-Za-z]+" 
+                     <label for="fname"><b>First name</b></label>
+					<input type="text" name="fname" placeholder="Enter first name" pattern="[A-Za-z]+" 
 					title="Only letters" required>
-                    <input type="text" name="lname" placeholder="last name" pattern="[A-Za-z]+"
+                     <label for="lname"><b>Last name</b></label>
+					<input type="text" name="lname" placeholder="Enter last name" pattern="[A-Za-z]+"
 					title="Only letters" required>
-                    <input type="text" name="ssn" maxlength="9" placeholder="ssn" pattern="[0-9]+"
+                     <label for="ssn"><b>SSN</b></label>
+					<input type="text" name="ssn" maxlength="9" placeholder="Enter SSN" pattern="[0-9]+"
 					title="SSN must be 9 digits" required>
-					<input type="email" placeholder="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-                    <input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required>
-                    <input type="number" name="permission" placeholder="permission" id="permission" max="4" required>
-                    <input type="submit" name="register" value="Register">
+					 <label for="email"><b>Email</b></label>
+					<input type="email" placeholder="Enter email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                     <label for="date"><b>Date</b></label>
+					<input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required>
+                     <label for="permission"><b>Permission</b></label>
+					<input type="number" name="permission" placeholder="Enter permission level" id="permission" min="0" max="4" required>
+                    <input type="submit" name="register" value="Register"  class="registerbtn">
+					
+					<div class="container covidback">
+						<p>Covid 2021 Testing Site</p>
+					</div>
                 </form>
             </div>';
         }
