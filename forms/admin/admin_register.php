@@ -72,10 +72,6 @@
                      <label for="permission"><b>Permission</b></label>
 					<input type="number" name="permission" placeholder="Enter permission level" id="permission" min="0" max="4" required>
                     <input type="submit" name="register" value="Register"  class="registerbtn">
-					
-					<div class="container covidback">
-						<p>Covid 2021 Testing Site</p>
-					</div>
                 </form>
             </div>';
         }
@@ -88,7 +84,11 @@
         header('Refresh: 1;URL=../../index.php');
     }
 ?>
-
+    <footer>
+        <div>
+            <p>Covid Testing Site 2021</p>
+        </div>
+    </footer>
 
 </body>
 </html>
