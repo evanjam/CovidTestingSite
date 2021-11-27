@@ -44,35 +44,48 @@ try{
 					<meta http-equiv="X-UA-Compatible" content="IE=edge">
 					<meta name="viewport" content="width=device-width, initial-scale=1.0">
 					<title>Patient Registration Form</title>
-					<link href="../css/dashboard.css" rel="stylesheet" type="text/css">
+					<link href="../css/register.css" rel="stylesheet" type="text/css">
 				</head>
 				<body>
 				<div class="header">
-				<h1>Admin/User Registration Form</h1>
-			
+                <h1>Admin/User Registration Form</h1>
+				<p><a href="admin_dashboard.php">Home</a></p>
 				</div>
-
-				<div><a href="../forms/admin/admin_dashboard.php">Home</a></div>
-				<br>
-
+				<br><br>
 				<div class="employee_register">
-					<h1>User Registration Form</h1>
-					Please fill out the following form and press Register to register a new User. Enter permission level as number 0-4.
-					<img src="../img/employee/nurse_resize.jpg" alt="Nurse">
-					<form method="post" action="admin_register.php" name="register">
-						<input type="text" name="username" placeholder="username" required>
-						<input type="password" name="password" placeholder="password" required>
-						<input type="text" name="fname" placeholder="first name" required>
-						<input type="text" name="lname" placeholder="last name" required>
-						<input type="text" name="ssn" placeholder="ssn" pattern="[0-9]+" required>
-						<input type="text" name="email" placeholder="email" required>
-						<input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
-						<input type="number" name="permission" placeholder="permission" id="permission" pattern="[0-4]" required />
-						<input type="submit" name="register" value="Register">
-					</form>
-					<hr>
-					<div>Username already exists.</div>
+				<br><br>
+                <p>Please fill out the following form and press Register to register a new User. Enter permission level as number 0-4.</p>
+				<p><b>Username already exists.</b><p>
+                <form method="post" action="admin_register.php" name="register">
+				    <label for="username"><b>Username</b></label>
+                    <input type="text" name="username" placeholder="Enter username" pattern="[A-Za-z0-9]+"
+					title="Only letters and numbers" required>
+					<label for="password"><b>Password</b></label>
+                    <input type="password" id="password" name="password" placeholder="Enter password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[#?!@$%^&*-]).{8,}" 
+					title="Password must contain at least one number, one uppercase, lowercase letter and 1 special character, and at least 8 or more characters" required/>
+                     <label for="fname"><b>First name</b></label>
+					<input type="text" name="fname" placeholder="Enter first name" pattern="[A-Za-z]+" 
+					title="Only letters" required>
+                     <label for="lname"><b>Last name</b></label>
+					<input type="text" name="lname" placeholder="Enter last name" pattern="[A-Za-z]+"
+					title="Only letters" required>
+                     <label for="ssn"><b>SSN</b></label>
+					<input type="text" name="ssn" maxlength="9" placeholder="Enter SSN" pattern="[0-9]+"
+					title="SSN must be 9 digits" required>
+					 <label for="email"><b>Email</b></label>
+					<input type="email" placeholder="Enter email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                     <label for="date"><b>Date</b></label>
+					<input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required>
+                     <label for="permission"><b>Permission</b></label>
+					<input type="number" name="permission" placeholder="Enter permission level" id="permission" min="0" max="4" required>
+                    <input type="submit" name="register" value="Register"  class="registerbtn">
+                </form>
 				</div>
+					<footer>
+						<div>
+							<p>Covid Testing Site 2021</p>
+						</div>
+					</footer>
 				</body>
 				</html>';
 		
@@ -94,35 +107,48 @@ try{
 					<meta http-equiv="X-UA-Compatible" content="IE=edge">
 					<meta name="viewport" content="width=device-width, initial-scale=1.0">
 					<title>Patient Registration Form</title>
-					<link href="../css/dashboard.css" rel="stylesheet" type="text/css">
+					<link href="../css/register.css" rel="stylesheet" type="text/css">
 				</head>
 				<body>
 				<div class="header">
-				<h1>Admin/User Registration Form</h1>
-			
+                <h1>Admin/User Registration Form</h1>
+				<p><a href="admin_dashboard.php">Home</a></p>
 				</div>
-
-				<div><a href="../forms/admin/admin_dashboard.php">Home</a></div>
-				<br>
-
+				<br><br>
 				<div class="employee_register">
-					<h1>User Registration Form</h1>
-					Please fill out the following form and press Register to register a new User. Enter permission level as number 0-4.
-					<img src="../img/employee/nurse_resize.jpg" alt="Nurse">
-					<form method="post" action="admin_register.php" name="register">
-						<input type="text" name="username" placeholder="username" required>
-						<input type="password" name="password" placeholder="password" required>
-						<input type="text" name="fname" placeholder="first name" required>
-						<input type="text" name="lname" placeholder="last name" required>
-						<input type="text" name="ssn" placeholder="ssn" pattern="[0-9]+" required>
-						<input type="text" name="email" placeholder="email" required>
-						<input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
-						<input type="number" name="permission" placeholder="permission" id="permission" pattern="[0-4]" required />
-						<input type="submit" name="register" value="Register">
-					</form>
-					<hr>
-					<div>New record created.<br>Email Verification Link Sent.</div>
+				<br><br>
+                <p>Please fill out the following form and press Register to register a new User. Enter permission level as number 0-4.</p>
+				<p><b>New record created.<br>Email Verification Link Sent.</b><p>
+                <form method="post" action="admin_register.php" name="register">
+				    <label for="username"><b>Username</b></label>
+                    <input type="text" name="username" placeholder="Enter username" pattern="[A-Za-z0-9]+"
+					title="Only letters and numbers" required>
+					<label for="password"><b>Password</b></label>
+                    <input type="password" id="password" name="password" placeholder="Enter password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[#?!@$%^&*-]).{8,}" 
+					title="Password must contain at least one number, one uppercase, lowercase letter and 1 special character, and at least 8 or more characters" required/>
+                     <label for="fname"><b>First name</b></label>
+					<input type="text" name="fname" placeholder="Enter first name" pattern="[A-Za-z]+" 
+					title="Only letters" required>
+                     <label for="lname"><b>Last name</b></label>
+					<input type="text" name="lname" placeholder="Enter last name" pattern="[A-Za-z]+"
+					title="Only letters" required>
+                     <label for="ssn"><b>SSN</b></label>
+					<input type="text" name="ssn" maxlength="9" placeholder="Enter SSN" pattern="[0-9]+"
+					title="SSN must be 9 digits" required>
+					 <label for="email"><b>Email</b></label>
+					<input type="email" placeholder="Enter email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                     <label for="date"><b>Date</b></label>
+					<input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required>
+                     <label for="permission"><b>Permission</b></label>
+					<input type="number" name="permission" placeholder="Enter permission level" id="permission" min="0" max="4" required>
+                    <input type="submit" name="register" value="Register"  class="registerbtn">
+                </form>
 				</div>
+					<footer>
+						<div>
+							<p>Covid Testing Site 2021</p>
+						</div>
+					</footer>
 				</body>
 				</html>';
 				
@@ -153,35 +179,48 @@ Thank you.
 					<meta http-equiv="X-UA-Compatible" content="IE=edge">
 					<meta name="viewport" content="width=device-width, initial-scale=1.0">
 					<title>Patient Registration Form</title>
-					<link href="../css/dashboard.css" rel="stylesheet" type="text/css">
+					<link href="../css/register.css" rel="stylesheet" type="text/css">
 				</head>
 				<body>
 				<div class="header">
-				<h1>Admin/User Registration Form</h1>
-			
+                <h1>Admin/User Registration Form</h1>
+				<p><a href="admin_dashboard.php">Home</a></p>
 				</div>
-
-				<div><a href="../forms/admin/admin_dashboard.php">Home</a></div>
-				<br>
-
+				<br><br>
 				<div class="employee_register">
-					<h1>User Registration Form</h1>
-					Please fill out the following form and press Register to register a new User. Enter permission level as number 0-4.
-					<img src="../img/employee/nurse_resize.jpg" alt="Nurse">
-					<form method="post" action="admin_register.php" name="register">
-						<input type="text" name="username" placeholder="username" required>
-						<input type="password" name="password" placeholder="password" required>
-						<input type="text" name="fname" placeholder="first name" required>
-						<input type="text" name="lname" placeholder="last name" required>
-						<input type="text" name="ssn" placeholder="ssn" pattern="[0-9]+" required>
-						<input type="text" name="email" placeholder="email" required>
-						<input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required />
-						<input type="number" name="permission" placeholder="permission" id="permission" pattern="[0-4]" required />
-						<input type="submit" name="register" value="Register">
-					</form>
-					<hr>
-					<div>Insertion failed. Try again.</div>
+				<br><br>
+                <p>Please fill out the following form and press Register to register a new User. Enter permission level as number 0-4.</p>
+				<p><b>Insertion failed. Try again.</b><p>
+                <form method="post" action="admin_register.php" name="register">
+				    <label for="username"><b>Username</b></label>
+                    <input type="text" name="username" placeholder="Enter username" pattern="[A-Za-z0-9]+"
+					title="Only letters and numbers" required>
+					<label for="password"><b>Password</b></label>
+                    <input type="password" id="password" name="password" placeholder="Enter password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[#?!@$%^&*-]).{8,}" 
+					title="Password must contain at least one number, one uppercase, lowercase letter and 1 special character, and at least 8 or more characters" required/>
+                     <label for="fname"><b>First name</b></label>
+					<input type="text" name="fname" placeholder="Enter first name" pattern="[A-Za-z]+" 
+					title="Only letters" required>
+                     <label for="lname"><b>Last name</b></label>
+					<input type="text" name="lname" placeholder="Enter last name" pattern="[A-Za-z]+"
+					title="Only letters" required>
+                     <label for="ssn"><b>SSN</b></label>
+					<input type="text" name="ssn" maxlength="9" placeholder="Enter SSN" pattern="[0-9]+"
+					title="SSN must be 9 digits" required>
+					 <label for="email"><b>Email</b></label>
+					<input type="email" placeholder="Enter email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                     <label for="date"><b>Date</b></label>
+					<input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required>
+                     <label for="permission"><b>Permission</b></label>
+					<input type="number" name="permission" placeholder="Enter permission level" id="permission" min="0" max="4" required>
+                    <input type="submit" name="register" value="Register"  class="registerbtn">
+                </form>
 				</div>
+					<footer>
+						<div>
+							<p>Covid Testing Site 2021</p>
+						</div>
+					</footer>
 				</body>
 				</html>';
 				header('Refresh: 2;URL=../forms/admin/admin_register.php'); //wait 2 seconds and redirect to admin_register form
