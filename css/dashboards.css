@@ -1,3 +1,10 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 16px;
+  }
+
 footer{
     position: fixed;
     left: 0;
