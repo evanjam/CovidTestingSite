@@ -20,7 +20,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient dashboard</title>
-    <link href="../../css/dashboard.css" rel="stylesheet" type="text/css">
+    <link href="../../css/dashboards.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <?php
@@ -65,16 +65,18 @@
 	echo'<div><a href="patient_info.php">Personal Info</a></div>';
 	echo'<br>';
     //Display the log out button
-    echo'<div><a href="../../index.php">Log Out</a></div>
-    <br>
-    <div class="getTests">
-    <h1>Test Results </h1>
-</div>
-    <table class="desiredResults" id="desiredResults">
-        <tr>
-            <th>Test Date</th>
-            <th>Result</th>
-        <tr>';
+    echo'<div><a href="../../index.php">Log Out</a></div>';
+	 echo'<br>';
+    echo'<div class="getTests">';
+        echo'<h1 class="labheading">Test Results</h1>';
+
+    echo'</div>';
+
+    echo'<table class="desiredResults" id="desiredResults">';
+        echo'<tr>';
+            echo'<th>Test Date</th>
+            <th>Result</th>';
+        echo'<tr>';
 
                 include('../../includes/connect.php'); 
 
@@ -118,5 +120,10 @@
         ?>
 
     </table>
+	<footer>
+        <div>
+            <p>Covid Testing Site 2021</p>
+        </div>
+    </footer>
 </body>
 </html>
