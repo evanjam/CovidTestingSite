@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 16px;
+  }
+
+.header{
+    height: 100px;
+    width: 100%;
+    background-color: #466692;
+}
+.header h1{
+    font-size: xx-large;
+    color: white;
+}
+
+  .getTests {
+    width: 300px;
+    height: 200px;
+    background-color: #ffffff;
+    margin: 100px auto;
+}
+.getTests h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 30px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+.getTests form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.desiredResults{
+    margin: auto;
+    width: 60%;
+}
+
+.desiredResults, table{
+    border-style: solid;
+    border: 2px, black;
+}
+.desiredResults form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+   /* margin-top: 20px; */
+    background-color: #3274d6;
+    border: 2px;
+    border-color: black;
+    border-width: 2px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+.desiredResults form input[type="submit"]:hover {
+  background-color: #2868c7;
+    transition: background-color 0.2s;
+}
+
+table, tr{
+    border: 2px, black;
+    padding: 2px;
+}
+
+  .employee_register {
+	text-align: center;
+    width: 300px;
+    height: 200px;
+    background-color: #ffffff;
+    margin: 100px auto;
+}
+.employee_register h1 {
+    color: #5b6574;
+    font-size: 30px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+.employee_register form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
