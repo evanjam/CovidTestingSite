@@ -51,11 +51,7 @@
 				}
 				if($row[5] != null)
 				{
-					$getAge = explode("-", $row[5]);
-					$age = (date("md", date("U", mktime(0, 0, 0, $getAge[1], $getAge[2], $getAge[0]))) > date("md")
-					? ((date("Y") - $getAge[0]) - 1)
-					: (date("Y") - $getAge[0]));
-					print "<p><b>Age: $age</b></p>";
+					print "<p><b>Date of birth: $row[5]</b></p>";
 				}
 				if($row[6] != null)
 				{
