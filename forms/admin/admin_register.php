@@ -42,8 +42,7 @@
     try{
         if($_SESSION['permission'] == 4){
             echo'<div class="header">
-                <h1>Admin/User Registration Form</h1>
-				<p><a href="admin_dashboard.php">Home</a></p>
+                <h1>Admin/User Registration Form<a href="admin_dashboard.php">Home</a></h1>
             </div>
 			<br><br>
             <div class="employee_register">
