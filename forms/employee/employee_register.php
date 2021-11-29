@@ -42,11 +42,14 @@
     if($_SESSION['permission'] == 1){ 
 	echo'
 	<div class="header">
-                <h1>Employee/Patient Registration Form<a href="employee_dashboard.php">Home</a></h1>
+                <h1>Employee/Patient Registration Form</h1>
             </div>
+
 			<br><br>
-            <div class="employee_register">
+            <div class="employee_register"> 
+
 				<br><br>
+                <a href="employee_dashboard.php">Home</a>
                 <p>Please fill out the following form and press Register to register a new Patient</p>
                 <form method="post" action="../../classes/UserRegister-inc.php" name="register">
 				    <label for="username"><b>Username</b></label>

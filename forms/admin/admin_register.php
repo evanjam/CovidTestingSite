@@ -42,11 +42,12 @@
     try{
         if($_SESSION['permission'] == 4){
             echo'<div class="header">
-                <h1>Admin/User Registration Form<a href="admin_dashboard.php">Home</a></h1>
+                <h1>Admin/User Registration Form</h1>
             </div>
 			<br><br>
             <div class="employee_register">
 				<br><br>
+                <a href="admin_dashboard.php">Home</a>
                 <p>Please fill out the following form and press Register to register a new User. Enter permission level as number 0-4.</p>
                 <form method="post" action="../../includes/admin_register.php" name="register">
 				    <label for="username"><b>Username</b></label>

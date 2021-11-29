@@ -81,14 +81,6 @@ hr {
   opacity: 1;
 }
 
-/* Add a blue text color to links */
-a {
-  color: dodgerblue;
-  padding-left: 60%;
-  text-align: right;
-  font-size: 20px;
-}
-
 /* Set a grey background color and center the text of the "sign in" section */
 .covidback {
   background-color: #f1f1f1;
@@ -103,4 +95,10 @@ footer{
   color: #ffffff;
   text-align: center;
   background-color: #466692;
+}
+
+.registerLink{
+  color: dodgerblue;
+  text-align: left;
+  font-size: 20px;
 }
