@@ -21,7 +21,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin/Lab user dashboard</title>
-    <link href="../../css/dashboard.css" rel="stylesheet" type="text/css">
+    <link href="../../css/dashboards.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -53,10 +53,13 @@
 
 
     <div class="getTests">
-        <h1>Enter date for tests </h1>
+        <h1 class="labHeading">Enter date for tests </h1>
         <form method="post" action="" name="labtests">
+            <div class="labHeading">
             <input type="date" name="date"  placeholder="Desired date" id="date" required />
             <input type="submit" name="labtests" value="Search">
+            </div>
+            <br></br>
         </form>
     </div>
 
@@ -87,8 +90,20 @@
                             echo "<td>{$row[1]}</td>";
                             echo "<td>{$row[2]}</td>";
                             echo "<td>{$row[3]}</td>";
-                            echo "<td>{$row[4]}</td>";
-                            echo "<td>{$row[5]}</td>";
+                            
+                            if($row[4] == 0){
+                                echo "<td>No Result</td>";
+                            }else if($row[4] == 1){
+                                echo "<td>Negative</td>";
+                            }else if($row[4] == 2){
+                                echo "<td>Positive</td>";
+                            }
+
+                            if($row[5] == 0){
+                                echo "<td>Not Signed</td>";
+                            }else if($row[5] == 1){
+                                echo "<td>Signed</td>";
+                            }
                             echo "<td>TID = {$row[0]}</td>";
                             echo '</tr>';
                             echo '<tr>
@@ -98,12 +113,39 @@
                             </tr>';
                         }
                         //print out the form
-                        echo '<tr><td><br></td></tr>';
+                        echo '
+                        <tr><td><br></br></td></tr>
+                        <tr><td>
+                        </td></tr>
+                        <tr>
+                        <td>Update Test: </td>
+                        <td>(All fields are required)</td>
+                        <td>Result</td>
+                        <td>Corresponding TID</td>
+                        <td></td>
+                        </tr>';
+
+                        echo '
+                        <tr><td>
+                        </td></tr>
+                        <tr>
+                        <td></td>
+                        <td></td>
+                        <td><hr></td>
+                        <td><hr></td>
+                        <td></td>
+                        </tr>';
+
                         echo '<tr>';
-                        echo '<td>Update Test: </td>';
-                        echo '<td>(All fields are required)</td>';
+                        echo '<td></td>';
+                        echo '<td></td>';
                         echo '<form action="lab_admin_dashboard.php" method="post">';
-                        echo '<td><input type="number" name="result" placeholder="Enter Result" id="result" pattern="[0-1]"/></td>';
+                        echo '<td><input type="radio" id="noResult" name="result" value="0">
+                        <label for="noResult">No Result</label><br>
+                        <input type="radio" id="positive" name="result" value="2">
+                        <label for="positive">Positive</label><br>
+                        <input type="radio" id="negative" name="result" value="1">
+                        <label for="negative">Negative</label></td>';
                         echo '<td><input type="number" name="tid" placeholder="Enter TID" id="tid" pattern="[0-1]"/></td>';
                         echo '<td><input type="submit" name="submit" value="submit"></td>';
                         echo '</form>';
@@ -138,5 +180,11 @@
         ?>
 
     </table>
+
+    <footer>
+        <div>
+            <p>Covid Testing Site 2021</p>
+        </div>
+    </footer>
 </body>
 </html>
