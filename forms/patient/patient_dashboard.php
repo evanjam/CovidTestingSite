@@ -68,7 +68,7 @@
     echo'<div><a href="../../index.php">Log Out</a></div>';
 	 echo'<br>';
     echo'<div class="getTests">';
-        echo'<h1 class="labheading">Test Results</h1>';
+        echo'<h1 class="labHeading">Test Results</h1>';
 
     echo'</div>';
 
