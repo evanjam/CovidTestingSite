@@ -158,9 +158,7 @@
                     $result = $_POST['result']; //saves variables from the user's input
                     $is_signed = $_POST['is_signed'];
                     $tid = $_POST['tid'];
-                    echo "$result";
-                    echo "$is_signed";
-                    echo "$tid";
+                    
                     $update_result = "UPDATE `test_sample` SET `result` = '$result', `is_signed` = '$is_signed' WHERE `test_sample`.`TID` = $tid;"; //prepares sql statement to check if username already exists
                     $connect->query($update_result); //runs $update_result as a query
 
