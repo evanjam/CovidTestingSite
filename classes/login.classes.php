@@ -17,15 +17,15 @@ class Login{
             <body>
 
                 <div class="login">
-                    <h1>login</h1>
+                    <h1>CTS Testing</h1>
                     <form method="post" action="includes/login.php" name="login">
                         <input type="text" name="username" pattern="[a-zA-Z0-9]+" placeholder="login" id="username" required />
                         <input type="password" name="password" placeholder="password" required>
                         <input type="submit" name="login" value="login" disabled>
                     </form>
                     <hr>
-                    <div>Credentials match, Logging in...</div>
-                    <div>(Log created)</div>
+                    <div class="message">Credentials match, Logging in..</div>
+                    <div class="message">(Log created)</div>
                     <hr>
                 </div>
 
@@ -48,15 +48,15 @@ class Login{
         <body>
 
             <div class="login">
-                <h1>login</h1>
+                <h1>CTS Testing</h1>
                 <form method="post" action="includes/login.php" name="login">
                     <input type="text" name="username" pattern="[a-zA-Z0-9]+" placeholder="login" id="username" required />
                     <input type="password" name="password" placeholder="password" required>
                     <input type="submit" name="login" value="login" disabled>
                 </form>
                 <hr>
-                <div>Credentials do not match, Try again</div> <!--password verify fails -->
-                <div>(Log created)</div>
+                <div class="message">Credentials do not match, Try again</div> <!--password verify fails -->
+                <div class="message">(Log created)</div>
                 <hr>
             </div>
 
@@ -79,15 +79,15 @@ class Login{
             <body>
 
                 <div class="login">
-                    <h1>login</h1>
+                    <h1>CTS Testing</h1>
                     <form method="post" action="includes/login.php" name="login">
                         <input type="text" name="username" pattern="[a-zA-Z0-9]+" placeholder="login" id="username" required />
                         <input type="password" name="password" placeholder="password" required>
                         <input type="submit" name="login" value="login" disabled>
                     </form>
                     <hr>
-                    <div>Credentials do not match, Try again</div> <!--user does not exist-->
-                    <div>(No log created)</div>
+                    <div class="message">Credentials do not match, Try again</div> <!--user does not exist-->
+                    <div class="message">(No log created)</div>
                     <hr>
                 </div>
 
