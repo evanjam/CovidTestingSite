@@ -47,7 +47,9 @@
 			<br><br>
             <div class="employee_register">
 				<br><br>
-                <a href="admin_dashboard.php">Home</a>
+                <ul>
+                <li><a href="admin_dashboard.php">Home</a></li>
+                </ul>
                 <p>Please fill out the following form and press Register to register a new User. Enter permission level as number 0-4.</p>
                 <form method="post" action="../../includes/admin_register.php" name="register">
 				    <label for="username"><b>Username</b></label>

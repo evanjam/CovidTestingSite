@@ -48,7 +48,9 @@
             
             </div>
             
-            <div><a href="admin_dashboard.php">Home</a></div>
+            <ul>
+            <li><a href="admin_dashboard.php">Home</a></li>
+            </ul>
             
 
             <div class="form">
