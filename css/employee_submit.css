@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 16px;
+  }
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    background-color: #466692;
+}
+
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    color: white;
+    height: 100px;
+    width: 100%;
+    background-color: #466692;
+}
+
+.header h1{
+    font-size: xx-large;
+    text-align: left;
+    padding: 10px;
+    padding-left: 30px;
+    color: white;
+}
+
+body{
+    padding:30px;
+    padding-top: 120px;
+}
+
+.bordertest{
+    position: fixed;
+    left:0;
+    width: 200px;
+    border-width:2px;
+    padding: 3px;
+    margin: 5px;
+    border-style: solid;
+    border-color:#466692;
+    text-align: center;
+}
+
+
+.desiredResults{
+    margin: auto;
+    width: 60%;
+}
+
+.desiredResults, table{
+    border-style: solid;
+    border: 2px, black;
+}
+.desiredResults form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+   /* margin-top: 20px; */
+    background-color: #3274d6;
+    border: 2px;
+    border-color: black;
+    border-width: 2px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+.desiredResults form input[type="submit"]:hover {
+  background-color: #2868c7;
+    transition: background-color 0.2s;
+}
+
+.Heading{
+    width: 100%;
+    text-align: center;
+    color: #5b6574
+}
+
+.labDate{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.docHeading{
+    width: 100%;
+    text-align: center;
+}
+
+.docDate{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.form {
+	text-align: center;
+    width: 320px;
+    height: 200px;
+    background-color: #ffffff;
+    margin: 100px auto;
+}
