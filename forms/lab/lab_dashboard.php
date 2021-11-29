@@ -107,7 +107,9 @@
                             </tr>';
                         }
                         //print out the form
-                        echo '<tr><td>
+                        echo '
+                        <tr><td><br></br></td></tr>
+                        <tr><td>
                         </td></tr>
                         <tr>
                         <td>Update Test: </td>
@@ -117,7 +119,8 @@
                         <td></td>
                         </tr>';
 
-                        echo '<tr><td>
+                        echo '
+                        <tr><td>
                         </td></tr>
                         <tr>
                         <td></td>
