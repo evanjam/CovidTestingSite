@@ -84,3 +84,14 @@ body{
     padding-bottom: 10px;
 }
 
+.docHeading{
+    width: 100%;
+    text-align: center;
+}
+
+.docDate{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 30px;
+}
+

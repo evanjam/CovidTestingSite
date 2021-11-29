@@ -20,7 +20,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor dashboard</title>
-    <link href="../../css/dashboard.css" rel="stylesheet" type="text/css">
+    <link href="../../css/dashboards.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <?php
@@ -53,8 +53,9 @@
 
 
     echo'<div class="getTests">';
-        echo'<h1>Enter date for tests </h1>';
-        echo'<form method="post" action="" name="labtests">';
+        echo'<h1 class="docHeading">Enter date for tests </h1>';
+        echo'<form method="post" action="" name="labtests" class="docDate">';
+        echo'<hr>';
             echo'<input type="date" name="date"  placeholder="Desired date" id="date" required />';
             echo'<input type="submit" name="labtests" value="Search">';
         echo'</form>';
@@ -87,8 +88,19 @@
                             echo "<td>{$row[1]}</td>";
                             echo "<td>{$row[2]}</td>";
                             echo "<td>{$row[3]}</td>";
-                            echo "<td>{$row[4]}</td>";
-                            echo "<td>{$row[5]}</td>";
+                            if($row[4] == 0){
+                                echo "<td>No Result</td>";
+                            }else if($row[4] == 1){
+                                echo "<td>Negative</td>";
+                            }else if($row[4] == 2){
+                                echo "<td>Positive</td>";
+                            }
+
+                            if($row[5] == 0){
+                                echo "<td>Not Signed</td>";
+                            }else if($row[5] == 1){
+                                echo "<td>Signed</td>";
+                            }
                             echo "<td>TID = {$row[0]}</td>";
                             echo '</tr>';
                             echo '<tr>
@@ -102,9 +114,37 @@
                         echo '<tr>';
                         echo '<td>Update Test: </td>';
                         echo '<td>(All fields are required)</td>';
+                        echo '<td>Result</td>';
+                        echo '<td>Sign</td>';
+                        echo '<td>Corresponding TID</td>';
+                        echo '<td></td>';
+                        echo '</tr>';
+
+                        echo '<tr>';
+                        echo '<td></td>';
+                        echo '<td></td>';
+                        echo '<td><hr></td>';
+                        echo '<td><hr></td>';
+                        echo '<td><hr></td>';
+                        echo '<td></td>';
+                        echo '</tr>';
+
+                        echo '<tr>';
+                        echo '<td></td>';
+                        echo '<td></td>';
                         echo '<form action="doctor_dashboard.php" method="post">';
-                        echo '<td><input type="number" name="result" placeholder="Enter Result" id="result" pattern="[0-1]"/></td>';
-                        echo '<td><input type="number" name="is_signed" placeholder="Enter is_signed" id="is_signed" pattern="[0-1]"/></td>';
+                        //echo '<td><input type="number" name="result" placeholder="Enter Result" id="result" pattern="[0-1]"/></td>';
+                        echo'<td><input type="radio" id="noResult" name="result" value="0">
+                            <label for="noResult">No Result</label><br>
+                            <input type="radio" id="positive" name="result" value="2">
+                            <label for="positive">Positive</label><br>
+                            <input type="radio" id="negative" name="result" value="1">
+                            <label for="negative">Negative</label></td>';
+                        //echo '<td><input type="number" name="is_signed" placeholder="Enter is_signed" id="is_signed" pattern="[0-1]"/></td>';
+                        echo '<td><input type="radio" id="is_signed" name="is_signed" value="1">
+                        <label for="is_signed">Sign</label><br>
+                        <input type="radio" id="is_signed" name="is_signed" value="0">
+                        <label for="is_signed">Do not Sign</label><br></td>';
                         echo '<td><input type="number" name="tid" placeholder="Enter TID" id="tid" pattern="[0-1]"/></td>';
                         echo '<td><input type="submit" name="submit" value="submit"></td>';
                         echo '</form>';
@@ -118,13 +158,15 @@
                     $result = $_POST['result']; //saves variables from the user's input
                     $is_signed = $_POST['is_signed'];
                     $tid = $_POST['tid'];
-                    
+                    echo "$result";
+                    echo "$is_signed";
+                    echo "$tid";
                     $update_result = "UPDATE `test_sample` SET `result` = '$result', `is_signed` = '$is_signed' WHERE `test_sample`.`TID` = $tid;"; //prepares sql statement to check if username already exists
                     $connect->query($update_result); //runs $update_result as a query
 
                     if($connect->query($update_result) == TRUE) { //evan's query function, up for discussion on which to use
                         echo "Result has been updated. ";
-						
+					
 						//block of code related to sending email to patient after test submission
 						//first, query the user associated with the test that was signed
 						$select_test = "SELECT * from test_sample WHERE TID = $tid;"; //separate the test row that we just edited
@@ -189,5 +231,10 @@ Thank you.
         ?>
 
     </table>
+    <footer>
+        <div>
+            <p>Covid Testing Site 2021</p>
+        </div>
+    </footer>
 </body>
 </html>

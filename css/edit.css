@@ -4,85 +4,103 @@ body {
     margin: 0;
     padding: 16px;
   }
-
-.header{
-    height: 100px;
-    width: 100%;
-    background-color: #466692;
-}
-.header h1{
-    font-size: xx-large;
-    color: white;
-}
-
-  .getTests {
-    width: 300px;
-    height: 200px;
-    background-color: #ffffff;
-    margin: 100px auto;
-}
-.getTests h1 {
-    text-align: center;
-    color: #5b6574;
-    font-size: 30px;
-    padding: 20px 0 20px 0;
-    border-bottom: 1px solid #dee0e4;
-}
-.getTests form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 20px;
-}
-
-.desiredResults{
-    margin: auto;
-    width: 60%;
-}
-
-.desiredResults, table{
-    border-style: solid;
-    border: 2px, black;
-}
-.desiredResults form input[type="submit"] {
-    width: 100%;
-    padding: 15px;
-   /* margin-top: 20px; */
-    background-color: #3274d6;
-    border: 2px;
-    border-color: black;
-    border-width: 2px;
-    cursor: pointer;
-    font-weight: bold;
-    color: #ffffff;
-    transition: background-color 0.2s;
-}
-.desiredResults form input[type="submit"]:hover {
-  background-color: #2868c7;
-    transition: background-color 0.2s;
-}
-
-table, tr{
-    border: 2px, black;
-    padding: 2px;
-}
-
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Add padding to containers */
   .employee_register {
-	text-align: center;
-    width: 300px;
-    height: 200px;
-    background-color: #ffffff;
-    margin: 100px auto;
-}
-.employee_register h1 {
-    color: #5b6574;
-    font-size: 30px;
-    padding: 20px 0 20px 0;
-    border-bottom: 1px solid #dee0e4;
-}
-.employee_register form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 20px;
-}
+    margin-top: 60px;
+    background-color: white;
+    margin-bottom: 100px;
+  }
+  
+  .header{
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      color: white;
+      height: 120px;
+      background-color: #466692;
+  }
+  
+  .header h1{
+      font-size: xx-large;
+      text-align: left;
+      padding: 10px;
+      padding-left: 20px;
+      color: white;
+  }
+  
+  .header p{
+      font-size: small-caps;
+      text-align: right;
+      padding: 10px;
+      padding-left: 30px;
+      color: white;
+  }
+  
+  /* Full-width input fields */
+  input[type=text], input[type=password], input[type=email], input[type=date], input[type=number] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Overwrite default styles of hr */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+  /* Set a style for the submit button */
+  .registerbtn {
+    background-color: #466692;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    opacity: 0.9;
+    margin-left: 40%;
+    box-shadow: 5px 5px 5px grey;
+  }
+  
+  .registerbtn:hover {
+    opacity: 1;
+  }
+  
+  /* Add a blue text color to links */
+  a {
+    color: dodgerblue;
+    padding-left: 60%;
+    text-align: right;
+    font-size: 20px;
+  }
+  
+  /* Set a grey background color and center the text of the "sign in" section */
+  .covidback {
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+  
+  footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    background-color: #466692;
+  }
