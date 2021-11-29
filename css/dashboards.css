@@ -79,9 +79,15 @@ body{
     transition: background-color 0.2s;
 }
 
-.labheading{
+.labHeading{
+    width: 100%;
     text-align: center;
-    padding-bottom: 10px;
+}
+
+.labDate{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 30px;
 }
 
 .docHeading{
