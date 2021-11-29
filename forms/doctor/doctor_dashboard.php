@@ -45,11 +45,14 @@
     
     echo'</div>';
 	
-	echo'<div><a href="doctor_dashboard.php">Home</a></div>';
-    echo'<br>';
-    echo'<div><a href="../patient/patient_dashboard.php">View Personal Test Results</a></div>';
-    echo'<br>';
-    echo'<div><a href="../../index.php">Log Out</a></div>';
+    echo'<ul>
+    <li><a href="doctor_dashboard.php">Home</a></li>
+    <br>
+    <li><a href="../patient/patient_dashboard.php">View Personal Test Results</a></li>
+    <br>
+    <li><a href="../../index.php">Log Out</a></li>
+    </ul>';
+
 
 
     echo'<div class="getTests">';

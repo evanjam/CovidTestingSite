@@ -46,27 +46,28 @@
     </div>';
 
     //Check to see which home button to display based on permission level
-	if($_SESSION['permission'] == 0){
-        echo'<div><a href="patient_dashboard.php">Home</a></div>';
+    echo'<ul>';
+    if($_SESSION['permission'] == 0){
+        echo'<li><a href="patient_dashboard.php">Home</a></li>';
     }
     else if($_SESSION['permission'] == 1){
-        echo'<div><a href="../employee/employee_dashboard.php">Home</a></div>';
+        echo'<li><a href="../employee/employee_dashboard.php">Home</a></li>';
     }
     else if($_SESSION['permission'] == 2){
-        echo'<div><a href="../lab/lab_dashboard.php">Home</a></div>';
+        echo'<li><a href="../lab/lab_dashboard.php">Home</a></li>';
     }
     else if($_SESSION['permission'] == 3){
-        echo'<div><a href="../doctor/doctor_dashboard.php">Home</a></div>';
+        echo'<li><a href="../doctor/doctor_dashboard.php">Home</a></li>';
     }
     else if($_SESSION['permission'] == 4){
-        echo'<div><a href="../admin/admin_dashboard.php">Home</a></div>';
+        echo'<li><a href="../admin/admin_dashboard.php">Home</a></li>';
     }
     echo'<br>';
-	echo'<div><a href="patient_info.php">Personal Info</a></div>';
+	echo'<li><a href="patient_info.php">Personal Info</a></li>';
 	echo'<br>';
     //Display the log out button
-    echo'<div><a href="../../index.php">Log Out</a></div>';
-	 echo'<br>';
+    echo'<li><a href="../../index.php">Log Out</a></li>';
+     echo'</ul>';
     echo'<div class="getTests">';
         echo'<h1 class="labHeading">Test Results</h1>';
 

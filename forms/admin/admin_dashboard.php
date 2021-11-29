@@ -44,18 +44,20 @@
             echo'<div class="header">
                 <h1>Admin dashboard</h1>
             
-            </div>        
-            <div class="border"><a href="admin_register.php">User Registration Form</a></div>
+            </div> 
+            <ul>       
+            <li><a href="admin_register.php">User Registration Form</a></li>
             <br>
-            <div class="border"><a href="admin_edit_user.php">Edit User</a></div>
+            <li><a href="admin_edit_user.php">Edit User</a></li>
             <br>
-            <div class="border"><a href="admin_submit_test.php">Submit New Test</a></div>
+            <li><a href="admin_submit_test.php">Submit New Test</a></li>
             <br>
-            <div class="border"><a href="lab_admin_dashboard.php">Edit Test</a></div>
+            <li><a href="lab_admin_dashboard.php">Edit Test</a></li>
             <br>
-            <div class="border"><a href="../patient/patient_dashboard.php">View Personal Test Results</a></div>
+            <li><a href="../patient/patient_dashboard.php">View Personal Test Results</a></li>
             <br>
-            <div class="border"><a href="../../index.php">Log Out</a></div>';
+            <li><a href="../../index.php">Log Out</a></li>
+            </ul>';
         }else{
             //Return message if access level is incorrect.
             echo '<h1>This page is not reachable with your level of access.</h1>';

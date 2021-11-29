@@ -46,18 +46,18 @@
         
         echo'</div>';
         //Registration form link
-        echo'<div><a href="employee_register.php">Patient Registration Form</a></div>';
-        echo'<br>';
-        //Submit test form link
-        echo'<div><a href="employee_submit_test.php">Submit New Test</a></div>';
-        echo'<br>';
-		echo '<div><a href="employee_view_user.php">Search User</a></div>';
-		echo'<br>';
-        //Personal Restuls link
-        echo'<div><a href="../patient/patient_dashboard.php">View Personal Test Results</a></div>';
-        echo'<br>';
-        //Log Out link
-        echo'<div><a href="../../index.php">Log Out</a></div>';
+        echo
+        '<ul>
+        <li><a href="employee_register.php">Patient Registration Form</a></li>
+        <br>
+        <li><a href="employee_submit_test.php">Submit New Test</a></li>
+        <br>
+        <li><a href="employee_view_user.php">Search User</a></li>
+        <br>
+        <li><a href="../patient/patient_dashboard.php">View Personal Test Results</a></li>
+        <br>
+        <li><a href="../../index.php">Log Out</a></li>
+        </ul>';
 
     }
     else{

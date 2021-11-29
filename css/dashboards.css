@@ -39,18 +39,6 @@ body{
     padding-top: 120px;
 }
 
-.bordertest{
-    position: fixed;
-    left:0;
-    width: 200px;
-    border-width:2px;
-    padding: 3px;
-    margin: 5px;
-    border-style: solid;
-    border-color:#466692;
-    text-align: center;
-}
-
 
 .desiredResults{
     margin: auto;
@@ -100,4 +88,25 @@ body{
     text-align: center;
     padding-bottom: 30px;
 }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+  }
+  
+  li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: #466692;
+    color: white;
+  }
 
