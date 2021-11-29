@@ -42,7 +42,9 @@
     
     echo'</div>';
 	
-	echo'<div><a href="employee_dashboard.php">Home</a></div>';
+	echo'<ul>
+    <li><a href="employee_dashboard.php">Home</a></li>
+    </ul>';
 
 
     echo'<div class="getTests">';

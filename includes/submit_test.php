@@ -39,9 +39,13 @@
 			
 				</div>';
 				if($_SESSION['permission'] == 4){
-					echo'<div><a href="../forms/admin/admin_dashboard.php">Home</a></div>';
+					echo'<ul>
+					<li><a href="../forms/admin/admin_dashboard.php">Home</a></li>
+					</ul>';
 				}else if($_SESSION['permission'] == 1){
-					echo'<div><a href="../forms/employee/employee_dashboard.php">Home</a></div>';
+					echo'<ul>
+					<li><a href="../forms/employee/employee_dashboard.php">Home</a></li>
+					</ul>';
 				}
 				echo'
 
@@ -87,9 +91,13 @@
 			
 				</div>';
 				if($_SESSION['permission'] == 4){
-					echo'<div><a href="../forms/admin/admin_dashboard.php">Home</a></div>';
+					echo'<ul>
+					<li><a href="../forms/admin/admin_dashboard.php">Home</a></li>
+					</ul>';
 				}else if($_SESSION['permission'] == 1){
-					echo'<div><a href="../forms/employee/employee_dashboard.php">Home</a></div>';
+					echo'<ul>
+					<li><a href="../forms/employee/employee_dashboard.php">Home</a></li>
+					</ul>';
 				}
 				echo'
 
@@ -136,9 +144,13 @@
 			
 				</div>';
 				if($_SESSION['permission'] == 4){
-					echo'<div><a href="../forms/admin/admin_dashboard.php">Home</a></div>';
+					echo'<ul>
+					<li><a href="../forms/admin/admin_dashboard.php">Home</a></li>
+					</ul>';
 				}else if($_SESSION['permission'] == 1){
-					echo'<div><a href="../forms/employee/employee_dashboard.php">Home</a></div>';
+					echo'<ul>
+					<li><a href="../forms/employee/employee_dashboard.php">Home</a></li>
+					</ul>';
 				}
 				echo'
 
