@@ -63,7 +63,8 @@
             <th>DOB</th>
             <th>SSN</th>
 			<th>Email</th>
-            <th>Permission</th>';
+            <th>Permission</th>
+			<th>Email Verified</th>';
         echo'<tr>';
 
                 include('../../includes/connect.php'); 
@@ -77,6 +78,23 @@
                     if($result->num_rows > 0) {
                         //loop throught rows
                         while(($row = $result->fetch_row())!==null) {
+							
+							if($row[7] == '0') {
+								$rowseven = 'Patient';
+							}else if($row[7] == '1') {
+								$rowseven = 'Employee';
+							}else if($row[7] == '2') {
+								$rowseven = 'Laboratory';
+							}else if($row[7] == '3') {
+								$rowseven = 'Doctor';
+							}else if($row[7] == '4') {
+								$rowseven = 'Admin';
+							}
+							if($row[10] == '0') {
+								$rowten = 'Not Verified';
+							} else 
+								$rowten = 'Verified';
+							
                             //print out rows
                             echo '<tr>';
                             echo "<td>{$row[1]}</td>";
@@ -86,7 +104,8 @@
                             echo "<td>{$row[5]}</td>";
                             echo "<td>{$row[6]}</td>";
 							echo "<td>{$row[8]}</td>";
-                            echo "<td>{$row[7]}</td>";
+                            echo "<td>{$rowseven}</td>";
+							echo "<td>{$rowten}</td>";
                             echo '</tr>';
                             echo '<tr>
                             <td><hr></td><td><hr></td>
