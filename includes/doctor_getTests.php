@@ -11,7 +11,7 @@
 		if($result->num_rows > 0) {
 			echo 'test exists on that date';
 		} else {
-			echo 'gay';
+			echo 'rip';
 		}
 	}
 	

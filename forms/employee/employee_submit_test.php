@@ -46,7 +46,9 @@
         
         </div>
         
-        <div><a href="employee_dashboard.php">Home</a></div>
+        <ul>
+        <li><a href="employee_dashboard.php">Home</a></li>
+        </ul>
         
 
         <div class="form">

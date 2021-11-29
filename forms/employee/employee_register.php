@@ -49,7 +49,9 @@
             <div class="employee_register"> 
 
 				<br><br>
-                <a href="employee_dashboard.php">Home</a>
+                <ul>
+                <li><a href="employee_dashboard.php">Home</a></li>
+                </ul>
                 <p>Please fill out the following form and press Register to register a new Patient</p>
                 <form method="post" action="../../classes/UserRegister-inc.php" name="register">
 				    <label for="username"><b>Username</b></label>

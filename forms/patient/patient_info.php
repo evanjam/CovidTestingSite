@@ -31,6 +31,11 @@
 		<div class="header">
         <h1>My Personal Information</h1>
 		</div>';
+
+		echo '<ul>
+		<li><a href="patient_dashboard.php">Home</a></li>
+		</ul>
+		<br>';
 	
 		$UID = $_SESSION['UID'];
 		$get_user = "SELECT * FROM `user_profile` WHERE `UID` = '$UID'";;
@@ -72,8 +77,6 @@
 				}
 			}
 		}
-		echo '<br>';
-		echo '<div><a href="patient_dashboard.php">Home</a></div>'
 	?>
 
   <footer>

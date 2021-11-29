@@ -49,7 +49,9 @@ try{
 				<body>
             	<div class="header">
                 <h1>Employee/Patient Registration Form</h1>
-				<p><a href="employee_dashboard.php">Home</a></p>
+				<ul>
+				<li><a href="employee_dashboard.php">Home</a></li>
+				</ul>
             </div>
 			<br><br>
             <div class="employee_register">
@@ -104,7 +106,9 @@ try{
 				<body>
 				<div class="header">
                 <h1>Employee/Patient Registration Form</h1>
-				<p><a href="employee_dashboard.php">Home</a></p>
+				<ul>
+				<li><a href="employee_dashboard.php">Home</a></li>
+				</ul>
             </div>
 			<br><br>
             <div class="employee_register">
@@ -168,7 +172,9 @@ Thank you.
 				<body>
 				<div class="header">
                 <h1>Employee/Patient Registration Form<a href="employee_dashboard.php">Home</a></h1>
-				<p><a href="employee_dashboard.php">Home</a></p>
+				<ul>
+				<li><a href="employee_dashboard.php">Home</a></li>
+				</ul>
             </div>
 			<br><br>
             <div class="employee_register">
