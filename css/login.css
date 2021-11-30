@@ -94,9 +94,23 @@ body {
 }
 
 .forgot{
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-left: 3px;
+ 
+    text-align: center;
+    background-color: #fcfcfcaf;
+    font-size: 20px;
+}
+
+.forgot a{
+    width: 100%;
+    padding: 8px;
+   margin-top: 5px;
+    border: 2px;
+    color: #000;
+    border-width: 2px;
+    cursor: pointer;
+    font-weight: bold;
+
+    
 }
 
 .message{
