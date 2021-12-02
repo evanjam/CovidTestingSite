@@ -55,8 +55,8 @@
                 <p>Please fill out the following form and press Register to register a new Patient</p>
                 <form method="post" action="../../classes/UserRegister-inc.php" name="register">
 				    <label for="username"><b>Username</b></label>
-                    <input type="text" name="username" placeholder="Enter username" pattern="[A-Za-z0-9]+"
-					title="Only letters and numbers" required>
+                    <input type="text" name="username" placeholder="Enter username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+					title="Username cannot contain those special characters" required>
 					<label for="password"><b>Password</b></label>
                     <input type="password" id="password" name="password" placeholder="Enter password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[#?!@$%^&*-]).{8,}" 
 					title="Password must contain at least one number, one uppercase, lowercase letter and 1 special character, and at least 8 or more characters" required/>

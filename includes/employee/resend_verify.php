@@ -43,7 +43,8 @@
     echo'</div>';
 	
 	echo'<ul>
-    <li><a href="../../forms/employee/employee_dashboard.php">Home</a></li>
+    <li><a href="../../forms/employee/employee_dashboard.php">Home</a>
+	<a href="../../forms/employee/employee_view_user.php">Back</a></li>
     </ul>';
 
 
@@ -59,16 +60,19 @@
                 include('../../includes/connect.php'); 
 	
                 if (isset($_POST['users'])) {
-                    $user = $_POST['user'];
+                    $username = $_POST['user'];
             
-                    $query = "SELECT * FROM `user_profile` WHERE `username` = '$user'"; //returns rows that have the desired date
+                    $query = "SELECT * FROM `user_profile` WHERE `username` = '$username'"; //returns rows that have the desired date
                     $result = $connect->query($query); //saves resultng data
 					
                     if($result->num_rows > 0) {
+						$row = $result->fetch_array(MYSQLI_ASSOC); //explode returned row into array
+						$UID = $row['UID'];
+						$email = $row['email'];
 						
 						$email_token = md5(rand(0,1000)); //prepare random # to use for new email token
 						
-						$update_email_token = "UPDATE `user_profile` SET `email_token` = '$email_token' WHERE `user_profile`.`UID` = '$UID'"; //prepare sql query
+						$update_email_token = "UPDATE `user_profile` SET `email_token` = '$email_token' WHERE `user_profile`.`UID` = $UID;"; //prepare sql query
 						$connect->query($update_email_token); //run sql query to update email token
 						
 						//prepare and send account verification email
