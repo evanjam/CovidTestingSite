@@ -17,7 +17,7 @@
     <div class="login">
         <h1>Reset Password</h1>
         <form method="post" action="../includes/password_reset.php" name="login">
-            <input type="text" name="username" pattern="[a-zA-Z0-9]+" placeholder="login" id="username" required />
+            <input type="text" name="username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="login" id="username" required />
             <input type="text" name="ssn" placeholder="ssn" pattern="[0-9]+" required>
             <input type="password" name="Newpassword" placeholder=" New password" required>
             <input type="password" name="Confirmpassword" placeholder=" Confirm password" required>
