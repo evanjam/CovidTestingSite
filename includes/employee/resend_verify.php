@@ -36,16 +36,25 @@
     }
     
     try{
-    if($_SESSION['permission'] == 1){ 
+    if($_SESSION['permission'] == 1 || $_SESSION['permission'] == 4){ 
     echo'<div class="header">';
         echo'<h1>Employee View User</h1>';
     
     echo'</div>';
 	
-	echo'<ul>
+	if($_SESSION['permission'] == 1) {
+		echo'<ul>
     <li><a href="../../forms/employee/employee_dashboard.php">Home</a>
 	<a href="../../forms/employee/employee_view_user.php">Back</a></li>
     </ul>';
+	}
+	
+	if($_SESSION['permission'] == 4) {
+		echo'<ul>
+    <li><a href="../../forms/admin/admin_dashboard.php">Home</a>
+	<a href="../../forms/admin/admin_edit_user.php">Back</a></li>
+    </ul>';
+	}
 
 
     echo'<div class="getTests">';

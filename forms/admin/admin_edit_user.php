@@ -43,7 +43,8 @@
     echo'</div>';
 	
 	echo'<ul>
-    <li><a href="admin_dashboard.php">Home</a></li>
+    <li><a href="admin_dashboard.php">Home</a>
+	<a href="../../includes/employee/resend_verify.php">Resend Verification Email</a></li>
     </ul>';
 
 
