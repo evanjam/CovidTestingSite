@@ -3,21 +3,21 @@ password reset form: login.css
 
 admin forms: 
 admin_dashboard (home page) 	dashboards.css
-admin_register  				register.css
-admin_edit_user  				dashboard.css
-admin_submit_test 				dashboard.css
+admin_register  		register.css
+admin_edit_user  		dashboard.css
+admin_submit_test 		dashboard.css
 
 doctor forms: 
 doctor_dashboard (home page)  	dashboard.css
 
 lab forms: 
-lab_dashboard (home page)		dashboards.css
+lab_dashboard (home page)	dashboards.css
 
 employee forms: 
 employee_dashboard (home page)	dashboards.css
-employee_register				register.css
-employee_submit_test			dashboard.css (can be register)
-employee_search_user			dashboard.css
+employee_register		register.css
+employee_submit_test		dashboard.css (can be register)
+employee_search_user		dashboard.css
 
 patient forms: 
 patient_dashboard (home page)	dashboard.css
