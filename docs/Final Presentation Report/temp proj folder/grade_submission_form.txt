@@ -1,0 +1,51 @@
+1. Your group number:
+monday night section
+
+2. You project name:
+covid testing site
+
+3. Your full name:
+evan j fulciniti
+
+4. One or more sentences explaining what you have done:
+-designed project scope and set product requirements and deliverables
+
+-designed user permission structure and hierarchy of user accounts, creating first implementations of all users level of access which was later iterated on by Dustin
+
+-designed laboratory/doctor test result modification structure and database implementation of result storage
+
+-created and maintained project proposal documentation
+-created midterm progress report video
+-created final presentation video
+
+-built foundation of front end html code for forms that would be used for the entirety of the project by all group members
+
+-built foundation of backend code and methods of interfacing with the mysql database which were then used for the rest of the project by all group members
+
+-built foundation for backend database connection process and database, access credential, non object oriented approach (later iterated on by Thatcher)
+
+-built first iteration and laid foundation of database with login system, including frontend/backend code for login page and storing of hashed passwords into database, thatcher/dustin later iterated on front end styling.
+
+-built first iteration and laid foundation of "vendor user" dashboard + 
+-"vendor user" registration form (non object oriented approach which was later worked on by Thatcher) +
+-"vendor user" test sample submission form, and all coorelating backend PHP code for all the above
+
+-related to above, also built and configured the sendmail portion of the project which is related to sending results to patients and designated school personnel
+-related to above, built email verification process which relies on the above mentioned sendmail configuration, as well as ability for certain user to resend email verification link
+
+-built employee "view user" page, using "table view" framework created by Dustin
+
+-built first iteration and laid foundation for "admin user" dashboard +
+-"admin user" user registration form
+-"admin user" test submission form
+-"admin user" 'lab' dashboard to view results, later iterated on by Dustin
+
+-laid framework for protecting front end from SQL injection and sanitizing inputs, later iterated on by Sunny
+
+-collaborated on lab/doctor user dashboards which were primarily designed and maintained by Dustin
+
+-delegated creation, documentation, learning, and research tasks to group members to look into specific HIPA compliancies regarding password encryption and storage, user account password requirements, session inactivity requirements, etc. 
+
+-made iterations on the patient/lab/doctor dashboard pages and the "table view" web page designed employed in those pages which was originally designed by Dustin
+
+-iterated on the patient "view your own results" table-view page which was to be made accessible to all users of the system (higher privileged accounts also can get tested and have their own form of 'patient portal' to view their results)

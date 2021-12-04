@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee View User</title>
+    <title>Resend Verification Email</title>
     <link href="../../css/dashboards.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -38,7 +38,7 @@
     try{
     if($_SESSION['permission'] == 1 || $_SESSION['permission'] == 4){ 
     echo'<div class="header">';
-        echo'<h1>Employee View User</h1>';
+        echo'<h1>Resend Verification Email</h1>';
     
     echo'</div>';
 	
