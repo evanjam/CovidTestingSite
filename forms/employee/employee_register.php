@@ -71,7 +71,7 @@
 					title="SSN must be 9 digits" required>
 					 <label for="email"><b>Email</b></label>
 					<input type="email" placeholder="Enter email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-                     <label for="date"><b>Date</b></label>
+                     <label for="date"><b>Date of Birth</b></label>
 					<input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required>
                     <input type="submit" name="register" value="Register"  class="registerbtn">
                 </form>
