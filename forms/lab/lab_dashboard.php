@@ -1,14 +1,19 @@
 <?php
+    //Start the session to gain access to the session variables
     session_start();
 	
+    //Set the current time
 	$t=time();
+    //Check to see if the session time is less than 900 seconds on refresh
 	if (isset($_SESSION['logged']) && ($t - $_SESSION['logged'] > 900)) 
 	{
+        //End the session if session time is 900 seconds or more
         session_destroy();
         header('Refresh: 0.01;URL=../../sessioninactivitytimeout.php');
 	}
 	else
 	{
+        //Update the session time to the current time
 		$_SESSION['logged'] = time();
 	}  
 ?>
@@ -45,11 +50,11 @@
                 <h1>Lab user dashboard</h1>
             </div>
             <ul>
-            <li><a href="lab_dashboard.php">Home</a></li>
-            <br>
-            <li><a href="../patient/patient_dashboard.php">View Personal Test Results</a></li>
-            <br>
-            <li><a href="../../index.php">Log Out</a></li>
+                <li><a href="lab_dashboard.php">Home</a></li>
+                <br>
+                <li><a href="../patient/patient_dashboard.php">View Personal Test Results</a></li>
+                <br>
+                <li><a href="../../index.php">Log Out</a></li>
             </ul>
             <div class="getTests">
                 <h1 class="labHeading">Enter date for tests </h1>
@@ -60,7 +65,7 @@
                 </form>
             </div>';
 
-            //Print out the top row of the table with the labels for each row.
+            //Print out the headings of each column.
             echo
             '<table class="desiredResults" id="desiredResults">
                 <tr>
@@ -117,6 +122,8 @@
                                     }
                                     echo "<td>TID = {$row[0]}</td>";
                                     echo '</tr>';
+
+                                    //Print an empty row with lines for formatting
                                     echo '<tr>
                                     <td><hr></td><td><hr></td>
                                     <td><hr></td><td><hr></td>
@@ -148,24 +155,29 @@
                                 </tr>';
 
                                 //Print out the result input and the submit button at the bottom of the table
-                                echo '<tr>
+                                echo 
+                                '<tr>
                                 <td></td>
                                 </tr>
                                 <tr>
-                                <td></td>
-                                <td></td>
-                                <form action="lab_dashboard.php" method="post">
-                                <td><input type="radio" id="noResult" name="result" value="0">
-                                <label for="noResult">No Result</label><br>
-                                <input type="radio" id="positive" name="result" value="2">
-                                <label for="positive">Positive</label><br>
-                                <input type="radio" id="negative" name="result" value="1">
-                                <label for="negative">Negative</label></td>';
-                                //<td><input type="number" name="result" placeholder="Enter Result" id="result" pattern="[0-1]"/></td>
-                                echo'<td><input class="inputColor" type="number" name="tid" placeholder="Enter TID" id="tid" pattern="[0-1]"/></td>
-                                <td><input class="inputColor" type="submit" name="submit" value="submit"></td>
-                                </form>
+                                    <td></td>
+                                    <td></td>
+                                    <form action="lab_dashboard.php" method="post">
+                                        <td>
+                                            <input type="radio" id="noResult" name="result" value="0">
+                                            <label for="noResult">No Result</label><br>
+                                            <input type="radio" id="positive" name="result" value="2">
+                                            <label for="positive">Positive</label><br>
+                                            <input type="radio" id="negative" name="result" value="1">
+                                            <label for="negative">Negative</label>
+                                        </td>
+                                        <td>
+                                            <input class="inputColor" type="number" name="tid" placeholder="Enter TID" id="tid" pattern="[0-1]"/></td>
+                                            <td><input class="inputColor" type="submit" name="submit" value="submit">
+                                        </td>
+                                    </form>
                                 </tr>';
+                                //If the number of rows was 0
                             } else {
                                 echo '<tr><td>There were no tests on that date</td></tr>';
                                 
