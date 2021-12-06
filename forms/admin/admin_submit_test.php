@@ -59,10 +59,10 @@
                 <img src="../../img/employee/cotton_swab_resize.jpg" alt="Cotton Swab">
                 <br></br>
                 <form method="post" action="../../includes/submit_test.php" name="submit_test">
-                    <input type="text" name="username" placeholder="username" required>
-                    <input type="text" name="serial" placeholder="serial #" pattern="[0-9]+" required>
+                    <input class="inputColor" type="text" name="username" placeholder="username" required>
+                    <input class="inputColor" type="text" name="serial" placeholder="serial #" pattern="[0-9]+" required>
                     <br></br>
-                    <input type="submit" name="submit_test" value="Submit">
+                    <input class="inputColor" type="submit" name="submit_test" value="Submit">
                 </form>
                 
             </div>';

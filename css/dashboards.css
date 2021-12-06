@@ -67,6 +67,17 @@ body{
     transition: background-color 0.2s;
 }
 
+.inputColor{
+    background-color: #c0c0c0;
+    border-color: gray;
+    box-shadow: 1px 1px 1px gray;
+}
+
+.inputColor:hover {
+    background-color: #d3d3d3;
+  }
+
+
 .labHeading{
     width: 100%;
     text-align: center;

@@ -51,8 +51,8 @@
     echo'<div class="getTests">';
         echo'<h1 class="labHeading">Enter a username</h1>';
         echo'<form method="post" action="" name="users">';
-            echo'<div class="labHeading"><input type="text" name="user"  placeholder="username" id="user" required />
-            <input type="submit" name="users" value="Search"></div>
+            echo'<div class="labHeading"><input class="inputColor" type="text" name="user"  placeholder="username" id="user" required />
+            <input class="inputColor" type="submit" name="users" value="Search"></div>
             <br></br>';
         echo'</form>';
     echo'</div>';

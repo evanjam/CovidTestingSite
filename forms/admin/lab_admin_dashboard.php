@@ -58,8 +58,8 @@
         <h1 class="labHeading">Enter date for tests </h1>
         <form method="post" action="" name="labtests">
             <div class="labHeading">
-            <input type="date" name="date"  placeholder="Desired date" id="date" required />
-            <input type="submit" name="labtests" value="Search">
+            <input class="inputColor" type="date" name="date"  placeholder="Desired date" id="date" required />
+            <input class="inputColor" type="submit" name="labtests" value="Search">
             </div>
             <br></br>
         </form>

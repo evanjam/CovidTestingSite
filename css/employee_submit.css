@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
+    background-color: #d3d3d3;
     margin: 0;
     padding: 16px;
   }
@@ -91,6 +91,17 @@ body{
     padding-bottom: 30px;
 }
 
+.inputColor{
+    background-color: #c0c0c0;
+    border-color: #d3d3d3;
+    box-shadow: 2px 2px 2px gray;
+    
+}
+
+.inputColor:hover {
+    background-color: #d3d3d3;
+  }
+
 .docHeading{
     width: 100%;
     text-align: center;
@@ -106,7 +117,7 @@ body{
 	text-align: center;
     width: 320px;
     height: 200px;
-    background-color: #ffffff;
+    background-color: #d3d3d3;
     margin: 100px auto;
 }
 
@@ -115,7 +126,7 @@ ul {
     margin: 0;
     padding: 0;
     width: 200px;
-    background-color: #f1f1f1;
+    background-color: #c0c0c0;
   }
   
   li a {
