@@ -59,8 +59,8 @@
         echo'<h1 class="docHeading">Enter date for tests </h1>';
         echo'<form method="post" action="" name="labtests" class="docDate">';
         echo'<hr>';
-            echo'<input type="date" name="date"  placeholder="Desired date" id="date" required />';
-            echo'<input type="submit" name="labtests" value="Search">';
+            echo'<input class="inputColor" type="date" name="date"  placeholder="Desired date" id="date" required />';
+            echo'<input class="inputColor" type="submit" name="labtests" value="Search">';
         echo'</form>';
     echo'</div>';
 
@@ -148,8 +148,8 @@
                         <label for="is_signed">Sign</label><br>
                         <input type="radio" id="is_signed" name="is_signed" value="0">
                         <label for="is_signed">Do not Sign</label><br></td>';
-                        echo '<td><input type="number" name="tid" placeholder="Enter TID" id="tid" pattern="[0-1]"/></td>';
-                        echo '<td><input type="submit" name="submit" value="submit"></td>';
+                        echo '<td><input class="inputColor" type="number" name="tid" placeholder="Enter TID" id="tid" pattern="[0-1]"/></td>';
+                        echo '<td><input class="inputColor" type="submit" name="submit" value="submit"></td>';
                         echo '</form>';
                         echo '</tr>';
                     } else {
