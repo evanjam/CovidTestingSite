@@ -148,8 +148,8 @@
                         <label for="positive">Positive</label><br>
                         <input type="radio" id="negative" name="result" value="1">
                         <label for="negative">Negative</label></td>';
-                        echo '<td><input type="number" name="tid" placeholder="Enter TID" id="tid" pattern="[0-1]"/></td>';
-                        echo '<td><input type="submit" name="submit" value="submit"></td>';
+                        echo '<td><input class="inputColor" type="number" name="tid" placeholder="Enter TID" id="tid" pattern="[0-1]"/></td>';
+                        echo '<td><input class="inputColor" type="submit" name="submit" value="submit"></td>';
                         echo '</form>';
                         echo '</tr>';
                     } else {

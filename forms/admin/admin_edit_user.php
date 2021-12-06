@@ -103,15 +103,15 @@
                         </td></tr>
                         <tr>
                         <form action="admin_edit_user.php" method="post">
-                        <td><input type="text" name="username"  placeholder="username" id="username" required /></td>
-                        <td><input type="text" name="password"  placeholder="password" id="user" required /></td>
-                        <td><input type="text" name="fname"  placeholder="Fname" id="fname" required /></td>
-                        <td><input type="text" name="lname" placeholder="Lname" id="lname" required/></td>
-                        <td><input type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required /></td>
-                        <td><input type="text" name="ssn" placeholder="ssn" id="ssn" pattern="[0-9]+" required></td>
-						<td><input type="text" name="email" placeholder="email" id="email" required></td>
-                        <td><input type="number" name="permission" placeholder="permission" id="permission" pattern="[0-4]" required /></td>
-                        <td><input type="submit" name="submit" value="submit"></td>
+                        <td><input class="inputColor" type="text" name="username"  placeholder="username" id="username" required /></td>
+                        <td><input class="inputColor" type="text" name="password"  placeholder="password" id="user" required /></td>
+                        <td><input class="inputColor" type="text" name="fname"  placeholder="Fname" id="fname" required /></td>
+                        <td><input class="inputColor" type="text" name="lname" placeholder="Lname" id="lname" required/></td>
+                        <td><input class="inputColor" type="date" name="date"  placeholder="Desired date (year-month-day)" id="date" required /></td>
+                        <td><input class="inputColor" type="text" name="ssn" placeholder="ssn" id="ssn" pattern="[0-9]+" required></td>
+						<td><input class="inputColor" type="text" name="email" placeholder="email" id="email" required></td>
+                        <td><input class="inputColor" type="number" name="permission" placeholder="permission" id="permission" pattern="[0-4]" required /></td>
+                        <td><input class="inputColor" type="submit" name="submit" value="submit"></td>
                         </form>
                         </tr>';
                     } else {
