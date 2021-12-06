@@ -86,6 +86,10 @@
 			}
 		}
 	?>
+	
+  <div class="logoContainer">
+  <img class="logo" src="../../img/logo/logo.png" alt="Logo">
+  </div>
   <footer>
         <div>
             <p>Covid Testing Site 2021</p>
